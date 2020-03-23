@@ -13,7 +13,7 @@
 
     </el-menu>-->
 
-    <div class="topnav">
+    <!-- <div class="topnav">
       <font-awesome-icon
         style="font-size: 30px; position: relative; top: 12px; left: 25px;"
         :icon="['fas', 'code']"
@@ -27,9 +27,14 @@
           <i style="font-size: 35px;" class="el-icon-sunny"></i>
         </div>
       </div>
-    </div>
+    </div>-->
 
-    <!-- <div id="menuArea">
+    <div class="topnav">
+      <font-awesome-icon
+        style="font-size: 30px; position: relative; top: 12px; left: 25px;"
+        :icon="['fas', 'code']"
+      />
+      <div id="menuArea">
         <input type="checkbox" id="menuToggle" />
 
         <label for="menuToggle" class="menuOpen">
@@ -39,25 +44,54 @@
         <div class="menu menuEffects">
           <label for="menuToggle"></label>
           <div class="menuContent">
-            <ul>
-              <li>
-                <a href="#">MENU 1</a>
-              </li>
-              <li>
-                <a href="#">MENU 2</a>
-              </li>
-              <li>
-                <a href="#">MENU 3</a>
-              </li>
-              <li>
-                <a href="#">MENU 4</a>
-              </li>
-            </ul>
+            <div style="display: inline-block; text-align: left;">
+              <ul>
+                <li class="nav-items">
+                  <el-switch v-model="value1" active-color="#13ce66" active-text="Dark Mode"></el-switch>
+                </li>
+                <li class="nav-items">
+                  <font-awesome-icon style="font-size: 33px" :icon="['fas', 'language']" />
+
+                  <el-dropdown trigger="click">
+                    <span
+                      style="position: relative; bottom: 6px; left: 10px;"
+                      class="text-secondary"
+                    >Language</span>
+
+                    <el-dropdown-menu slot="dropdown">
+                      <span v-for="(lang, index) in languages" :key="index">
+                        <el-dropdown-item>{{ lang }}</el-dropdown-item>
+                      </span>
+                    </el-dropdown-menu>
+                  </el-dropdown>
+                </li>
+                <li class="nav-items">
+                  <font-awesome-icon style="font-size: 33px" :icon="['fas', 'palette']" />
+                  <el-popover placement="bottom" width="218" trigger="click">
+                    <div>
+                      <span v-for="(color, index) in colorPalette" :key="index">
+                        <el-button
+                          class="color-btn"
+                          :style="{background: color, border: '1px solid' + color}"
+                          circle
+                        ></el-button>
+                      </span>
+                    </div>
+                    <span
+                      slot="reference"
+                      style="position: relative; bottom: 6px; left: 18px;"
+                      class="text-secondary"
+                    >Choose Color</span>
+                  </el-popover>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-    </div>-->
+      </div>
+    </div>
 
-    <el-row style="padding: 100px">
+    <!-- <el-row style="padding: 100px">
       <el-col :span="12">
         <div class="grid-content bg-purple" style="text-align: center">
           <h2 style="font-weight: 400;">HELLO</h2>
@@ -83,7 +117,79 @@
           <img style="width: 300px; border-radius: 50%;" src="../../assets/image/me-toga.jpeg" />
         </div>
       </el-col>
-    </el-row>
+    </el-row>-->
+
+    <div class="container" style="padding: 60px">
+      <div class="section" style="min-width: 65%">
+        <div class="column-one">
+          <ul style="list-style-type:none; padding: 0; margin: 0;">
+            <li class="left-icons">
+              <a href="https://www.linkedin.com/in/alvin-nario-498a20193/" target="_blank" style="color: #1a1a1a">
+                <font-awesome-icon
+                  style="font-size: 25px; margin-bottom: 20px"
+                  :icon="['fab', 'linkedin']"
+                />
+              </a>
+            </li>
+            <li class="left-icons">
+              <a href="https://github.com/narioalvin" target="_blank" style="color: #1a1a1a">
+                <font-awesome-icon
+                  style="font-size: 25px; margin-bottom: 20px"
+                  :icon="['fab', 'github']"
+                />
+              </a>
+            </li>
+            <li class="left-icons">
+              <font-awesome-icon
+                style="font-size: 20px; margin-bottom: 20px"
+                :icon="['fas', 'phone']"
+              />
+            </li>
+            <li class="left-icons">
+              <font-awesome-icon style="font-size: 20px" :icon="['fas', 'envelope']" />
+            </li>
+          </ul>
+        </div>
+        <div class="column-two">
+          <div class="divider"></div>
+          <div class="grid-content bg-purple" style="text-align: center; width: 100%;">
+            <h2 style="font-weight: bold; letter-spacing: 3px;">HELLO</h2>
+            <h1 style="font-size: 55px; letter-spacing: 5px;">I'M ALVIN NARIO</h1>
+            <div style="padding: 0 120px;">
+              <h5 style="font-weight: 200; letter-spacing: 3px;">
+                <span style="font-weight: bold">WEB DEVELOPER</span>
+              </h5>
+            </div>
+            <div style="margin-bottom: 20px">
+              <a class="download-btn" :href="`${publicPath}resume.pdf`" download>DOWNLOAD CV</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div style="margin-bottom: 15px">
+          <img style="width: 270px; border-radius: 50%;" src="../../assets/image/me-toga.jpeg" />
+        </div>
+        <!-- <div style="position: relative; left: 30px;">
+          <ul style="list-style-type:none; padding: 0; margin: 0;">
+            <li style="margin-bottom: 10px;">
+              <font-awesome-icon style="font-size: 20px;" :icon="['fas', 'phone']" />
+              <span
+                class="text-secondary"
+                style="margin-left: 10px; font-size: 14px;"
+              >+639 05 232 2714</span>
+            </li>
+            <li>
+              <font-awesome-icon style="font-size: 20px" :icon="['fas', 'envelope']" />
+              <span
+                class="text-secondary"
+                style="margin-left: 10px; font-size: 14px;"
+              >narioalvin94@gmail.com</span>
+            </li>
+          </ul>
+        </div>-->
+      </div>
+    </div>
   </div>
 </template>
 
@@ -98,7 +204,20 @@ export default {
   data() {
     return {
       activeIndex: "1",
-      nightMode: localStorage.getItem("nightMode") || false
+      value1: false,
+      nightMode: localStorage.getItem("nightMode") || false,
+      colorPalette: [
+        "#a35061",
+        "#3ac6c6",
+        "#ccccff",
+        "#93b0b6",
+        "#ffe3c0",
+        "#856e6e",
+        "#fdca00",
+        "#dd7856"
+      ],
+      languages: ["English", "German", "French"],
+      publicPath: process.env.BASE_URL
     };
   },
   created() {
@@ -121,6 +240,100 @@ export default {
 </script>
 
 <style lang="scss">
+.download-btn {
+  position: relative;
+  background: #1a1a1a;
+  color: #fefefe;
+  font-size: 12px;
+  text-decoration: none;
+  padding: 12px 33px;
+  border-radius: 20px;
+  border: 1px solid #1a1a1a;
+  font-weight: bold;
+  top: 30px;
+}
+
+.left-icons:hover,
+.download-btn:hover,
+.nav-items:hover,
+.color-btn:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+.color-btn {
+  padding: 20px !important;
+  margin: 0 6px 10px 0 !important;
+}
+
+.el-switch__label.is-active {
+  color: #535343 !important;
+}
+
+.el-switch__label * {
+  font-family: "Avenir", sans-serif !important;
+  color: #535343 !important;
+  font-weight: bold !important;
+  font-size: 13px !important;
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.divider {
+  width: 2px;
+  margin: 60px 0;
+  background: #1a1a1a;
+}
+
+.container {
+  display: flex;
+}
+
+.section {
+  flex: 1; /*grow*/
+  // border: 1px solid;
+  min-height: 70vh;
+}
+
+.column-one {
+  float: left;
+  width: 15%;
+  padding: 10px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.column-two {
+  float: left;
+  width: 100;
+  padding: 10px;
+  height: 300px;
+  display: flex;
+  width: 85%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media (max-width: 768px) {
+  /*breakpoint*/
+  .container {
+    flex-direction: column;
+  }
+}
+
 .topnav {
   overflow: hidden;
 }
@@ -136,17 +349,17 @@ export default {
   float: right;
 }
 
-h4 {
-  width: 100%;
+h5 {
   text-align: center;
   border-bottom: 1px solid #1a1a1a;
   line-height: 0.1em;
   margin: 10px 0 20px;
 }
 
-h4 span {
+h5 span {
   background: #fff;
   padding: 0 10px;
+  font-size: 13px;
 }
 
 .el-menu-demo {
@@ -159,25 +372,25 @@ h4 span {
   display: flex;
 }
 
-.dark-theme-nav {
-  display: flex;
-  justify-content: flex-end;
-  padding: 8px;
-}
+// .dark-theme-nav {
+//   display: flex;
+//   justify-content: flex-end;
+//   padding: 8px;
+// }
 
-.dark-theme-nav:focus {
-  outline: none;
-}
+// .dark-theme-nav:focus {
+//   outline: none;
+// }
 
-:root {
-  --toggle-size: 35px;
-  --switch-w: 70px;
-  --switch-h: 35px;
-  --switch-handle-scale: 0.65;
-  --switch-off-handle-x: -0.125em;
-  --switch-on-handle-x: calc(100% - 0.125em);
-  --switch-transition-duration: 0.2s;
-}
+// :root {
+//   --toggle-size: 35px;
+//   --switch-w: 70px;
+//   --switch-h: 35px;
+//   --switch-handle-scale: 0.65;
+//   --switch-off-handle-x: -0.125em;
+//   --switch-on-handle-x: calc(100% - 0.125em);
+//   --switch-transition-duration: 0.2s;
+// }
 
 #page {
   background: #fefefe;
@@ -187,62 +400,62 @@ h4 span {
   // }
 }
 
-#theme-toggle {
-  display: none;
+// #theme-toggle {
+//   display: none;
 
-  & + label {
-    font-size: var(--toggle-size);
-    display: flex;
-    height: var(--switch-h);
-    width: var(--switch-w);
-    border-radius: calc(var(--switch-h) / 2);
-    background-size: auto 8em;
-    background-position: bottom;
-    background-image: linear-gradient(
-      180deg,
-      #021037 0%,
-      #20206a 19%,
-      #4184b1 66%,
-      #62e7f7 100%
-    );
-    transition: var(--switch-transition-duration);
-    border: 0.125em solid hsl(207, 30%, 95%);
-    overflow: hidden;
-    span {
-      background: #fffad8;
-      border-radius: 50%;
-      height: var(--switch-h);
-      width: var(--switch-h);
-      transform: translateX(var(--switch-off-handle-x))
-        scale(var(--switch-handle-scale));
-      transition: var(--switch-transition-duration);
-      cursor: pointer;
-      box-shadow: 0 0 0.25em 0.0625em #fbee8d, 0 0 2em 0 #ffeb3b,
-        inset -0.25em -0.25em 0 0 #fbee8e,
-        inset -0.3125em -0.3125em 0 0.625em #fff5b2;
-      margin-top: var(--switch-off-handle-x);
-    }
-  }
+//   & + label {
+//     font-size: var(--toggle-size);
+//     display: flex;
+//     height: var(--switch-h);
+//     width: var(--switch-w);
+//     border-radius: calc(var(--switch-h) / 2);
+//     background-size: auto 8em;
+//     background-position: bottom;
+//     background-image: linear-gradient(
+//       180deg,
+//       #021037 0%,
+//       #20206a 19%,
+//       #4184b1 66%,
+//       #62e7f7 100%
+//     );
+//     transition: var(--switch-transition-duration);
+//     border: 0.125em solid hsl(207, 30%, 95%);
+//     overflow: hidden;
+//     span {
+//       background: #fffad8;
+//       border-radius: 50%;
+//       height: var(--switch-h);
+//       width: var(--switch-h);
+//       transform: translateX(var(--switch-off-handle-x))
+//         scale(var(--switch-handle-scale));
+//       transition: var(--switch-transition-duration);
+//       cursor: pointer;
+//       box-shadow: 0 0 0.25em 0.0625em #fbee8d, 0 0 2em 0 #ffeb3b,
+//         inset -0.25em -0.25em 0 0 #fbee8e,
+//         inset -0.3125em -0.3125em 0 0.625em #fff5b2;
+//       margin-top: var(--switch-off-handle-x);
+//     }
+//   }
 
-  &:checked {
-    font-size: var(--switch-font-size);
+//   &:checked {
+//     font-size: var(--switch-font-size);
 
-    & + label {
-      background-position: top;
-      border-color: hsl(207, 30%, 50%);
+//     & + label {
+//       background-position: top;
+//       border-color: hsl(207, 30%, 50%);
 
-      span {
-        background: transparent;
-        transform: translateX(var(--switch-on-handle-x))
-          scale(var(--switch-handle-scale));
-        box-shadow: inset -0.1875em -0.1875em 0 0 #fbe7ef,
-          inset -0.5625em -0.5625em 0 0 #fffff7;
-      }
-    }
-  }
-}
+//       span {
+//         background: transparent;
+//         transform: translateX(var(--switch-on-handle-x))
+//           scale(var(--switch-handle-scale));
+//         box-shadow: inset -0.1875em -0.1875em 0 0 #fbe7ef,
+//           inset -0.5625em -0.5625em 0 0 #fffff7;
+//       }
+//     }
+//   }
+// }
 
-/*-- Housekeeping --*/
+// /*-- Housekeeping --*/
 
 html {
   box-sizing: border-box;
@@ -258,9 +471,9 @@ body {
   margin: 0;
 }
 
-#page {
-  // min-height: 100vh;
-}
+// #page {
+//   // min-height: 100vh;
+// }
 
 * {
   transition: 0.2s ease;
@@ -279,7 +492,7 @@ input {
   border-radius: 2px;
   cursor: pointer;
   position: relative;
-  top: 8px;
+  top: -20px;
 }
 
 .open:before {
@@ -317,6 +530,7 @@ input {
   float: right;
   position: relative;
   right: 50px;
+  z-index: 9999;
 }
 
 .menuOpen:hover .open:before {
@@ -333,15 +547,10 @@ input {
   height: 100vh;
   top: 0;
   left: 0;
-  background: rgba(255, 135, 2, 0.9);
+  background: #fefefe;
 }
 
 .menu label {
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  right: 20px;
-  top: 20px;
   background-size: 100%;
   cursor: pointer;
 }
@@ -349,10 +558,9 @@ input {
 .menu .menuContent {
   position: relative;
   top: 50%;
-  font-size: 54px;
   text-align: center;
   padding-bottom: 20px;
-  margin-top: -170px;
+  margin-top: -100px;
 }
 
 .menu ul {
@@ -361,28 +569,17 @@ input {
   margin: 0 auto;
 }
 
-.menu ul li a {
-  display: block;
-  color: white;
-  text-decoration: none;
+.menu ul li {
   transition: color 0.2s;
-  font-family: Trebuchet MS;
-  text-transform: uppercase;
   padding: 10px 0;
-}
-
-.menu ul li a:hover {
-  color: #ff8702;
-}
-
-.menu ul li:hover {
-  background: white;
 }
 
 .menuEffects {
   opacity: 0;
+  backdrop-filter: blur(12px);
   visibility: hidden;
   transition: opacity 0.5s, visibility 0.5s;
+  z-index: 999;
 }
 
 .menuEffects ul {
@@ -391,13 +588,13 @@ input {
 }
 
 #menuToggle:checked ~ .menuEffects {
-  opacity: 1;
+  opacity: 0.9;
   visibility: visible;
   transition: opacity 0.5s;
 }
 
 #menuToggle:checked ~ .menuEffects ul {
-  opacity: 1;
+  opacity: 0.9;
 }
 
 #menuToggle:checked ~ .menuOpen .open {
@@ -406,7 +603,7 @@ input {
 
 #menuToggle:checked ~ .menuOpen .open:before {
   content: "";
-  background-color: white;
+  background-color: #1a1a1a;
   transform: rotate(45deg);
   position: absolute;
   top: 0;
@@ -416,7 +613,7 @@ input {
 
 #menuToggle:checked ~ .menuOpen .open:after {
   content: "";
-  background-color: white;
+  background-color: #1a1a1a;
   transform: rotate(-45deg);
   position: relative;
   top: 0;

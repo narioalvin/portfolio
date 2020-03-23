@@ -1,25 +1,30 @@
 <template>
   <div id="app">
-    <router-view /> 
+    <router-view />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
-}
+  name: "App"
+};
 </script>
 
 <style>
-
 @font-face {
-    font-family: 'Monaco';
-    src: url('./assets/font/monaco-webfont.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Avenir";
+  src: url("./assets/font/avenir.otf") format("otf");
+  font-weight: normal;
+  font-style: normal;
 }
 
 * {
-    font-family: 'Monaco', sans-serif;
+  font-family: "Avenir", sans-serif;
+}
+
+.text-secondary {
+  color: #535343;
+  font-weight: bold;
+  font-size: 13px;
 }
 </style>
