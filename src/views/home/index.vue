@@ -30,10 +30,7 @@
     </div>-->
 
     <div class="topnav">
-      <font-awesome-icon
-        style="font-size: 30px; position: relative; top: 12px; left: 25px;"
-        :icon="['fas', 'code']"
-      />
+      <font-awesome-icon class="logo" :icon="['fas', 'code']" />
       <div id="menuArea">
         <input type="checkbox" id="menuToggle" />
 
@@ -47,7 +44,12 @@
             <div style="display: inline-block; text-align: left;">
               <ul>
                 <li class="nav-items">
-                  <el-switch v-model="value1" active-color="#13ce66" active-text="Dark Mode"></el-switch>
+                  <el-switch
+                    style="border-color: 1px solid #cccccc"
+                    v-model="value1"
+                    active-color="#13ce66"
+                    active-text="Dark Mode"
+                  ></el-switch>
                 </li>
                 <li class="nav-items">
                   <font-awesome-icon style="font-size: 33px" :icon="['fas', 'language']" />
@@ -119,54 +121,89 @@
       </el-col>
     </el-row>-->
 
-    <div class="container" style="padding: 60px">
+    <div class="container">
       <div class="section" style="min-width: 65%">
         <div class="column-one">
           <ul style="list-style-type:none; padding: 0; margin: 0;">
             <li class="left-icons">
-              <a href="https://www.linkedin.com/in/alvin-nario-498a20193/" target="_blank" style="color: #1a1a1a">
-                <font-awesome-icon
-                  style="font-size: 25px; margin-bottom: 20px"
-                  :icon="['fab', 'linkedin']"
-                />
+              <a
+                href="https://www.linkedin.com/in/alvin-nario-498a20193/"
+                target="_blank"
+                style="color: #1a1a1a"
+              >
+                <font-awesome-icon class="brand-icons" :icon="['fab', 'linkedin']" />
               </a>
             </li>
             <li class="left-icons">
               <a href="https://github.com/narioalvin" target="_blank" style="color: #1a1a1a">
-                <font-awesome-icon
-                  style="font-size: 25px; margin-bottom: 20px"
-                  :icon="['fab', 'github']"
-                />
+                <font-awesome-icon class="brand-icons" :icon="['fab', 'github']" />
               </a>
             </li>
             <li class="left-icons">
-              <font-awesome-icon
-                style="font-size: 20px; margin-bottom: 20px"
-                :icon="['fas', 'phone']"
-              />
+              <font-awesome-icon class="solid-icons" :icon="['fas', 'phone']" />
             </li>
             <li class="left-icons">
-              <font-awesome-icon style="font-size: 20px" :icon="['fas', 'envelope']" />
+              <font-awesome-icon
+                style="margin-bottom: 0"
+                class="solid-icons"
+                :icon="['fas', 'envelope']"
+              />
             </li>
           </ul>
         </div>
         <div class="column-two">
-          <div class="divider"></div>
-          <div class="grid-content bg-purple" style="text-align: center; width: 100%;">
-            <h2 style="font-weight: bold; letter-spacing: 3px;">HELLO</h2>
-            <h1 style="font-size: 55px; letter-spacing: 5px;">I'M ALVIN NARIO</h1>
-            <div style="padding: 0 120px;">
-              <h5 style="font-weight: 200; letter-spacing: 3px;">
-                <span style="font-weight: bold">WEB DEVELOPER</span>
-              </h5>
-            </div>
-            <div style="margin-bottom: 20px">
-              <a class="download-btn" :href="`${publicPath}resume.pdf`" download>DOWNLOAD CV</a>
+          <!-- <div class="divider"></div> -->
+          <div class="grid-content bg-purple" style="width: 100%;">
+            <img class="me-toga-mobile" src="../../assets/image/me-toga.jpeg" />
+            <span>
+              <h1 class="intro-text">ALVIN NARIO</h1>
+            </span>
+            <span>
+              <h5 class="web-text">WEB DEVELOPER</h5>
+            </span>
+            <!-- <div class="mobile-icons">
+              <span>
+                <a
+                  href="https://www.linkedin.com/in/alvin-nario-498a20193/"
+                  target="_blank"
+                  style="color: #1a1a1a"
+                >
+                  <font-awesome-icon
+                    style="font-size: 20px; margin-right: 15px"
+                    :icon="['fab', 'linkedin']"
+                  />
+                </a>
+              </span>
+              <span>
+                <a href="https://github.com/narioalvin" target="_blank" style="color: #1a1a1a">
+                  <font-awesome-icon
+                    style="font-size: 20px; margin-right: 15px"
+                    :icon="['fab', 'github']"
+                  />
+                </a>
+              </span>
+              <span>
+                <font-awesome-icon
+                  style="font-size: 15px; margin-right: 15px"
+                  :icon="['fas', 'phone']"
+                />
+              </span>
+              <span>
+                <font-awesome-icon
+                  style="font-size: 15px;"
+                  :icon="['fas', 'envelope']"
+                />
+              </span>
+            </div>-->
+            <div style="margin-top: 30px;">
+              <el-button icon="el-icon-upload" class="download-btn">DOWNLOAD CV</el-button>
+              <!-- <a class="download-btn" :href="`${publicPath}resume.pdf`" download>DOWNLOAD CV</a> -->
             </div>
           </div>
         </div>
       </div>
-      <div class="section">
+
+      <div class="section me-toga-desktop">
         <div style="margin-bottom: 15px">
           <img style="width: 270px; border-radius: 50%;" src="../../assets/image/me-toga.jpeg" />
         </div>
@@ -240,19 +277,9 @@ export default {
 </script>
 
 <style lang="scss">
-.download-btn {
-  position: relative;
-  background: #1a1a1a;
-  color: #fefefe;
-  font-size: 12px;
-  text-decoration: none;
-  padding: 12px 33px;
-  border-radius: 20px;
-  border: 1px solid #1a1a1a;
-  font-weight: bold;
-  top: 30px;
+*:focus {
+  outline: none;
 }
-
 .left-icons:hover,
 .download-btn:hover,
 .nav-items:hover,
@@ -285,39 +312,12 @@ export default {
   border-radius: 50%;
 }
 
-.divider {
-  width: 2px;
-  margin: 60px 0;
-  background: #1a1a1a;
-}
-
 .container {
   display: flex;
 }
 
 .section {
-  flex: 1; /*grow*/
-  // border: 1px solid;
-  min-height: 70vh;
-}
-
-.column-one {
-  float: left;
-  width: 15%;
-  padding: 10px;
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.column-two {
-  float: left;
-  width: 100;
-  padding: 10px;
-  height: 300px;
-  display: flex;
-  width: 85%;
+  flex: 1;
 }
 
 /* Clear floats after the columns */
@@ -349,19 +349,6 @@ export default {
   float: right;
 }
 
-h5 {
-  text-align: center;
-  border-bottom: 1px solid #1a1a1a;
-  line-height: 0.1em;
-  margin: 10px 0 20px;
-}
-
-h5 span {
-  background: #fff;
-  padding: 0 10px;
-  font-size: 13px;
-}
-
 .el-menu-demo {
   border-bottom: none !important;
 }
@@ -372,90 +359,10 @@ h5 span {
   display: flex;
 }
 
-// .dark-theme-nav {
-//   display: flex;
-//   justify-content: flex-end;
-//   padding: 8px;
-// }
-
-// .dark-theme-nav:focus {
-//   outline: none;
-// }
-
-// :root {
-//   --toggle-size: 35px;
-//   --switch-w: 70px;
-//   --switch-h: 35px;
-//   --switch-handle-scale: 0.65;
-//   --switch-off-handle-x: -0.125em;
-//   --switch-on-handle-x: calc(100% - 0.125em);
-//   --switch-transition-duration: 0.2s;
-// }
-
 #page {
   background: #fefefe;
-  color: #1a1a1a;
-  // &.theme-dark {
-  //   background: hsl(207, 30%, 5%);
-  // }
+  color: #262626;
 }
-
-// #theme-toggle {
-//   display: none;
-
-//   & + label {
-//     font-size: var(--toggle-size);
-//     display: flex;
-//     height: var(--switch-h);
-//     width: var(--switch-w);
-//     border-radius: calc(var(--switch-h) / 2);
-//     background-size: auto 8em;
-//     background-position: bottom;
-//     background-image: linear-gradient(
-//       180deg,
-//       #021037 0%,
-//       #20206a 19%,
-//       #4184b1 66%,
-//       #62e7f7 100%
-//     );
-//     transition: var(--switch-transition-duration);
-//     border: 0.125em solid hsl(207, 30%, 95%);
-//     overflow: hidden;
-//     span {
-//       background: #fffad8;
-//       border-radius: 50%;
-//       height: var(--switch-h);
-//       width: var(--switch-h);
-//       transform: translateX(var(--switch-off-handle-x))
-//         scale(var(--switch-handle-scale));
-//       transition: var(--switch-transition-duration);
-//       cursor: pointer;
-//       box-shadow: 0 0 0.25em 0.0625em #fbee8d, 0 0 2em 0 #ffeb3b,
-//         inset -0.25em -0.25em 0 0 #fbee8e,
-//         inset -0.3125em -0.3125em 0 0.625em #fff5b2;
-//       margin-top: var(--switch-off-handle-x);
-//     }
-//   }
-
-//   &:checked {
-//     font-size: var(--switch-font-size);
-
-//     & + label {
-//       background-position: top;
-//       border-color: hsl(207, 30%, 50%);
-
-//       span {
-//         background: transparent;
-//         transform: translateX(var(--switch-on-handle-x))
-//           scale(var(--switch-handle-scale));
-//         box-shadow: inset -0.1875em -0.1875em 0 0 #fbe7ef,
-//           inset -0.5625em -0.5625em 0 0 #fffff7;
-//       }
-//     }
-//   }
-// }
-
-// /*-- Housekeeping --*/
 
 html {
   box-sizing: border-box;
@@ -470,10 +377,6 @@ html {
 body {
   margin: 0;
 }
-
-// #page {
-//   // min-height: 100vh;
-// }
 
 * {
   transition: 0.2s ease;
@@ -529,8 +432,9 @@ input {
   cursor: pointer;
   float: right;
   position: relative;
-  right: 50px;
+  right: 30px;
   z-index: 9999;
+  top: 8px;
 }
 
 .menuOpen:hover .open:before {
@@ -547,7 +451,7 @@ input {
   height: 100vh;
   top: 0;
   left: 0;
-  background: #fefefe;
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .menu label {
@@ -576,7 +480,7 @@ input {
 
 .menuEffects {
   opacity: 0;
-  backdrop-filter: blur(12px);
+  backdrop-filter: saturate(180%) blur(45px);
   visibility: hidden;
   transition: opacity 0.5s, visibility 0.5s;
   z-index: 999;
@@ -588,7 +492,7 @@ input {
 }
 
 #menuToggle:checked ~ .menuEffects {
-  opacity: 0.9;
+  opacity: 1;
   visibility: visible;
   transition: opacity 0.5s;
 }
@@ -623,5 +527,204 @@ input {
 
 #menuToggle:not(:checked) ~ .menuEffects ul {
   transform: translateY(-30%);
+}
+
+// RESPONSIVENESS
+
+.container {
+  padding: 0;
+}
+
+.column-one {
+  float: left;
+  width: 12%;
+  // padding: 10px;
+  // height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.column-two {
+  // display: flex;
+  // align-items: center;
+  float: left;
+  width: 100;
+  // padding: 10px;
+  // height: 85vh;
+  display: flex;
+  width: 88%;
+  padding-left: 30px;
+}
+
+.section {
+  display: flex;
+  align-items: center;
+  height: 75vh;
+}
+
+.hello-txt {
+  font-weight: bold;
+  letter-spacing: 3px;
+  font-size: 15px;
+}
+
+.divider {
+  width: 1px;
+  margin: 60px 0;
+  background: #1a1a1a;
+  display: none;
+}
+
+.intro-text {
+  font-size: 22px;
+  letter-spacing: 3px;
+}
+
+.web-text {
+  font-size: 11px;
+  margin: 0;
+}
+
+.download-btn {
+  min-width: 200px;
+  border-radius: 20px !important;
+  border: 1px solid#1a1a1a !important;
+  background: #1a1a1a !important;
+  font-size: 11px !important;
+  color: #fefefe !important;
+}
+
+// .download-btn {
+//   position: relative;
+//   background: #1a1a1a;
+//   color: #fefefe;
+//   font-size: 9px;
+//   text-decoration: none;
+//   padding: 12px 28px;
+//   border-radius: 20px;
+//   border: 1px solid #1a1a1a;
+//   top: 30px;
+// }
+
+.logo {
+  position: relative;
+  font-size: 25px;
+  top: 14px;
+  left: 14px;
+}
+
+.brand-icons {
+  font-size: 17px;
+  margin-bottom: 35px;
+}
+
+.solid-icons {
+  font-size: 13px;
+  margin-bottom: 40px;
+}
+
+.me-toga-desktop {
+  display: none;
+}
+
+@media (min-width: 360px) {
+  .column-two {
+    text-align: center;
+    padding-left: 0;
+  }
+}
+
+@media (min-width: 480px) {
+  .container {
+    padding: 0 50px;
+  }
+}
+
+@media (min-width: 600px) {
+  .column-one {
+    width: 15%;
+    padding: 10px;
+  }
+
+  .column-two {
+    width: 82%;
+  }
+
+  // .divider {
+  //   display: block;
+  // }
+
+  .brand-icons {
+    font-size: 25px;
+    margin-bottom: 65px;
+  }
+
+  .solid-icons {
+    font-size: 20px;
+    margin-bottom: 65px;
+  }
+
+  .intro-text {
+    font-size: 40px;
+  }
+  // .container {
+  //   padding: 60px;
+  // }
+
+  .hello-txt {
+    font-size: 20px;
+  }
+
+  .web-text {
+    font-size: 13px;
+  }
+
+  .logo {
+    font-size: 30px;
+    top: 12px;
+    left: 25px;
+  }
+}
+
+.me-toga-mobile {
+  width: 200px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+@media (min-width: 768px) {
+  .column-two {
+    width: 75%;
+  }
+
+  .download-btn {
+    font-size: 12px;
+    text-decoration: none;
+    padding: 12px 33px;
+  }
+
+  .menuOpen {
+    right: 50px;
+    z-index: 9999;
+  }
+}
+
+@media (min-width: 1024px) {
+  .me-toga-mobile {
+    display: none;
+  }
+
+  .me-toga-desktop {
+    display: flex;
+  }
+
+  .intro-text {
+    font-size: 55px;
+  }
+
+  // .web-text {
+  //   fontsi
+  // }
 }
 </style>
