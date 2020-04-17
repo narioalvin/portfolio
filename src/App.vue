@@ -5,6 +5,9 @@
 </template>
 
 <script>
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
 export default {
   name: "App"
 };
@@ -23,6 +26,16 @@ export default {
 
 @font-face {
   font-family: "Montserrat";
+  src: url("./assets/font/Montserrat-Medium.ttf");
+  src: local("Montserrat Medium"),
+    local("Montserrat-Medium"),
+    url("./assets/font/Montserrat-Medium.ttf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
   src: url("./assets/font/Montserrat-Bold.ttf");
   src: local("Montserrat Bold"),
     local("Montserrat-Bold"),
@@ -34,6 +47,7 @@ export default {
 
 * {
   font-family: "Montserrat", sans-serif;
+  margin: 0;
 }
 
 .text-secondary {
