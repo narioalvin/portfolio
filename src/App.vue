@@ -14,6 +14,10 @@ export default {
 </script>
 
 <style>
+html {
+  scroll-behavior: smooth;
+}
+
 @font-face {
   font-family: "Montserrat";
   src: url("./assets/font/Montserrat-Regular.ttf");
