@@ -6,7 +6,7 @@
         <div class="section-content">
           <div
             class="info"
-            v-bind:class="[scrolled ? 'animated bounceInLeft fast delay-1s' : 'animated bounceInRight fast delay-1s']"
+            v-bind:class="[showLandingPage ? 'animated fadeOutLeft fast' : 'animated fadeInLeft fast']"
           >
             <div class="info-content">
               <h1 class="name">Alvin Nario</h1>
@@ -15,13 +15,20 @@
               <span class="place">Makati City Philippines</span>
             </div>
           </div>
-          <div class="info-img animated bounceInRight fast delay-1s">
+          <div
+            class="info-img"
+            v-bind:class="[showLandingPage ? 'animated fadeOutRight fast' : 'animated fadeInRight fast']"
+          >
             <img class="me" src="../../assets/image/me.jpg" />
           </div>
         </div>
       </div>
-      <div class="bottom animated bounceInRight rotateInUpLeft">
-        <ul class="brand-list" style="list-style-type:none; padding: 0">
+      <div class="bottom">
+        <ul
+          class="brand-list"
+          style="list-style-type:none; padding: 0"
+          v-bind:class="[showLandingPage ? 'animated fadeOutLeft fast' : 'animated fadeInLeft fast']"
+        >
           <li>
             <font-awesome-icon class="brand-icon" :icon="['fab', 'dribbble']" />
           </li>
@@ -35,13 +42,18 @@
             <font-awesome-icon class="brand-icon" :icon="['fab', 'github']" />
           </li>
         </ul>
-        <div>
+        <div
+          v-bind:class="[showLandingPage ? 'animated fadeOutDown fast' : 'animated fadeInUp fast']"
+        >
           <font-awesome-icon class="arrow-down" :icon="['fas', 'angle-down']" />
         </div>
       </div>
     </section>
-    <section class="flex full-height p-40" id="about">
-      <div class="about">
+    <section class="flex p-40" id="about">
+      <div
+        class="about"
+        v-bind:class="[showAboutPage ? 'animated fadeInUp fast' : 'contact-custom']"
+      >
         <h5 class="intro">
           <b>It all started with one Hello World</b>
         </h5>
@@ -66,7 +78,10 @@
       </div>
     </section>
     <section id="projects">
-      <div class="project">
+      <div
+        class="project"
+        v-bind:class="[showProjectsPage ? 'animated fadeInUp fast' : 'animated fadeOutDown fast']"
+      >
         <b-row class="two-cols">
           <b-col class="b-col" md>
             <div class="flip">
@@ -74,7 +89,7 @@
                 class="front"
                 style="background-image: url(https://images.unsplash.com/photo-1506619216599-9d16d0903dfd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1498&q=80)"
               >
-                <h1 class="text-shadow">MOUNTAIN</h1>
+                <h1 class="text-shadow">COMING SOON</h1>
               </div>
               <div class="back">
                 <h2>Angular</h2>
@@ -88,7 +103,7 @@
                 class="front"
                 style="background-image: url(https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80)"
               >
-                <h1 class="text-shadow">MOUNTAIN</h1>
+                <h1 class="text-shadow">COMING SOON</h1>
               </div>
               <div class="back">
                 <h2>Angular</h2>
@@ -105,7 +120,7 @@
                 class="front"
                 style="background-image: url(https://images.unsplash.com/photo-1513595207829-9f414c0665f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80)"
               >
-                <h1 class="text-shadow">MOUNTAIN</h1>
+                <h1 class="text-shadow">COMING SOON</h1>
               </div>
               <div class="back">
                 <h2>Angular</h2>
@@ -119,7 +134,7 @@
                 class="front"
                 style="background-image: url(https://images.unsplash.com/photo-1486746290722-483e8f1e44d2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=601&q=80)"
               >
-                <h1 class="text-shadow">MOUNTAIN</h1>
+                <h1 class="text-shadow">COMING SOON</h1>
               </div>
               <div class="back">
                 <h2>Angular</h2>
@@ -133,7 +148,7 @@
                 class="front"
                 style="background-image: url(https://images.unsplash.com/photo-1502945015378-0e284ca1a5be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80)"
               >
-                <h1 class="text-shadow">MOUNTAIN</h1>
+                <h1 class="text-shadow">COMING SOON</h1>
               </div>
               <div class="back">
                 <h2>Angular</h2>
@@ -144,20 +159,22 @@
         </b-row>
       </div>
     </section>
-    <footer id="contact">
-      <div>
+    <section class="contact" id="contact">
+      <div
+        v-bind:class="[showContactPage ? 'animated fadeInUp fast' : 'animated fadeOutDown fast']"
+      >
         <ul class="links">
           <li>
-            <font-awesome-icon class="footer-icon" :icon="['fab', 'github']" />
+            <font-awesome-icon class="contact-icon" :icon="['fab', 'github']" />
           </li>
           <li>
-            <font-awesome-icon class="footer-icon" :icon="['fab', 'dribbble']" />
+            <font-awesome-icon class="contact-icon" :icon="['fab', 'dribbble']" />
           </li>
           <li>
-            <font-awesome-icon class="footer-icon" :icon="['fab', 'behance']" />
+            <font-awesome-icon class="contact-icon" :icon="['fab', 'behance']" />
           </li>
           <li>
-            <font-awesome-icon class="footer-icon" :icon="['fab', 'linkedin-in']" />
+            <font-awesome-icon class="contact-icon" :icon="['fab', 'linkedin-in']" />
           </li>
         </ul>
         <br />
@@ -166,7 +183,7 @@
           <b>2020 ALVIN NARIO</b>
         </span>
       </div>
-    </footer>
+    </section>
   </div>
 </template>
 
@@ -178,12 +195,18 @@ export default {
   components: { Navbar },
   data() {
     return {
-      scrolled: false
+      showLandingPage: false,
+      showAboutPage: false,
+      showProjectsPage: false,
+      showContactPage: false
     };
   },
   methods: {
     handleScroll() {
-      this.scrolled = window.scrollY > 4;
+      this.showLandingPage = window.scrollY > 200;
+      this.showAboutPage = window.scrollY >= 350 && window.scrollY < 700;
+      this.showProjectsPage = window.scrollY >= 700;
+      this.showContactPage = window.scrollY > 1300;
     }
   },
   created() {
@@ -324,32 +347,32 @@ section {
   padding: 0;
 }
 
-footer {
+.contact {
   min-height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-footer div {
+.contact div {
   text-align: center;
 }
 
-footer .links {
+.contact .links {
   list-style-type: none;
   padding: 0;
 }
 
-footer .links li {
+.contact .links li {
   display: inline;
   margin-right: 40px;
 }
 
-footer .links li:last-child {
+.contact .links li:last-child {
   margin-right: 0;
 }
 
-footer .links li .footer-icon {
+.contact .links li .contact-icon {
   font-size: 40px;
   color: #cccccc;
 }
@@ -390,6 +413,14 @@ footer .links li .footer-icon {
   // animation-name: bottom;
   // animation-duration: 1s;
   // animation-timing-function: ease-out;
+}
+
+.contact-custom {
+  position: relative;
+    animation-name: contact;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  opacity: 0;
 }
 
 .brand-list li {
@@ -539,12 +570,13 @@ footer .links li .footer-icon {
   }
 }
 
-@keyframes arrowAnimation {
+@keyframes contact {
   0% {
-    bottom: 50px;
+    top: 0;
+    opacity: 1;
   }
   100% {
-    bottom: 10px;
+    top: -50px;
   }
 }
 
