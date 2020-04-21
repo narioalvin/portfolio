@@ -1,32 +1,62 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
+<script>
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+export default {
+  name: "App"
+};
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+html {
+  scroll-behavior: smooth;
 }
 
-#nav {
-  padding: 30px;
+@font-face {
+  font-family: "Montserrat";
+  src: url("./assets/font/Montserrat-Regular.ttf");
+  src: local("Montserrat Regular"),
+    local("Montserrat-Regular"),
+    url("./assets/font/Montserrat-Regular.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
 }
 
-#nav a {
+@font-face {
+  font-family: "Montserrat";
+  src: url("./assets/font/Montserrat-Medium.ttf");
+  src: local("Montserrat Medium"),
+    local("Montserrat-Medium"),
+    url("./assets/font/Montserrat-Medium.ttf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("./assets/font/Montserrat-Bold.ttf");
+  src: local("Montserrat Bold"),
+    local("Montserrat-Bold"),
+    url("./assets/font/Montserrat-Bold.ttf") format("opentype");
   font-weight: bold;
-  color: #2c3e50;
+  font-style: normal;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+
+* {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+}
+
+.text-secondary {
+  color: #535343;
+  font-weight: bold;
+  font-size: 13px;
 }
 </style>
