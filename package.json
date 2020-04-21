@@ -10,7 +10,7 @@
     "lint": "vue-cli-service lint",
     "deploy": "gh-pages -d dist"
   },
-  "homepage": "https://narioalvin.github.io/portfolio",
+  "homepage": "https://narioalvin.github.io/vue-my-portfolio",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
