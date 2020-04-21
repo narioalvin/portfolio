@@ -30,26 +30,29 @@
           v-bind:class="[showLandingPage ? 'animated fadeOutLeft fast' : 'animated fadeInLeft fast']"
         >
           <li>
+            <font-awesome-icon class="brand-icon" :icon="['fab', 'github']" />
+          </li>
+          <li>
             <font-awesome-icon class="brand-icon" :icon="['fab', 'dribbble']" />
           </li>
           <li>
             <font-awesome-icon class="brand-icon" :icon="['fab', 'behance']" />
           </li>
-          <li>
-            <font-awesome-icon class="brand-icon" :icon="['fab', 'linkedin-in']" />
-          </li>
           <li style="margin-bottom: 0">
-            <font-awesome-icon class="brand-icon" :icon="['fab', 'github']" />
+            <font-awesome-icon class="brand-icon" :icon="['fab', 'linkedin-in']" />
           </li>
         </ul>
         <div
           v-bind:class="[showLandingPage ? 'animated fadeOutDown fast' : 'animated fadeInUp fast']"
         >
-          <font-awesome-icon class="arrow-down" :icon="['fas', 'angle-down']" />
+          <font-awesome-icon
+            class="arrow-down animated fadeOutDown slow infinite"
+            :icon="['fas', 'angle-down']"
+          />
         </div>
       </div>
     </section>
-    <section class="flex p-40" id="about">
+    <section class="full-height flex p-40" id="about">
       <div
         class="about"
         v-bind:class="[showAboutPage ? 'animated fadeInUp fast' : 'contact-custom']"
@@ -198,15 +201,24 @@ export default {
       showLandingPage: false,
       showAboutPage: false,
       showProjectsPage: false,
-      showContactPage: false
+      showContactPage: false,
+      innerWidth: window.innerWidth
     };
   },
   methods: {
     handleScroll() {
+      //BREAKPOINTS WHEN THE ANIMATIONS WILL SHOW
       this.showLandingPage = window.scrollY > 200;
-      this.showAboutPage = window.scrollY >= 350 && window.scrollY < 700;
-      this.showProjectsPage = window.scrollY >= 700;
-      this.showContactPage = window.scrollY > 1300;
+      this.showAboutPage = window.scrollY >= 350 && window.scrollY < 850;
+      this.showProjectsPage = window.scrollY >= 850;
+
+      if (this.innerWidth < 576) {
+        this.showContactPage = window.scrollY > 2300;
+      } else if (this.innerWidth >= 576 && this.innerWidth < 768) {
+        this.showContactPage = window.scrollY > 1800;
+      } else if (this.innerWidth > 768) {
+        this.showContactPage = window.scrollY > 1400;
+      }
     }
   },
   created() {
@@ -417,14 +429,14 @@ section {
 
 .contact-custom {
   position: relative;
-    animation-name: contact;
+  animation-name: contact;
   animation-duration: 0.5s;
   animation-timing-function: ease-out;
   opacity: 0;
 }
 
 .brand-list li {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .brand-icon {
@@ -457,6 +469,220 @@ section {
   animation: arrowAnimation 1.5s infinite;
 }
 
+// ANIMATION
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.infinite {
+  animation-iteration-count: infinite;
+}
+
+.animated.fast {
+  -webkit-animation-duration: 800ms;
+  animation-duration: 800ms;
+}
+
+@-webkit-keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+}
+
+@-webkit-keyframes fadeOutLeft {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes fadeOutLeft {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.fadeOutLeft {
+  -webkit-animation-name: fadeOutLeft;
+  animation-name: fadeOutLeft;
+}
+
+@-webkit-keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+}
+
+@-webkit-keyframes fadeOutRight {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+@keyframes fadeOutRight {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+.fadeOutRight {
+  -webkit-animation-name: fadeOutRight;
+  animation-name: fadeOutRight;
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+@-webkit-keyframes fadeOutDown {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+.fadeOutDown {
+  -webkit-animation-name: fadeOutDown;
+  animation-name: fadeOutDown;
+}
+
+@media (print), (prefers-reduced-motion: reduce) {
+  .animated {
+    -webkit-animation-duration: 1ms !important;
+    animation-duration: 1ms !important;
+    -webkit-transition-duration: 1ms !important;
+    transition-duration: 1ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
 @media (min-width: 360px) {
   .name {
     font-size: 45px;
@@ -473,7 +699,7 @@ section {
   }
 
   .home {
-    height: 74vh;
+    height: 63vh;
   }
 
   .brand-icon {

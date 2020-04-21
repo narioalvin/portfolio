@@ -19,7 +19,7 @@
         </ul>
       </div>
       <div class="hamburger">
-        <input type="checkbox" id="menuToggle" />
+        <input type="checkbox" id="menuToggle" :checked="test" @change="test = true"/>
 
         <label for="menuToggle" class="menuOpen">
           <div class="open"></div>
@@ -30,7 +30,7 @@
           <div class="menuContent">
             <ul>
               <li>
-                <a href="#about">ABOUT</a>
+                <a href="#about" @click="check()">ABOUT</a>
               </li>
               <li>
                 <a href="#projects">PROJECTS</a>
@@ -51,7 +51,8 @@ export default {
   name: "Navbar",
   data() {
     return {
-      prevScrollpos: window.pageYOffset
+      prevScrollpos: window.pageYOffset,
+      test: false
     };
   },
   methods: {
@@ -64,12 +65,17 @@ export default {
         document.getElementById("navbar").style.top = "-80px";
       }
 
+      // console.log(currentScrollPos, this.prevScrollpos)
+
       currentScrollPos > 100
         ? (document.getElementById("navbar").style.borderBottom =
             "1px solid #cccccc")
         : (document.getElementById("navbar").style.borderBottom = "none");
 
       this.prevScrollpos = currentScrollPos;
+    },
+    check() {
+      this.test = false;
     }
   },
   created() {
@@ -146,7 +152,7 @@ input {
 
 .open:before {
   content: "";
-  background-color: #3c3c3c;
+  background-color: #000000;
   width: 24px;
   height: 4px;
   display: block;
@@ -159,7 +165,7 @@ input {
 
 .open:after {
   content: "";
-  background-color: #3c3c3c;
+  background-color: #000000;
   width: 24px;
   height: 4px;
   display: block;
@@ -233,7 +239,7 @@ input {
 }
 
 .menu ul li a:hover {
-  color: #ff8702;
+  color: #202020;
 }
 
 .menu ul li:hover {
