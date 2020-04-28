@@ -1,18 +1,25 @@
 <template>
   <div id="page">
-    <section class="full-height p-40">
+    <section id="home" class="full-height p-40">
       <Navbar />
       <div class="flex home">
         <div class="section-content">
-          <div
-            class="info"
-            v-bind:class="[showLandingPage ? 'animated fadeOutLeft fast' : 'animated fadeInLeft fast']"
-          >
+          <div class="info">
             <div class="info-content">
-              <h1 class="name">Alvin Nario</h1>
-              <span class="job">Software Web Developer</span>
-              <br />
-              <span class="place">Makati City Philippines</span>
+              <h1
+                v-bind:class="[showLandingPage ? 'animated fadeOutLeft fast' : 'animated fadeInLeft fast']"
+                class="name"
+              >Alvin Nario</h1>
+              <div
+                v-bind:class="[showLandingPage ? 'animated fadeOutLeft fast' : 'animated fadeInLeft fast delay-04s']"
+              >
+                <span class="job">Software Web Developer</span>
+              </div>
+              <div
+                v-bind:class="[showLandingPage ? 'animated fadeOutLeft fast' : 'animated fadeInLeft fast delay-06s']"
+              >
+                <span class="place">Makati City Philippines</span>
+              </div>
             </div>
           </div>
           <div
@@ -30,16 +37,24 @@
           v-bind:class="[showLandingPage ? 'animated fadeOutLeft fast' : 'animated fadeInLeft fast']"
         >
           <li>
-            <font-awesome-icon class="brand-icon" :icon="['fab', 'github']" />
+            <a href="https://github.com/narioalvin" target="_blank">
+              <font-awesome-icon class="brand-icon" :icon="['fab', 'github']" />
+            </a>
           </li>
           <li>
-            <font-awesome-icon class="brand-icon" :icon="['fab', 'dribbble']" />
+            <a href="https://dribbble.com/narioalvin" target="_blank">
+              <font-awesome-icon class="brand-icon" :icon="['fab', 'dribbble']" />
+            </a>
           </li>
           <li>
-            <font-awesome-icon class="brand-icon" :icon="['fab', 'behance']" />
+            <a href="https://www.behance.net/narioalvin" target="_blank">
+              <font-awesome-icon class="brand-icon" :icon="['fab', 'behance']" />
+            </a>
           </li>
           <li style="margin-bottom: 0">
-            <font-awesome-icon class="brand-icon" :icon="['fab', 'linkedin-in']" />
+            <a href="https://www.linkedin.com/in/alvin-nario-498a20193" target="_blank">
+              <font-awesome-icon class="brand-icon" :icon="['fab', 'linkedin-in']" />
+            </a>
           </li>
         </ul>
         <div
@@ -53,32 +68,32 @@
       </div>
     </section>
     <section class="full-height flex p-40" id="about">
-      <div
-        class="about"
-        v-bind:class="[showAboutPage ? 'animated fadeInUp fast' : 'contact-custom']"
-      >
-        <h5 class="intro">
+      <div class="about">
+        <h4
+          class="intro"
+          v-bind:class="[showAboutPage ? 'animated fadeInUp fast' : 'contact-custom']"
+        >
           <b>It all started with one Hello World</b>
-        </h5>
+        </h4>
         <br />
         <div>
-          <p>
+          <p v-bind:class="[showAboutPage ? 'animated fadeInUp fast delay-03s' : 'contact-custom']">
             Now I'm a Web Developer with two years of experience
             building amazing experience for the users
             and continuously learning and
             improving myself by practicing day by day with three cups of coffee.
             <br />
-            <br />I love what I do just as I love my dog.
+            <br />
+            <span
+              v-bind:class="[showAboutPage ? 'animated fadeInUp fast delay-06s' : 'contact-custom']"
+            >I love what I do just as I love my dog.</span>
           </p>
           <br />
-
-          <!-- <a class="download">
-            DOWNLOAD CV
-            <b-spinner small style="position: relative; left: 15px;"></b-spinner>
-            <span class="sr-only">Loading...</span>
-          </a> -->
-
-          <a class="download-btn" :href="`${publicPath}resume.pdf`" download>DOWNLOAD CV</a>
+          <div
+            v-bind:class="[showAboutPage ? 'animated fadeInUp fast delay-07s' : 'contact-custom']"
+          >
+            <a class="download-btn" :href="`${publicPath}resume.pdf`" download>DOWNLOAD CV</a>
+          </div>
         </div>
       </div>
     </section>
@@ -165,30 +180,47 @@
       </div>
     </section>
     <section class="contact" id="contact">
-      <div
+      <h4
         v-bind:class="[showContactPage ? 'animated fadeInUp fast' : 'animated fadeOutDown fast']"
+      >Contact Me</h4>
+      <div
+        v-bind:class="[showContactPage ? 'animated fadeInUp fast delay-04s' : 'animated fadeOutDown fast']"
       >
-        <ul class="links">
-          <li>
-            <font-awesome-icon class="contact-icon" :icon="['fab', 'github']" />
-          </li>
-          <li>
-            <font-awesome-icon class="contact-icon" :icon="['fab', 'dribbble']" />
-          </li>
-          <li>
-            <font-awesome-icon class="contact-icon" :icon="['fab', 'behance']" />
-          </li>
-          <li>
-            <font-awesome-icon class="contact-icon" :icon="['fab', 'linkedin-in']" />
-          </li>
-        </ul>
-        <br />
-        <font-awesome-icon style="margin-right: 10px" :icon="['far', 'copyright']" />
-        <span style="font-size: 14px;">
-          <b>2020 ALVIN NARIO</b>
-        </span>
+        <font-awesome-icon class="contact-icon" :icon="['fas', 'phone']" />
+        <h2>09052322714</h2>
+      </div>
+      <div
+        v-bind:class="[showContactPage ? 'animated fadeInUp fast delay-05s' : 'animated fadeOutDown fast']"
+      >
+        <font-awesome-icon class="contact-icon" :icon="['fas', 'paper-plane']" />
+        <h2>narioalvin94@gmail.com</h2>
       </div>
     </section>
+    <footer>
+      <span
+        v-bind:class="[showContactPage ? 'animated fadeInLeft fast delay-07s' : 'animated fadeOutLeft fast']"
+      >
+        <font-awesome-icon style="margin-right: 10px" :icon="['far', 'copyright']" />
+        <b>2020 ALVIN NARIO</b>
+      </span>
+      <ul
+        class="links"
+        v-bind:class="[showContactPage ? 'animated fadeInRight fast delay-07s' : 'animated fadeOutRight fast']"
+      >
+        <li>
+          <font-awesome-icon class="contact-icon" :icon="['fab', 'github']" />
+        </li>
+        <li>
+          <font-awesome-icon class="contact-icon" :icon="['fab', 'dribbble']" />
+        </li>
+        <li>
+          <font-awesome-icon class="contact-icon" :icon="['fab', 'behance']" />
+        </li>
+        <li>
+          <font-awesome-icon class="contact-icon" :icon="['fab', 'linkedin-in']" />
+        </li>
+      </ul>
+    </footer>
   </div>
 </template>
 
@@ -267,6 +299,11 @@ section {
   color: #fcfcfc;
 }
 
+.brand-icon:hover {
+  animation: bounce 0.5s infinite;
+  cursor: pointer;
+}
+
 .about div {
   max-width: 560px;
 }
@@ -274,7 +311,8 @@ section {
 .about div p {
   font-weight: 600;
   font-size: 15px;
-  line-height: 2rem;
+
+  line-height: 25px;
   letter-spacing: 0.05rem;
 }
 
@@ -286,11 +324,9 @@ section {
 
 .intro {
   font-size: 1.1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
-
-// .test {
-//   transform: rotateY(180deg);
-// }
 
 .flip {
   position: relative;
@@ -395,29 +431,28 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  font-weight: 600;
+}
+
+.contact h4 {
+  margin-bottom: 35px;
+  font-size: 18px;
 }
 
 .contact div {
-  text-align: center;
+  margin-bottom: 10px;
 }
 
-.contact .links {
-  list-style-type: none;
-  padding: 0;
+.contact div h2 {
+  display: inline-block !important;
+  font-size: 23px;
+  margin: 0;
 }
 
-.contact .links li {
-  display: inline;
-  margin-right: 40px;
-}
-
-.contact .links li:last-child {
-  margin-right: 0;
-}
-
-.contact .links li .contact-icon {
-  font-size: 40px;
-  color: #cccccc;
+.contact div .contact-icon {
+  font-size: 20px;
+  margin-right: 8px;
 }
 
 .section-content {
@@ -450,12 +485,8 @@ section {
 .bottom {
   display: flex;
   justify-content: space-between;
-  // padding: 0 15px;
   align-items: flex-end;
   position: relative;
-  // animation-name: bottom;
-  // animation-duration: 1s;
-  // animation-timing-function: ease-out;
 }
 
 .contact-custom {
@@ -472,6 +503,7 @@ section {
 
 .brand-icon {
   font-size: 15px;
+  color: #1a1a1a;
 }
 
 .info {
@@ -479,9 +511,6 @@ section {
   width: 250px;
   z-index: 9999;
   top: 45%;
-  // animation: infoAnimation 0s 1s forwards;
-  // animation-duration: 0.7s;
-  // opacity: 0;
 }
 
 .info-content {
@@ -500,219 +529,297 @@ section {
   animation: arrowAnimation 1.5s infinite;
 }
 
+footer {
+  background-color: #cccccc;
+  color: #1a1a1a;
+  height: 60px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+
+footer span {
+  font-size: 11px;
+}
+
+footer ul {
+  margin: 0;
+}
+
+footer .links {
+  list-style-type: none;
+  padding: 0;
+}
+
+footer .links li {
+  display: inline;
+  margin-right: 12px;
+}
+
+footer .links li:last-child {
+  margin-right: 0;
+}
+
+footer .links li .contact-icon {
+  font-size: 14px;
+}
+
 // ANIMATION
-.animated {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
+// .animated {
+//   -webkit-animation-duration: 1s;
+//   animation-duration: 1s;
+//   -webkit-animation-fill-mode: both;
+//   animation-fill-mode: both;
+// }
 
-.infinite {
-  animation-iteration-count: infinite;
-}
+// .infinite {
+//   animation-iteration-count: infinite;
+// }
 
-.animated.fast {
-  -webkit-animation-duration: 800ms;
-  animation-duration: 800ms;
-}
+// .animated.fast {
+//   -webkit-animation-duration: 800ms;
+//   animation-duration: 800ms;
+// }
 
-@-webkit-keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
-  }
+// .animated.delay-04s {
+//   -webkit-animation-delay: 0.4s;
+//   animation-delay: 0.4s;
+// }
 
-  to {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
+// .animated.delay-05s {
+//   -webkit-animation-delay: 0.5s;
+//   animation-delay: 0.5s;
+// }
 
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
-  }
+// .animated.delay-07s {
+//   -webkit-animation-delay: 0.7s;
+//   animation-delay: 0.7s;
+// }
 
-  to {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
+// .animated.delay-1s {
+//   -webkit-animation-delay: 1s;
+//   animation-delay: 1s;
+// }
 
-.fadeInLeft {
-  -webkit-animation-name: fadeInLeft;
-  animation-name: fadeInLeft;
-}
+// .animated.delay-2s {
+//   -webkit-animation-delay: 2s;
+//   animation-delay: 2s;
+// }
 
-@-webkit-keyframes fadeOutLeft {
-  from {
-    opacity: 1;
-  }
+// .animated.delay-3s {
+//   -webkit-animation-delay: 3s;
+//   animation-delay: 3s;
+// }
 
-  to {
-    opacity: 0;
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
-  }
-}
+// .animated.delay-4s {
+//   -webkit-animation-delay: 4s;
+//   animation-delay: 4s;
+// }
 
-@keyframes fadeOutLeft {
-  from {
-    opacity: 1;
-  }
+// .animated.delay-5s {
+//   -webkit-animation-delay: 5s;
+//   animation-delay: 5s;
+// }
 
-  to {
-    opacity: 0;
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
-  }
-}
+// @-webkit-keyframes fadeInLeft {
+//   from {
+//     opacity: 0;
+//     -webkit-transform: translate3d(-100%, 0, 0);
+//     transform: translate3d(-100%, 0, 0);
+//   }
 
-.fadeOutLeft {
-  -webkit-animation-name: fadeOutLeft;
-  animation-name: fadeOutLeft;
-}
+//   to {
+//     opacity: 1;
+//     -webkit-transform: translate3d(0, 0, 0);
+//     transform: translate3d(0, 0, 0);
+//   }
+// }
 
-@-webkit-keyframes fadeInRight {
-  from {
-    opacity: 0;
-    -webkit-transform: translate3d(100%, 0, 0);
-    transform: translate3d(100%, 0, 0);
-  }
+// @keyframes fadeInLeft {
+//   from {
+//     opacity: 0;
+//     -webkit-transform: translate3d(-100%, 0, 0);
+//     transform: translate3d(-100%, 0, 0);
+//   }
 
-  to {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
+//   to {
+//     opacity: 1;
+//     -webkit-transform: translate3d(0, 0, 0);
+//     transform: translate3d(0, 0, 0);
+//   }
+// }
 
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    -webkit-transform: translate3d(100%, 0, 0);
-    transform: translate3d(100%, 0, 0);
-  }
+// .fadeInLeft {
+//   -webkit-animation-name: fadeInLeft;
+//   animation-name: fadeInLeft;
+// }
 
-  to {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
+// @-webkit-keyframes fadeOutLeft {
+//   from {
+//     opacity: 1;
+//   }
 
-.fadeInRight {
-  -webkit-animation-name: fadeInRight;
-  animation-name: fadeInRight;
-}
+//   to {
+//     opacity: 0;
+//     -webkit-transform: translate3d(-100%, 0, 0);
+//     transform: translate3d(-100%, 0, 0);
+//   }
+// }
 
-@-webkit-keyframes fadeOutRight {
-  from {
-    opacity: 1;
-  }
+// @keyframes fadeOutLeft {
+//   from {
+//     opacity: 1;
+//   }
 
-  to {
-    opacity: 0;
-    -webkit-transform: translate3d(100%, 0, 0);
-    transform: translate3d(100%, 0, 0);
-  }
-}
+//   to {
+//     opacity: 0;
+//     -webkit-transform: translate3d(-100%, 0, 0);
+//     transform: translate3d(-100%, 0, 0);
+//   }
+// }
 
-@keyframes fadeOutRight {
-  from {
-    opacity: 1;
-  }
+// .fadeOutLeft {
+//   -webkit-animation-name: fadeOutLeft;
+//   animation-name: fadeOutLeft;
+// }
 
-  to {
-    opacity: 0;
-    -webkit-transform: translate3d(100%, 0, 0);
-    transform: translate3d(100%, 0, 0);
-  }
-}
+// @-webkit-keyframes fadeInRight {
+//   from {
+//     opacity: 0;
+//     -webkit-transform: translate3d(100%, 0, 0);
+//     transform: translate3d(100%, 0, 0);
+//   }
 
-.fadeOutRight {
-  -webkit-animation-name: fadeOutRight;
-  animation-name: fadeOutRight;
-}
+//   to {
+//     opacity: 1;
+//     -webkit-transform: translate3d(0, 0, 0);
+//     transform: translate3d(0, 0, 0);
+//   }
+// }
 
-@-webkit-keyframes fadeInUp {
-  from {
-    opacity: 0;
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
-  }
+// @keyframes fadeInRight {
+//   from {
+//     opacity: 0;
+//     -webkit-transform: translate3d(100%, 0, 0);
+//     transform: translate3d(100%, 0, 0);
+//   }
 
-  to {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
+//   to {
+//     opacity: 1;
+//     -webkit-transform: translate3d(0, 0, 0);
+//     transform: translate3d(0, 0, 0);
+//   }
+// }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
-  }
+// .fadeInRight {
+//   -webkit-animation-name: fadeInRight;
+//   animation-name: fadeInRight;
+// }
 
-  to {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
+// @-webkit-keyframes fadeOutRight {
+//   from {
+//     opacity: 1;
+//   }
 
-.fadeInUp {
-  -webkit-animation-name: fadeInUp;
-  animation-name: fadeInUp;
-}
+//   to {
+//     opacity: 0;
+//     -webkit-transform: translate3d(100%, 0, 0);
+//     transform: translate3d(100%, 0, 0);
+//   }
+// }
 
-@-webkit-keyframes fadeOutDown {
-  from {
-    opacity: 1;
-  }
+// @keyframes fadeOutRight {
+//   from {
+//     opacity: 1;
+//   }
 
-  to {
-    opacity: 0;
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
-  }
-}
+//   to {
+//     opacity: 0;
+//     -webkit-transform: translate3d(100%, 0, 0);
+//     transform: translate3d(100%, 0, 0);
+//   }
+// }
 
-@keyframes fadeOutDown {
-  from {
-    opacity: 1;
-  }
+// .fadeOutRight {
+//   -webkit-animation-name: fadeOutRight;
+//   animation-name: fadeOutRight;
+// }
 
-  to {
-    opacity: 0;
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
-  }
-}
+// @-webkit-keyframes fadeInUp {
+//   from {
+//     opacity: 0;
+//     -webkit-transform: translate3d(0, 100%, 0);
+//     transform: translate3d(0, 100%, 0);
+//   }
 
-.fadeOutDown {
-  -webkit-animation-name: fadeOutDown;
-  animation-name: fadeOutDown;
-}
+//   to {
+//     opacity: 1;
+//     -webkit-transform: translate3d(0, 0, 0);
+//     transform: translate3d(0, 0, 0);
+//   }
+// }
 
-@media (print), (prefers-reduced-motion: reduce) {
-  .animated {
-    -webkit-animation-duration: 1ms !important;
-    animation-duration: 1ms !important;
-    -webkit-transition-duration: 1ms !important;
-    transition-duration: 1ms !important;
-    -webkit-animation-iteration-count: 1 !important;
-    animation-iteration-count: 1 !important;
-  }
-}
+// @keyframes fadeInUp {
+//   from {
+//     opacity: 0;
+//     -webkit-transform: translate3d(0, 100%, 0);
+//     transform: translate3d(0, 100%, 0);
+//   }
+
+//   to {
+//     opacity: 1;
+//     -webkit-transform: translate3d(0, 0, 0);
+//     transform: translate3d(0, 0, 0);
+//   }
+// }
+
+// .fadeInUp {
+//   -webkit-animation-name: fadeInUp;
+//   animation-name: fadeInUp;
+// }
+
+// @-webkit-keyframes fadeOutDown {
+//   from {
+//     opacity: 1;
+//   }
+
+//   to {
+//     opacity: 0;
+//     -webkit-transform: translate3d(0, 100%, 0);
+//     transform: translate3d(0, 100%, 0);
+//   }
+// }
+
+// @keyframes fadeOutDown {
+//   from {
+//     opacity: 1;
+//   }
+
+//   to {
+//     opacity: 0;
+//     -webkit-transform: translate3d(0, 100%, 0);
+//     transform: translate3d(0, 100%, 0);
+//   }
+// }
+
+// .fadeOutDown {
+//   -webkit-animation-name: fadeOutDown;
+//   animation-name: fadeOutDown;
+// }
+
+// @media (print), (prefers-reduced-motion: reduce) {
+//   .animated {
+//     -webkit-animation-duration: 1ms !important;
+//     animation-duration: 1ms !important;
+//     -webkit-transition-duration: 1ms !important;
+//     transition-duration: 1ms !important;
+//     -webkit-animation-iteration-count: 1 !important;
+//     animation-iteration-count: 1 !important;
+//   }
+// }
+
+// MEDIA QUERIES
 
 @media (min-width: 360px) {
   .name {
@@ -725,7 +832,6 @@ section {
 
   .info-content {
     position: relative;
-    // left: 150px;
     top: 20px;
   }
 
@@ -735,6 +841,18 @@ section {
 
   .brand-icon {
     font-size: 18px;
+  }
+
+  footer span {
+    font-size: 15px;
+  }
+
+  footer .links li .contact-icon {
+    font-size: 20px;
+  }
+
+  .contact h4 {
+    font-size: 20px;
   }
 }
 
@@ -777,10 +895,28 @@ section {
 
   .about div p {
     font-size: 1rem;
+    line-height: 2rem;
   }
 
   .intro {
     font-size: 1.25rem;
+  }
+
+  footer .links li {
+    margin-right: 20px;
+  }
+
+  .contact div .contact-icon {
+    font-size: 25px;
+    margin-right: 15px;
+  }
+
+  .contact div h2 {
+    font-size: 28px;
+  }
+
+  .contact h4 {
+    font-size: 1.5rem;
   }
 }
 
@@ -795,6 +931,10 @@ section {
 
   .home {
     height: 85vh;
+  }
+
+  footer {
+    padding: 0 40px;
   }
 }
 
@@ -825,51 +965,13 @@ section {
     left: -50px;
     width: 330px;
   }
-}
 
-@keyframes contact {
-  0% {
-    top: 0;
-    opacity: 1;
-  }
-  100% {
-    top: -50px;
-  }
-}
-
-@keyframes bottom {
-  0% {
-    top: 100px;
-    opacity: 0;
-  }
-  100% {
-    top: 0;
-  }
-}
-
-@keyframes infoAnimation {
-  to {
-    opacity: 1;
+  .contact div h2 {
+    font-size: 2rem;
   }
 
-  0% {
-    left: -200px;
-  }
-  100% {
-    left: 15px;
-  }
-}
-
-@keyframes imgAnimation {
-  to {
-    opacity: 1;
-  }
-
-  0% {
-    left: 100px;
-  }
-  100% {
-    left: 0;
+  footer .links li {
+    margin-right: 35px;
   }
 }
 </style>
