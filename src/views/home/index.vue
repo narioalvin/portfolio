@@ -65,18 +65,20 @@
           <p>
             Now I'm a Web Developer with two years of experience
             building amazing experience for the users
-            and continuosly learning and
-            improving myself by practicing with three cups of coffee day by day.
+            and continuously learning and
+            improving myself by practicing day by day with three cups of coffee.
             <br />
             <br />I love what I do just as I love my dog.
           </p>
           <br />
 
-          <b-button variant="outline-dark" class="download">
+          <!-- <a class="download">
             DOWNLOAD CV
             <b-spinner small style="position: relative; left: 15px;"></b-spinner>
             <span class="sr-only">Loading...</span>
-          </b-button>
+          </a> -->
+
+          <a class="download-btn" :href="`${publicPath}resume.pdf`" download>DOWNLOAD CV</a>
         </div>
       </div>
     </section>
@@ -87,7 +89,7 @@
       >
         <b-row class="two-cols">
           <b-col class="b-col" md>
-            <div class="flip">
+            <div class="flip" @click="test">
               <div
                 class="front"
                 style="background-image: url(https://images.unsplash.com/photo-1506619216599-9d16d0903dfd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1498&q=80)"
@@ -101,7 +103,7 @@
             </div>
           </b-col>
           <b-col class="b-col" md>
-            <div class="flip">
+            <div class="flip" @click="test">
               <div
                 class="front"
                 style="background-image: url(https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80)"
@@ -118,7 +120,7 @@
 
         <b-row class="three-cols">
           <b-col class="b-col" sm>
-            <div class="flip">
+            <div class="flip" @click="test">
               <div
                 class="front"
                 style="background-image: url(https://images.unsplash.com/photo-1513595207829-9f414c0665f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80)"
@@ -132,7 +134,7 @@
             </div>
           </b-col>
           <b-col class="b-col" sm>
-            <div class="flip">
+            <div class="flip" @click="test">
               <div
                 class="front"
                 style="background-image: url(https://images.unsplash.com/photo-1486746290722-483e8f1e44d2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=601&q=80)"
@@ -146,7 +148,7 @@
             </div>
           </b-col>
           <b-col class="b-col" sm>
-            <div class="flip">
+            <div class="flip" @click="test">
               <div
                 class="front"
                 style="background-image: url(https://images.unsplash.com/photo-1502945015378-0e284ca1a5be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80)"
@@ -202,7 +204,8 @@ export default {
       showAboutPage: false,
       showProjectsPage: false,
       showContactPage: false,
-      innerWidth: window.innerWidth
+      innerWidth: window.innerWidth,
+      publicPath: process.env.BASE_URL
     };
   },
   methods: {
@@ -219,6 +222,10 @@ export default {
       } else if (this.innerWidth > 768) {
         this.showContactPage = window.scrollY > 1400;
       }
+    },
+    test() {
+      // document.getElementById("test").style.transform = 'rotateY(180deg)';
+      // element.classList.add("mystyle");
     }
   },
   created() {
@@ -241,6 +248,25 @@ section {
   width: 100%;
 }
 
+.download-btn {
+  position: relative;
+  background: #fcfcfc;
+  color: #1a1a1a;
+  font-size: 12px;
+  text-decoration: none;
+  padding: 12px 33px;
+  border-radius: 5px;
+  border: 1px solid #1a1a1a;
+  font-weight: bold;
+  top: 30px;
+  transition: 0.3s;
+}
+
+.download-btn:hover {
+  background: #1a1a1a;
+  color: #fcfcfc;
+}
+
 .about div {
   max-width: 560px;
 }
@@ -260,6 +286,10 @@ section {
 .intro {
   font-size: 1.1rem;
 }
+
+// .test {
+//   transform: rotateY(180deg);
+// }
 
 .flip {
   position: relative;
