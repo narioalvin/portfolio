@@ -3,7 +3,7 @@
     <div></div>
     <nav id="navbar" class="navbar navbar-expand-sm fixed-top">
       <div class="logo">
-        <img class="me" src="../assets/image/logo.png" />
+        <a href="#home"><img class="me" src="../assets/image/logo.png" /></a>
       </div>
       <div class="items">
         <ul>
@@ -118,7 +118,7 @@ export default {
   letter-spacing: 0.15em;
   font-weight: 600;
   font-size: 14px;
-  
+
   display: inline-block;
   padding: 15px 20px;
   position: relative;
@@ -146,6 +146,11 @@ export default {
   width: 45px;
 }
 
+.logo img:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
 @keyframes navbar {
   0% {
     bottom: 50px;
@@ -163,7 +168,7 @@ input {
 .open {
   background-color: #3c3c3c;
   width: 24px;
-  height: 4px;
+  height: 3px;
   display: block;
   border-radius: 2px;
   cursor: pointer;
@@ -174,9 +179,9 @@ input {
 
 .open:before {
   content: "";
-  background-color: #000000;
+  background-color: #1a1a1a;
   width: 24px;
-  height: 4px;
+  height: 3px;
   display: block;
   border-radius: 2px;
   position: relative;
@@ -187,9 +192,9 @@ input {
 
 .open:after {
   content: "";
-  background-color: #000000;
+  background-color: #1a1a1a;
   width: 24px;
-  height: 4px;
+  height: 3px;
   display: block;
   border-radius: 2px;
   position: relative;
