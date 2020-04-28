@@ -19,9 +19,9 @@
         </ul>
       </div>
       <div class="hamburger">
-        <input type="checkbox" id="menuToggle" :checked="test" @change="test = true"/>
+        <input type="checkbox" id="menuToggle" v-model="checkboxState" @change="checkboxClicked(checkboxState)" />
 
-        <label for="menuToggle" class="menuOpen">
+        <label for="menuToggle" class="menuOpen" >
           <div class="open"></div>
         </label>
 
@@ -52,7 +52,7 @@ export default {
   data() {
     return {
       prevScrollpos: window.pageYOffset,
-      test: false
+      checkboxState: false
     };
   },
   methods: {
@@ -74,6 +74,11 @@ export default {
 
       this.prevScrollpos = currentScrollPos;
     },
+    scrollingState(state) {
+      // this.test != this.test;
+      console.log(state);
+      // document.body.style.overflow = "hidden";
+    },
     check() {
       this.test = false;
     }
@@ -85,15 +90,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-a {
-  color: #202020;
-}
-
-a:hover {
-  text-decoration: none;
-  opacity: 0.5;
-}
-
 .navbar {
   transition: top 0.3s;
   justify-content: space-between;
@@ -104,20 +100,46 @@ a:hover {
   padding: 0 15px 0 15px;
 }
 
-.items ul {
-  list-style-type: none;
+.items ul { 
+  padding: 0; 
+  list-style: none; 
   margin: 0;
-  padding: 0;
 }
 
-.items ul li {
-  display: inline;
-  margin-right: 20px;
+.items ul li { 
+  display: table-cell; 
+  position: relative; 
+}
+
+.items ul li a {
+  color: #1a1a1a;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.15em;
   font-weight: 600;
+  font-size: 14px;
+  
+  display: inline-block;
+  padding: 15px 20px;
+  position: relative;
 }
 
-.items ul li:nth-child(3) {
-  margin-right: 0;
+.items ul li a:after {    
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #1a1a1a;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+.items ul li a:hover:after { 
+  width: 100%; 
+  left: 0; 
 }
 
 .logo img {

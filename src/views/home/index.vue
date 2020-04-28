@@ -275,6 +275,7 @@ section {
   font-weight: 600;
   font-size: 15px;
   line-height: 2rem;
+  letter-spacing: 0.05rem;
 }
 
 .download {
