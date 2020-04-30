@@ -2,26 +2,34 @@
   <div>
     <div></div>
     <nav id="navbar" class="navbar navbar-expand-sm fixed-top">
-      <div class="logo">
-        <a href="#home"><img class="me" src="../assets/image/logo.png" /></a>
+      <div class="logo navAnimation animated" data-delay="0s">
+        <a href="#home">
+          <img class="me" src="../assets/image/logo.png" />
+        </a>
       </div>
       <div class="items">
         <ul>
-          <li>
+          <li class="navAnimation animated" data-delay="0s">
             <a href="#about">About</a>
           </li>
-          <li>
+          <li class="navAnimation animated" data-delay=".3s">
             <a href="#projects">Projects</a>
           </li>
-          <li>
+          <li class="navAnimation animated" data-delay=".5s">
             <a href="#contact">Contact</a>
           </li>
         </ul>
       </div>
       <div class="hamburger">
-        <input type="checkbox" id="menuToggle" v-model="checkboxState" @change="checkboxClicked(checkboxState)" />
+        <input
+          type="checkbox"
+          class="navAnimation animated"
+          data-delay="0s"
+          id="menuToggle"
+          @change="checkboxClicked($event)"
+        />
 
-        <label for="menuToggle" class="menuOpen" >
+        <label for="menuToggle" class="menuOpen">
           <div class="open"></div>
         </label>
 
@@ -52,46 +60,61 @@ export default {
   data() {
     return {
       prevScrollpos: window.pageYOffset,
-      checkboxState: false
+      checkboxState: false,
+      newScrollPosition: 0,
+      lastScrollPosition: 0
     };
   },
   methods: {
     handleScroll() {
-      var currentScrollPos = window.pageYOffset;
+      var navbar = document.getElementById("navbar");
+      this.lastScrollPosition = window.scrollY;
 
-      if (this.prevScrollpos > currentScrollPos) {
-        document.getElementById("navbar").style.top = "0";
+      if (
+        this.newScrollPosition < this.lastScrollPosition &&
+        this.lastScrollPosition > 50
+      ) {
+        navbar.style.top = "-80px";
       } else {
-        document.getElementById("navbar").style.top = "-80px";
+        navbar.style.top = "0";
       }
 
-      // console.log(currentScrollPos, this.prevScrollpos)
-
-      currentScrollPos > 100
-        ? (document.getElementById("navbar").style.borderBottom =
-            "1px solid #cccccc")
-        : (document.getElementById("navbar").style.borderBottom = "none");
-
-      this.prevScrollpos = currentScrollPos;
+      this.newScrollPosition > 100
+        ? navbar.classList.add("nav-border")
+        : navbar.classList.remove("nav-border");
+        
+      this.newScrollPosition = this.lastScrollPosition;
     },
-    scrollingState(state) {
-      // this.test != this.test;
-      console.log(state);
-      // document.body.style.overflow = "hidden";
-    },
-    check() {
-      this.test = false;
+    checkboxClicked(e) {
+      e.target.checked === true ?
+      document.getElementsByTagName("body")[0].classList.add("scrollHidden")
+      : document.getElementsByTagName("body")[0].classList.remove("scrollHidden")
     }
   },
   created() {
     window.addEventListener("scroll", this.handleScroll);
+  },
+  mounted() {
+    const items = document.querySelectorAll(".navAnimation");
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.intersectionRatio > 0) {
+          entry.target.style.animation = `animDown .4s ${entry.target.dataset.delay} forwards ease-out`;
+        }
+      });
+    });
+
+    items.forEach(item => {
+      observer.observe(item);
+    });
   }
 };
 </script>
 
 <style lang="scss" scoped>
 .navbar {
-  transition: top 0.3s;
+  transition: all 0.3s;
   justify-content: space-between;
   align-items: center;
   z-index: 999999;
@@ -100,15 +123,23 @@ export default {
   padding: 0 15px 0 15px;
 }
 
-.items ul { 
-  padding: 0; 
-  list-style: none; 
+.nav-border {
+  border-bottom: 1px solid #cccccc !important;
+}
+
+.scrollHidden {
+  overflow: hidden !important;
+}
+
+.items ul {
+  padding: 0;
+  list-style: none;
   margin: 0;
 }
 
-.items ul li { 
-  display: table-cell; 
-  position: relative; 
+.items ul li {
+  display: table-cell;
+  position: relative;
 }
 
 .items ul li a {
@@ -124,7 +155,7 @@ export default {
   position: relative;
 }
 
-.items ul li a:after {    
+.items ul li a:after {
   background: none repeat scroll 0 0 transparent;
   bottom: 0;
   content: "";
@@ -137,9 +168,9 @@ export default {
   width: 0;
 }
 
-.items ul li a:hover:after { 
-  width: 100%; 
-  left: 0; 
+.items ul li a:hover:after {
+  width: 100%;
+  left: 0;
 }
 
 .logo img {
