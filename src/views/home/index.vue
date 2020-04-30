@@ -6,78 +6,76 @@
         <div class="section-content">
           <div class="info">
             <div class="info-content">
-              <h1
-                v-bind:class="[showLandingPage ? 'animated fadeOutLeft fast' : 'animated fadeInLeft fast']"
-                class="name"
-              >Alvin Nario</h1>
-              <div
-                v-bind:class="[showLandingPage ? 'animated fadeOutLeft fast' : 'animated fadeInLeft fast delay-04s']"
-              >
+              <h1 class="name animated" data-animationtype="left" data-delay=".3s">Alvin Nario</h1>
+              <div class="animated" data-animationtype="left" data-delay=".4s">
                 <span class="job">Software Web Developer</span>
               </div>
-              <div
-                v-bind:class="[showLandingPage ? 'animated fadeOutLeft fast' : 'animated fadeInLeft fast delay-06s']"
-              >
+              <div class="animated" data-animationtype="left" data-delay=".5s">
                 <span class="place">Makati City Philippines</span>
               </div>
             </div>
           </div>
-          <div
-            class="info-img"
-            v-bind:class="[showLandingPage ? 'animated fadeOutRight fast' : 'animated fadeInRight fast']"
-          >
+          <div class="info-img animated" data-animationtype="right" data-delay=".3s">
             <img class="me" src="../../assets/image/me.jpg" />
           </div>
         </div>
       </div>
       <div class="bottom">
-        <ul
-          class="brand-list"
-          style="list-style-type:none; padding: 0"
-          v-bind:class="[showLandingPage ? 'animated fadeOutLeft fast' : 'animated fadeInLeft fast']"
-        >
+        <ul class="brand-list" style="list-style-type:none; padding: 0">
           <li>
             <a href="https://github.com/narioalvin" target="_blank">
-              <font-awesome-icon class="brand-icon" :icon="['fab', 'github']" />
+              <font-awesome-icon
+                class="brand-icon animated"
+                data-animationtype="up-brand"
+                data-delay=".3s"
+                :icon="['fab', 'github']"
+              />
             </a>
           </li>
           <li>
             <a href="https://dribbble.com/narioalvin" target="_blank">
-              <font-awesome-icon class="brand-icon" :icon="['fab', 'dribbble']" />
+              <font-awesome-icon
+                class="brand-icon animated"
+                data-animationtype="up-brand"
+                data-delay=".4s"
+                :icon="['fab', 'dribbble']"
+              />
             </a>
           </li>
           <li>
             <a href="https://www.behance.net/narioalvin" target="_blank">
-              <font-awesome-icon class="brand-icon" :icon="['fab', 'behance']" />
+              <font-awesome-icon
+                class="brand-icon animated"
+                data-animationtype="up-brand"
+                data-delay=".5s"
+                :icon="['fab', 'behance']"
+              />
             </a>
           </li>
           <li style="margin-bottom: 0">
             <a href="https://www.linkedin.com/in/alvin-nario-498a20193" target="_blank">
-              <font-awesome-icon class="brand-icon" :icon="['fab', 'linkedin-in']" />
+              <font-awesome-icon
+                class="brand-icon animated"
+                data-animationtype="up-brand"
+                data-delay=".6s"
+                :icon="['fab', 'linkedin-in']"
+              />
             </a>
           </li>
         </ul>
-        <div
-          v-bind:class="[showLandingPage ? 'animated fadeOutDown fast' : 'animated fadeInUp fast']"
-        >
-          <font-awesome-icon
-            class="arrow-down animated fadeOutDown slow infinite"
-            :icon="['fas', 'angle-down']"
-          />
+        <div class="info-img animatedArrow fadeOutDown infinite">
+          <font-awesome-icon class="arrow-down" :icon="['fas', 'angle-down']" />
         </div>
       </div>
     </section>
     <section class="full-height flex p-40" id="about">
       <div class="about">
-        <h4
-          class="intro"
-          v-bind:class="[showAboutPage ? 'animated fadeInUp fast' : 'contact-custom']"
-        >
+        <h4 class="intro animated" data-animationtype="up" data-delay="0s">
           <b>It all started with one Hello World</b>
         </h4>
         <br />
         <div>
-          <p v-bind:class="[showAboutPage ? 'animated fadeInUp fast delay-03s' : 'contact-custom']">
+          <p class="animated" data-animationtype="up" data-delay=".2s">
             Now I'm a Web Developer with two years of experience
             building amazing experience for the users
             and continuously learning and
@@ -85,26 +83,23 @@
             <br />
             <br />
             <span
-              v-bind:class="[showAboutPage ? 'animated fadeInUp fast delay-06s' : 'contact-custom']"
+              class="animated"
+              data-animationtype="up"
+              data-delay=".3s"
             >I love what I do just as I love my dog.</span>
           </p>
           <br />
-          <div
-            v-bind:class="[showAboutPage ? 'animated fadeInUp fast delay-07s' : 'contact-custom']"
-          >
+          <div class="animated" data-animationtype="up" data-delay=".4s">
             <a class="download-btn" :href="`${publicPath}resume.pdf`" download>DOWNLOAD CV</a>
           </div>
         </div>
       </div>
     </section>
     <section id="projects">
-      <div
-        class="project"
-        v-bind:class="[showProjectsPage ? 'animated fadeInUp fast' : 'animated fadeOutDown fast']"
-      >
+      <div class="animated" data-animationtype="up" data-delay=".3s">
         <b-row class="two-cols">
           <b-col class="b-col" md>
-            <div class="flip" @click="test">
+            <div class="flip project" @click="test">
               <div
                 class="front"
                 style="background-image: url(https://images.unsplash.com/photo-1506619216599-9d16d0903dfd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1498&q=80)"
@@ -180,33 +175,22 @@
       </div>
     </section>
     <section class="contact" id="contact">
-      <h4
-        v-bind:class="[showContactPage ? 'animated fadeInUp fast' : 'animated fadeOutDown fast']"
-      >Contact Me</h4>
-      <div
-        v-bind:class="[showContactPage ? 'animated fadeInUp fast delay-04s' : 'animated fadeOutDown fast']"
-      >
+      <h4 class="project animated" data-animationtype="up" data-delay=".2s">Contact Me</h4>
+      <div class="project animated" data-animationtype="up" data-delay=".4s">
         <font-awesome-icon class="contact-icon" :icon="['fas', 'phone']" />
         <h2>09052322714</h2>
       </div>
-      <div
-        v-bind:class="[showContactPage ? 'animated fadeInUp fast delay-05s' : 'animated fadeOutDown fast']"
-      >
+      <div class="project animated" data-animationtype="up" data-delay=".5s">
         <font-awesome-icon class="contact-icon" :icon="['fas', 'paper-plane']" />
         <h2>narioalvin94@gmail.com</h2>
       </div>
     </section>
     <footer>
-      <span
-        v-bind:class="[showContactPage ? 'animated fadeInLeft fast delay-07s' : 'animated fadeOutLeft fast']"
-      >
+      <span class="project animated" data-animationtype="left" data-delay=".6s">
         <font-awesome-icon style="margin-right: 10px" :icon="['far', 'copyright']" />
         <b>2020 ALVIN NARIO</b>
       </span>
-      <ul
-        class="links"
-        v-bind:class="[showContactPage ? 'animated fadeInRight fast delay-07s' : 'animated fadeOutRight fast']"
-      >
+      <ul class="links project animated" data-animationtype="right" data-delay=".6s">
         <li>
           <font-awesome-icon class="contact-icon" :icon="['fab', 'github']" />
         </li>
@@ -241,30 +225,38 @@ export default {
     };
   },
   methods: {
-    handleScroll() {
-      //BREAKPOINTS WHEN THE ANIMATIONS WILL SHOW
-      this.showLandingPage = window.scrollY > 200;
-      this.showAboutPage = window.scrollY >= 350 && window.scrollY < 850;
-      this.showProjectsPage = window.scrollY >= 850;
-
-      if (this.innerWidth < 576) {
-        this.showContactPage = window.scrollY > 2300;
-      } else if (this.innerWidth >= 576 && this.innerWidth < 768) {
-        this.showContactPage = window.scrollY > 1800;
-      } else if (this.innerWidth > 768) {
-        this.showContactPage = window.scrollY > 1400;
-      }
-    },
-    test() {
-      // document.getElementById("test").style.transform = 'rotateY(180deg)';
-      // element.classList.add("mystyle");
-    }
-  },
-  created() {
-    window.addEventListener("scroll", this.handleScroll);
+    test() { }
   },
   destroyed() {
     window.removeEventListener("scroll", this.handleScroll);
+  },
+  mounted() {
+    const items = document.querySelectorAll(".animated");
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.intersectionRatio > 0) {
+          switch (entry.target.dataset.animationtype) {
+            case "up":
+              entry.target.style.animation = `animUp .5s ${entry.target.dataset.delay} forwards ease-out`;
+              break;
+            case "left":
+              entry.target.style.animation = `animLeft .5s ${entry.target.dataset.delay} forwards ease-out`;
+              break;
+            case "right":
+              entry.target.style.animation = `animRight .5s ${entry.target.dataset.delay} forwards ease-out`;
+              break;
+            case "up-brand":
+              entry.target.style.animation = `animUpBrands .5s ${entry.target.dataset.delay} forwards ease-out`;
+              break;
+          }
+        }
+      });
+    });
+
+    items.forEach(item => {
+      observer.observe(item);
+    });
   }
 };
 </script>
@@ -294,7 +286,8 @@ section {
   transition: 0.3s;
 }
 
-.download-btn:hover {
+.download-btn:hover,
+.download-btn:focus {
   background: #1a1a1a;
   color: #fcfcfc;
 }
@@ -489,14 +482,6 @@ section {
   position: relative;
 }
 
-.contact-custom {
-  position: relative;
-  animation-name: contact;
-  animation-duration: 0.5s;
-  animation-timing-function: ease-out;
-  opacity: 0;
-}
-
 .brand-list li {
   margin-bottom: 15px;
 }
@@ -530,7 +515,7 @@ section {
 }
 
 footer {
-  background-color: #cccccc;
+  background-color: #e6e6e6;
   color: #1a1a1a;
   height: 60px;
   align-items: center;
@@ -565,260 +550,6 @@ footer .links li .contact-icon {
   font-size: 14px;
 }
 
-// ANIMATION
-// .animated {
-//   -webkit-animation-duration: 1s;
-//   animation-duration: 1s;
-//   -webkit-animation-fill-mode: both;
-//   animation-fill-mode: both;
-// }
-
-// .infinite {
-//   animation-iteration-count: infinite;
-// }
-
-// .animated.fast {
-//   -webkit-animation-duration: 800ms;
-//   animation-duration: 800ms;
-// }
-
-// .animated.delay-04s {
-//   -webkit-animation-delay: 0.4s;
-//   animation-delay: 0.4s;
-// }
-
-// .animated.delay-05s {
-//   -webkit-animation-delay: 0.5s;
-//   animation-delay: 0.5s;
-// }
-
-// .animated.delay-07s {
-//   -webkit-animation-delay: 0.7s;
-//   animation-delay: 0.7s;
-// }
-
-// .animated.delay-1s {
-//   -webkit-animation-delay: 1s;
-//   animation-delay: 1s;
-// }
-
-// .animated.delay-2s {
-//   -webkit-animation-delay: 2s;
-//   animation-delay: 2s;
-// }
-
-// .animated.delay-3s {
-//   -webkit-animation-delay: 3s;
-//   animation-delay: 3s;
-// }
-
-// .animated.delay-4s {
-//   -webkit-animation-delay: 4s;
-//   animation-delay: 4s;
-// }
-
-// .animated.delay-5s {
-//   -webkit-animation-delay: 5s;
-//   animation-delay: 5s;
-// }
-
-// @-webkit-keyframes fadeInLeft {
-//   from {
-//     opacity: 0;
-//     -webkit-transform: translate3d(-100%, 0, 0);
-//     transform: translate3d(-100%, 0, 0);
-//   }
-
-//   to {
-//     opacity: 1;
-//     -webkit-transform: translate3d(0, 0, 0);
-//     transform: translate3d(0, 0, 0);
-//   }
-// }
-
-// @keyframes fadeInLeft {
-//   from {
-//     opacity: 0;
-//     -webkit-transform: translate3d(-100%, 0, 0);
-//     transform: translate3d(-100%, 0, 0);
-//   }
-
-//   to {
-//     opacity: 1;
-//     -webkit-transform: translate3d(0, 0, 0);
-//     transform: translate3d(0, 0, 0);
-//   }
-// }
-
-// .fadeInLeft {
-//   -webkit-animation-name: fadeInLeft;
-//   animation-name: fadeInLeft;
-// }
-
-// @-webkit-keyframes fadeOutLeft {
-//   from {
-//     opacity: 1;
-//   }
-
-//   to {
-//     opacity: 0;
-//     -webkit-transform: translate3d(-100%, 0, 0);
-//     transform: translate3d(-100%, 0, 0);
-//   }
-// }
-
-// @keyframes fadeOutLeft {
-//   from {
-//     opacity: 1;
-//   }
-
-//   to {
-//     opacity: 0;
-//     -webkit-transform: translate3d(-100%, 0, 0);
-//     transform: translate3d(-100%, 0, 0);
-//   }
-// }
-
-// .fadeOutLeft {
-//   -webkit-animation-name: fadeOutLeft;
-//   animation-name: fadeOutLeft;
-// }
-
-// @-webkit-keyframes fadeInRight {
-//   from {
-//     opacity: 0;
-//     -webkit-transform: translate3d(100%, 0, 0);
-//     transform: translate3d(100%, 0, 0);
-//   }
-
-//   to {
-//     opacity: 1;
-//     -webkit-transform: translate3d(0, 0, 0);
-//     transform: translate3d(0, 0, 0);
-//   }
-// }
-
-// @keyframes fadeInRight {
-//   from {
-//     opacity: 0;
-//     -webkit-transform: translate3d(100%, 0, 0);
-//     transform: translate3d(100%, 0, 0);
-//   }
-
-//   to {
-//     opacity: 1;
-//     -webkit-transform: translate3d(0, 0, 0);
-//     transform: translate3d(0, 0, 0);
-//   }
-// }
-
-// .fadeInRight {
-//   -webkit-animation-name: fadeInRight;
-//   animation-name: fadeInRight;
-// }
-
-// @-webkit-keyframes fadeOutRight {
-//   from {
-//     opacity: 1;
-//   }
-
-//   to {
-//     opacity: 0;
-//     -webkit-transform: translate3d(100%, 0, 0);
-//     transform: translate3d(100%, 0, 0);
-//   }
-// }
-
-// @keyframes fadeOutRight {
-//   from {
-//     opacity: 1;
-//   }
-
-//   to {
-//     opacity: 0;
-//     -webkit-transform: translate3d(100%, 0, 0);
-//     transform: translate3d(100%, 0, 0);
-//   }
-// }
-
-// .fadeOutRight {
-//   -webkit-animation-name: fadeOutRight;
-//   animation-name: fadeOutRight;
-// }
-
-// @-webkit-keyframes fadeInUp {
-//   from {
-//     opacity: 0;
-//     -webkit-transform: translate3d(0, 100%, 0);
-//     transform: translate3d(0, 100%, 0);
-//   }
-
-//   to {
-//     opacity: 1;
-//     -webkit-transform: translate3d(0, 0, 0);
-//     transform: translate3d(0, 0, 0);
-//   }
-// }
-
-// @keyframes fadeInUp {
-//   from {
-//     opacity: 0;
-//     -webkit-transform: translate3d(0, 100%, 0);
-//     transform: translate3d(0, 100%, 0);
-//   }
-
-//   to {
-//     opacity: 1;
-//     -webkit-transform: translate3d(0, 0, 0);
-//     transform: translate3d(0, 0, 0);
-//   }
-// }
-
-// .fadeInUp {
-//   -webkit-animation-name: fadeInUp;
-//   animation-name: fadeInUp;
-// }
-
-// @-webkit-keyframes fadeOutDown {
-//   from {
-//     opacity: 1;
-//   }
-
-//   to {
-//     opacity: 0;
-//     -webkit-transform: translate3d(0, 100%, 0);
-//     transform: translate3d(0, 100%, 0);
-//   }
-// }
-
-// @keyframes fadeOutDown {
-//   from {
-//     opacity: 1;
-//   }
-
-//   to {
-//     opacity: 0;
-//     -webkit-transform: translate3d(0, 100%, 0);
-//     transform: translate3d(0, 100%, 0);
-//   }
-// }
-
-// .fadeOutDown {
-//   -webkit-animation-name: fadeOutDown;
-//   animation-name: fadeOutDown;
-// }
-
-// @media (print), (prefers-reduced-motion: reduce) {
-//   .animated {
-//     -webkit-animation-duration: 1ms !important;
-//     animation-duration: 1ms !important;
-//     -webkit-transition-duration: 1ms !important;
-//     transition-duration: 1ms !important;
-//     -webkit-animation-iteration-count: 1 !important;
-//     animation-iteration-count: 1 !important;
-//   }
-// }
-
 // MEDIA QUERIES
 
 @media (min-width: 360px) {
@@ -836,7 +567,7 @@ footer .links li .contact-icon {
   }
 
   .home {
-    height: 63vh;
+    height: 61vh;
   }
 
   .brand-icon {
@@ -967,11 +698,15 @@ footer .links li .contact-icon {
   }
 
   .contact div h2 {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 
   footer .links li {
     margin-right: 35px;
+  }
+
+  .contact div .contact-icon {
+    font-size: 40px;
   }
 }
 </style>
