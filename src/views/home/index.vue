@@ -6,7 +6,13 @@
         <div class="section-content">
           <div class="info">
             <div class="info-content">
-              <h1 class="name animated" data-animationtype="left" data-delay=".3s">Alvin Nario</h1>
+              <h1
+                class="name animated"
+                data-animationtype="left"
+                data-delay=".3s"
+              >
+                Alvin Nario
+              </h1>
               <div class="animated" data-animationtype="left" data-delay=".4s">
                 <span class="job">Software Web Developer</span>
               </div>
@@ -15,7 +21,11 @@
               </div>
             </div>
           </div>
-          <div class="info-img animated" data-animationtype="right" data-delay=".3s">
+          <div
+            class="info-img animated"
+            data-animationtype="right"
+            data-delay=".3s"
+          >
             <img class="me" src="../../assets/image/me.jpg" />
           </div>
         </div>
@@ -53,7 +63,10 @@
             </a>
           </li>
           <li style="margin-bottom: 0">
-            <a href="https://www.linkedin.com/in/alvin-nario-498a20193" target="_blank">
+            <a
+              href="https://www.linkedin.com/in/alvin-nario-498a20193"
+              target="_blank"
+            >
               <font-awesome-icon
                 class="brand-icon animated"
                 data-animationtype="up-brand"
@@ -76,21 +89,20 @@
         <br />
         <div>
           <p class="animated" data-animationtype="up" data-delay=".2s">
-            Now I'm a Web Developer with two years of experience
-            building amazing experience for the users
-            and continuously learning and
+            Now I'm a Web Developer with two years of experience building
+            amazing experience for the users and continuously learning and
             improving myself by practicing day by day with three cups of coffee.
             <br />
             <br />
-            <span
-              class="animated"
-              data-animationtype="up"
-              data-delay=".3s"
-            >I love what I do just as I love my dog.</span>
+            <span class="animated" data-animationtype="up" data-delay=".3s"
+              >I love what I do just as I love my dog.</span
+            >
           </p>
           <br />
           <div class="animated" data-animationtype="up" data-delay=".4s">
-            <a class="download-btn" :href="`${publicPath}resume.pdf`" download>DOWNLOAD CV</a>
+            <a class="download-btn" :href="`${publicPath}resume.pdf`" download
+              >DOWNLOAD CV</a
+            >
           </div>
         </div>
       </div>
@@ -100,15 +112,31 @@
         <b-row class="two-cols">
           <b-col class="b-col" md>
             <div class="flip project" @click="test">
-              <div
-                class="front"
-                style="background-image: url(https://images.unsplash.com/photo-1506619216599-9d16d0903dfd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1498&q=80)"
-              >
-                <h1 class="text-shadow">COMING SOON</h1>
+              <div class="front project-one">
+                <!-- style="background-image: url(https://images.unsplash.com/photo-1506619216599-9d16d0903dfd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1498&q=80)" -->
+                <h1 class="text-shadow white-text">WEATHER VIBE</h1>
+                <CloudyDay3 class="cloudy-day" />
               </div>
-              <div class="back">
-                <h2>Angular</h2>
-                <p>Good tools make application development quicker and easier to maintain than if you did everything by hand..</p>
+              <div
+                class="back"
+                style="padding-top: 50px; border: 1px solid #ccc;"
+              >
+                <h2 class="dark-text" style="margin-bottom: 20px">VUE.JS</h2>
+                <p>
+                  A simple weather app with dynamic background and relaxing
+                  music.
+                </p>
+                <button class="project-btn">
+                  <a
+                    href="https://narioalvin.github.io/weather-vibe/"
+                    target="_blank"
+                  >
+                    <font-awesome-icon
+                      class="chevron"
+                      :icon="['fas', 'chevron-right']"
+                    />
+                  </a>
+                </button>
               </div>
             </div>
           </b-col>
@@ -118,11 +146,14 @@
                 class="front"
                 style="background-image: url(https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80)"
               >
-                <h1 class="text-shadow">COMING SOON</h1>
+                <h1 class="text-shadow white-text">COMING SOON</h1>
               </div>
               <div class="back">
-                <h2>Angular</h2>
-                <p>Good tools make application development quicker and easier to maintain than if you did everything by hand..</p>
+                <h2 class="dark-text">Angular</h2>
+                <p>
+                  Good tools make application development quicker and easier to
+                  maintain than if you did everything by hand..
+                </p>
               </div>
             </div>
           </b-col>
@@ -135,11 +166,14 @@
                 class="front"
                 style="background-image: url(https://images.unsplash.com/photo-1513595207829-9f414c0665f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80)"
               >
-                <h1 class="text-shadow">COMING SOON</h1>
+                <h1 class="text-shadow white-text">COMING SOON</h1>
               </div>
               <div class="back">
-                <h2>Angular</h2>
-                <p>Good tools make application development quicker and easier to maintain than if you did everything by hand..</p>
+                <h2 class="dark-text">Angular</h2>
+                <p>
+                  Good tools make application development quicker and easier to
+                  maintain than if you did everything by hand..
+                </p>
               </div>
             </div>
           </b-col>
@@ -149,11 +183,14 @@
                 class="front"
                 style="background-image: url(https://images.unsplash.com/photo-1486746290722-483e8f1e44d2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=601&q=80)"
               >
-                <h1 class="text-shadow">COMING SOON</h1>
+                <h1 class="text-shadow white-text">COMING SOON</h1>
               </div>
               <div class="back">
-                <h2>Angular</h2>
-                <p>Good tools make application development quicker and easier to maintain than if you did everything by hand..</p>
+                <h2 class="dark-text">Angular</h2>
+                <p>
+                  Good tools make application development quicker and easier to
+                  maintain than if you did everything by hand..
+                </p>
               </div>
             </div>
           </b-col>
@@ -166,8 +203,11 @@
                 <h1 class="text-shadow">COMING SOON</h1>
               </div>
               <div class="back">
-                <h2>Angular</h2>
-                <p>Good tools make application development quicker and easier to maintain than if you did everything by hand..</p>
+                <h2 class="dark-text">Angular</h2>
+                <p>
+                  Good tools make application development quicker and easier to
+                  maintain than if you did everything by hand..
+                </p>
               </div>
             </div>
           </b-col>
@@ -175,22 +215,34 @@
       </div>
     </section>
     <section class="contact" id="contact">
-      <h4 class="project animated" data-animationtype="up" data-delay=".2s">Contact Me</h4>
+      <h4 class="project animated" data-animationtype="up" data-delay=".2s">
+        Contact Me
+      </h4>
       <div class="project animated" data-animationtype="up" data-delay=".4s">
         <font-awesome-icon class="contact-icon" :icon="['fas', 'phone']" />
         <h2>09052322714</h2>
       </div>
       <div class="project animated" data-animationtype="up" data-delay=".5s">
-        <font-awesome-icon class="contact-icon" :icon="['fas', 'paper-plane']" />
+        <font-awesome-icon
+          class="contact-icon"
+          :icon="['fas', 'paper-plane']"
+        />
         <h2>narioalvin94@gmail.com</h2>
       </div>
     </section>
     <footer>
       <span class="project animated" data-animationtype="left" data-delay=".6s">
-        <font-awesome-icon style="margin-right: 10px" :icon="['far', 'copyright']" />
+        <font-awesome-icon
+          style="margin-right: 10px"
+          :icon="['far', 'copyright']"
+        />
         <b>2020 ALVIN NARIO</b>
       </span>
-      <ul class="links project animated" data-animationtype="right" data-delay=".6s">
+      <ul
+        class="links project animated"
+        data-animationtype="right"
+        data-delay=".6s"
+      >
         <li>
           <font-awesome-icon class="contact-icon" :icon="['fab', 'github']" />
         </li>
@@ -201,7 +253,10 @@
           <font-awesome-icon class="contact-icon" :icon="['fab', 'behance']" />
         </li>
         <li>
-          <font-awesome-icon class="contact-icon" :icon="['fab', 'linkedin-in']" />
+          <font-awesome-icon
+            class="contact-icon"
+            :icon="['fab', 'linkedin-in']"
+          />
         </li>
       </ul>
     </footer>
@@ -209,11 +264,15 @@
 </template>
 
 <script>
-import Navbar from "@/components/Navbar";
+import Navbar from '@/components/Navbar';
+import CloudyDay3 from '@/components//CloudyDay3.vue';
 
 export default {
-  name: "Home",
-  components: { Navbar },
+  name: 'Home',
+  components: {
+    Navbar,
+    CloudyDay3,
+  },
   data() {
     return {
       showLandingPage: false,
@@ -221,32 +280,32 @@ export default {
       showProjectsPage: false,
       showContactPage: false,
       innerWidth: window.innerWidth,
-      publicPath: process.env.BASE_URL
+      publicPath: process.env.BASE_URL,
     };
   },
   methods: {
-    test() { }
+    test() {},
   },
   destroyed() {
-    window.removeEventListener("scroll", this.handleScroll);
+    window.removeEventListener('scroll', this.handleScroll);
   },
   mounted() {
-    const items = document.querySelectorAll(".animated");
+    const items = document.querySelectorAll('.animated');
 
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
         if (entry.intersectionRatio > 0) {
           switch (entry.target.dataset.animationtype) {
-            case "up":
+            case 'up':
               entry.target.style.animation = `animUp .5s ${entry.target.dataset.delay} forwards ease-out`;
               break;
-            case "left":
+            case 'left':
               entry.target.style.animation = `animLeft .5s ${entry.target.dataset.delay} forwards ease-out`;
               break;
-            case "right":
+            case 'right':
               entry.target.style.animation = `animRight .5s ${entry.target.dataset.delay} forwards ease-out`;
               break;
-            case "up-brand":
+            case 'up-brand':
               entry.target.style.animation = `animUpBrands .5s ${entry.target.dataset.delay} forwards ease-out`;
               break;
           }
@@ -254,10 +313,10 @@ export default {
       });
     });
 
-    items.forEach(item => {
+    items.forEach((item) => {
       observer.observe(item);
     });
-  }
+  },
 };
 </script>
 
@@ -270,6 +329,14 @@ export default {
 
 section {
   width: 100%;
+}
+
+.dark-text {
+  color: #202020;
+}
+
+.white-text {
+  color: #fefefe;
 }
 
 .download-btn {
@@ -319,6 +386,33 @@ section {
   font-size: 1.1rem;
   letter-spacing: 1px;
   text-transform: uppercase;
+}
+
+.project-btn {
+  width: 50px;
+  height: 50px;
+  border: 0;
+  border-radius: 50%;
+  background: #202020;
+}
+
+.project-btn .chevron {
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.project-btn:hover {
+  opacity: 0.8;
+}
+
+.project-one {
+  background-color: #e6c84f !important;
+  background-image: linear-gradient(315deg, #e6c84f 0%, #e8807f 74%) !important;
+}
+
+.cloudy-day {
+  position: relative;
+  top: 50px;
 }
 
 .flip {
@@ -374,17 +468,16 @@ section {
   > .front,
   > .back {
     display: block;
-    color: white;
     width: inherit;
     background-size: cover !important;
     background-position: center !important;
     height: 50vh;
     padding: 1em 2em;
-    background: #313131;
+    background: #fefefe;
     p {
       font-size: 0.9125rem;
       line-height: 160%;
-      color: #999;
+      color: #202020;
     }
   }
 }
