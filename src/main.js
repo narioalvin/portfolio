@@ -6,6 +6,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import CloudyDay3 from '@/components/CloudyDay3.vue';
 import { BContainer, BRow, BCol, BButton, BSpinner } from 'bootstrap-vue'
 
 library.add(fas, fab, far)
@@ -17,6 +18,8 @@ Vue.component('b-row', BRow)
 Vue.component('b-col', BCol)
 Vue.component('b-button', BButton)
 Vue.component('b-spinner', BSpinner)
+
+Vue.component('CloudyDay3', CloudyDay3);
 
 // Vue.component('my-component', {
 //   components: {
