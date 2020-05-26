@@ -26,7 +26,7 @@
             data-animationtype="right"
             data-delay=".3s"
           >
-            <img class="me" src="../../assets/image/me.jpg" />
+            <img class="me" src="../assets/image/me.jpg" />
           </div>
         </div>
       </div>
@@ -114,46 +114,63 @@
             <div class="flip project" @click="test">
               <div class="front project-one">
                 <!-- style="background-image: url(https://images.unsplash.com/photo-1506619216599-9d16d0903dfd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1498&q=80)" -->
-                <h1 class="text-shadow white-text">WEATHER VIBE</h1>
-                <CloudyDay3 class="cloudy-day" />
+                <h1 class="text-shadow white-text">Weather Vibe</h1>
+                <CloudyDay3 class="project-icon" />
               </div>
               <div
                 class="back"
                 style="padding-top: 50px; border: 1px solid #ccc;"
               >
-                <h2 class="dark-text" style="margin-bottom: 20px">VUE.JS</h2>
+                <h2 class="dark-text" style="margin-bottom: 20px">Vue</h2>
                 <p>
                   A simple weather app with dynamic background and relaxing
                   music.
                 </p>
-                <button class="project-btn">
-                  <a
-                    href="https://narioalvin.github.io/weather-vibe/"
-                    target="_blank"
-                  >
+                <a
+                  href="https://narioalvin.github.io/weather-vibe/"
+                  target="_blank"
+                >
+                  <button class="project-btn">
                     <font-awesome-icon
                       class="chevron"
                       :icon="['fas', 'chevron-right']"
                     />
-                  </a>
-                </button>
+                  </button>
+                </a>
               </div>
             </div>
           </b-col>
           <b-col class="b-col" md>
-            <div class="flip" @click="test">
-              <div
-                class="front"
-                style="background-image: url(https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80)"
-              >
-                <h1 class="text-shadow white-text">COMING SOON</h1>
+            <div class="flip project" @click="test">
+              <div class="front project-two">
+                <h1 class="text-shadow white-text">Multi-Step Form</h1>
+                <img
+                  width="70"
+                  class="project-icon"
+                  src="../assets/image/avatar.png"
+                />
               </div>
-              <div class="back">
-                <h2 class="dark-text">Angular</h2>
+              <div
+                class="back"
+                style="padding-top: 50px; border: 1px solid #ccc;"
+              >
+                <h2 class="dark-text">Full Stack</h2>
                 <p>
-                  Good tools make application development quicker and easier to
-                  maintain than if you did everything by hand..
+                  Multi-Step Registration and Login form with complete
+                  validation and email verification using Express, MongoDB and
+                  multiple JS Frameworks.
                 </p>
+                <a
+                  href="https://narioalvin.github.io/vue-multi-step-form/#/"
+                  target="_blank"
+                >
+                  <button class="project-btn">
+                    <font-awesome-icon
+                      class="chevron"
+                      :icon="['fas', 'chevron-right']"
+                    />
+                  </button>
+                </a>
               </div>
             </div>
           </b-col>
@@ -169,7 +186,7 @@
                 <h1 class="text-shadow white-text">COMING SOON</h1>
               </div>
               <div class="back">
-                <h2 class="dark-text">Angular</h2>
+                <h2 class="dark-text" style="margin-bottom: 20px">Angular</h2>
                 <p>
                   Good tools make application development quicker and easier to
                   maintain than if you did everything by hand..
@@ -410,7 +427,12 @@ section {
   background-image: linear-gradient(315deg, #e6c84f 0%, #e8807f 74%) !important;
 }
 
-.cloudy-day {
+.project-two {
+  background-color: #8d5185 !important;
+  background-image: linear-gradient(315deg, #8d5185 0%, #a1bafe 74%) !important;
+}
+
+.project-icon {
   position: relative;
   top: 50px;
 }
@@ -473,7 +495,8 @@ section {
     background-position: center !important;
     height: 50vh;
     padding: 1em 2em;
-    background: #fefefe;
+    background-color: #f6f6f6;
+    background-image: linear-gradient(315deg, #f6f6f6 0%, #e9e9e9 74%);
     p {
       font-size: 0.9125rem;
       line-height: 160%;
