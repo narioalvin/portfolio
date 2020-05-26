@@ -3,7 +3,8 @@
   "description": "Personal Website Portfolio",
   "author": "Alvin Nario <narioalvin94@gmail.com>",
   "version": "0.1.0",
-  "private": true,
+  "license": "MIT",
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",

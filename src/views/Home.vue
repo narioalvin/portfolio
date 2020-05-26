@@ -119,7 +119,7 @@
               </div>
               <div
                 class="back"
-                style="padding-top: 50px; border: 1px solid #ccc;"
+                style="padding-top: 50px"
               >
                 <h2 class="dark-text" style="margin-bottom: 20px">Vue</h2>
                 <p>
@@ -152,7 +152,7 @@
               </div>
               <div
                 class="back"
-                style="padding-top: 50px; border: 1px solid #ccc;"
+                style="padding-top: 50px"
               >
                 <h2 class="dark-text">Full Stack</h2>
                 <p>
