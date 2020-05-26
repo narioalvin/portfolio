@@ -668,7 +668,7 @@ footer .links li .contact-icon {
 
 // MEDIA QUERIES
 
-@media (min-width: 360px) {
+@media screen and (min-width: 360px) {
   .name {
     font-size: 45px;
   }
@@ -703,7 +703,7 @@ footer .links li .contact-icon {
   }
 }
 
-@media (min-width: 480px) {
+@media screen and (min-width: 480px) {
   .name {
     font-size: 39px;
   }
@@ -767,7 +767,7 @@ footer .links li .contact-icon {
   }
 }
 
-@media (min-width: 600px) {
+@media screen and (min-width: 600px) and (orientation: portrait) {
   .brand-list li .brand-icon {
     font-size: 20px;
   }
@@ -785,7 +785,7 @@ footer .links li .contact-icon {
   }
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .info-content {
     left: 50px;
     top: 50px;

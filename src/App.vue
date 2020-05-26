@@ -5,15 +5,15 @@
 </template>
 
 <script>
-import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap-vue/dist/bootstrap-vue.css";
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
 
 export default {
-  name: "App"
+  name: 'App',
 };
 </script>
 
-<style>
+<style lang="scss">
 html {
   scroll-behavior: smooth;
 }
@@ -23,34 +23,34 @@ body {
 }
 
 @font-face {
-  font-family: "Montserrat";
-  src: url("./assets/font/Montserrat-Regular.ttf");
-  src: local("Montserrat Regular"), local("Montserrat-Regular"),
-    url("./assets/font/Montserrat-Regular.ttf") format("opentype");
+  font-family: 'Montserrat';
+  src: url('./assets/font/Montserrat-Regular.ttf');
+  src: local('Montserrat Regular'), local('Montserrat-Regular'),
+    url('./assets/font/Montserrat-Regular.ttf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Montserrat";
-  src: url("./assets/font/Montserrat-Medium.ttf");
-  src: local("Montserrat Medium"), local("Montserrat-Medium"),
-    url("./assets/font/Montserrat-Medium.ttf") format("opentype");
+  font-family: 'Montserrat';
+  src: url('./assets/font/Montserrat-Medium.ttf');
+  src: local('Montserrat Medium'), local('Montserrat-Medium'),
+    url('./assets/font/Montserrat-Medium.ttf') format('opentype');
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Montserrat";
-  src: url("./assets/font/Montserrat-Bold.ttf");
-  src: local("Montserrat Bold"), local("Montserrat-Bold"),
-    url("./assets/font/Montserrat-Bold.ttf") format("opentype");
+  font-family: 'Montserrat';
+  src: url('./assets/font/Montserrat-Bold.ttf');
+  src: local('Montserrat Bold'), local('Montserrat-Bold'),
+    url('./assets/font/Montserrat-Bold.ttf') format('opentype');
   font-weight: bold;
   font-style: normal;
 }
 
 * {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
 }
 
@@ -168,6 +168,30 @@ h6 {
   to {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+@media only screen and (min-width: 360px) and (max-width: 812px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+  .navbar {
+    padding: 0;
+  }
+
+  .home {
+    height: 93vh;
+    margin: 70px 0;
+  }
+
+  #home {
+   margin-bottom: 210px;
+  }
+
+  #about {
+    margin-bottom: 200px;
+  }
+
+  .back,
+  .front {
+    height: 100vh !important;
   }
 }
 </style>
