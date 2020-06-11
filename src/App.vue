@@ -69,6 +69,32 @@ h6 {
   font-size: 13px;
 }
 
+.p-40 {
+  padding: 15px;
+}
+
+.full-height {
+  height: 100vh;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  width: 100%;
+}
+
+.dark-text {
+  color: #202020;
+}
+
+.white-text {
+  color: #fefefe;
+}
+
 .animated {
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
