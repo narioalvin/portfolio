@@ -43,7 +43,7 @@
               <p>
                 Multi-Step Registration and Login Form Template with complete
                 validation and email verification using Express for Back-End,
-                MongoDB for Database then and Angular, Vue, and React for
+                MongoDB for Database then Angular, Vue, and React for
                 Front-End.
               </p>
               <a
