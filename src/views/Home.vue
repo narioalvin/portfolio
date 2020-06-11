@@ -140,9 +140,6 @@ export default {
       innerWidth: window.innerWidth
     };
   },
-  methods: {
-    test() {},
-  },
   destroyed() {
     window.removeEventListener('scroll', this.handleScroll);
   },

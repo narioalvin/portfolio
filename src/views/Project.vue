@@ -3,7 +3,7 @@
     <div class="animated" data-animationtype="up" data-delay=".3s">
       <b-row class="two-cols">
         <b-col class="b-col" md>
-          <div class="flip project" @click="test">
+          <div class="flip project" @click="flipProject">
             <div class="front project-one">
               <h1 class="text-shadow white-text">Weather Vibe</h1>
               <CloudyDay3 class="project-icon" />
@@ -29,7 +29,7 @@
           </div>
         </b-col>
         <b-col class="b-col" md>
-          <div class="flip project" @click="test">
+          <div class="flip project" @click="flipProject">
             <div class="front project-two">
               <h1 class="text-shadow white-text">Multi-Step Form</h1>
               <img
@@ -64,7 +64,7 @@
 
       <b-row class="three-cols">
         <b-col class="b-col" sm>
-          <div class="flip" @click="test">
+          <div class="flip" @click="flipProject">
             <div
               class="front"
               style="background-image: url(https://images.unsplash.com/photo-1513595207829-9f414c0665f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80)"
@@ -81,7 +81,7 @@
           </div>
         </b-col>
         <b-col class="b-col" sm>
-          <div class="flip" @click="test">
+          <div class="flip" @click="flipProject">
             <div
               class="front"
               style="background-image: url(https://images.unsplash.com/photo-1486746290722-483e8f1e44d2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=601&q=80)"
@@ -98,7 +98,7 @@
           </div>
         </b-col>
         <b-col class="b-col" sm>
-          <div class="flip" @click="test">
+          <div class="flip" @click="flipProject">
             <div
               class="front"
               style="background-image: url(https://images.unsplash.com/photo-1502945015378-0e284ca1a5be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80)"
@@ -127,6 +127,11 @@ export default {
   components: {
     CloudyDay3
   },
+  methods: {
+    flipProject() {
+        //FOR CLICKING PROJECTS ON MOBILE
+    }
+  }
 };
 </script>
 
