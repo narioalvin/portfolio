@@ -10,7 +10,24 @@ const routes = [
     name: 'Home',
     component: Home,
     meta: { title: `Alvin's Portfolio` },
-  },
+    children: [
+      {
+        path: 'about',
+        component: () => import('@/views/About'),
+        meta: { title: `Alvin's Portfolio` },
+      },
+      {
+        path: 'project',
+        component: () => import('@/views/Project'),
+        meta: { title: `Alvin's Portfolio` },
+      },
+      {
+        path: 'contact',
+        component: () => import('@/views/Contact'),
+        meta: { title: `Alvin's Portfolio` },
+      }
+    ]
+  }
 ];
 
 const router = new VueRouter({
