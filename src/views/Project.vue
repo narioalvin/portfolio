@@ -43,8 +43,7 @@
               <p>
                 Multi-Step Registration and Login Form Template with complete
                 validation and email verification using Express for Back-End,
-                MongoDB for Database then Angular, Vue, and React for
-                Front-End.
+                MongoDB for Database then Angular, Vue, and React for Front-End.
               </p>
               <a
                 href="https://narioalvin.github.io/vue-multi-step-form/#/"
@@ -62,21 +61,34 @@
         </b-col>
       </b-row>
 
-      <b-row class="three-cols">
+      <b-row class="two-cols">
         <b-col class="b-col" sm>
           <div class="flip" @click="flipProject">
-            <div
-              class="front"
-              style="background-image: url(https://images.unsplash.com/photo-1513595207829-9f414c0665f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80)"
-            >
-              <h1 class="text-shadow white-text">COMING SOON</h1>
+            <div class="front project-three">
+              <h1 class="text-shadow white-text">Cheez-Meez</h1>
+              <img
+                width="150"
+                class="project-icon"
+                src="../assets/image/cheez-meez.svg"
+              />
             </div>
             <div class="back">
-              <h2 class="dark-text" style="margin-bottom: 20px">Angular</h2>
+              <h2 class="dark-text" style="margin-bottom: 20px">Full Stack</h2>
               <p>
-                Good tools make application development quicker and easier to
-                maintain than if you did everything by hand..
+                A Real-Time Chat Application created using ReactJS for
+                Front-End, Node.js and Socket.io for Back-End.
               </p>
+              <a
+                href="https://narioalvin.github.io/react-cheez-meez/"
+                target="_blank"
+              >
+                <button class="project-btn">
+                  <font-awesome-icon
+                    class="chevron"
+                    :icon="['fas', 'chevron-right']"
+                  />
+                </button>
+              </a>
             </div>
           </div>
         </b-col>
@@ -87,23 +99,6 @@
               style="background-image: url(https://images.unsplash.com/photo-1486746290722-483e8f1e44d2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=601&q=80)"
             >
               <h1 class="text-shadow white-text">COMING SOON</h1>
-            </div>
-            <div class="back">
-              <h2 class="dark-text">Angular</h2>
-              <p>
-                Good tools make application development quicker and easier to
-                maintain than if you did everything by hand..
-              </p>
-            </div>
-          </div>
-        </b-col>
-        <b-col class="b-col" sm>
-          <div class="flip" @click="flipProject">
-            <div
-              class="front"
-              style="background-image: url(https://images.unsplash.com/photo-1502945015378-0e284ca1a5be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80)"
-            >
-              <h1 class="text-shadow">COMING SOON</h1>
             </div>
             <div class="back">
               <h2 class="dark-text">Angular</h2>
@@ -125,13 +120,13 @@ import CloudyDay3 from '@/components/CloudyDay3.vue';
 export default {
   name: 'Project',
   components: {
-    CloudyDay3
+    CloudyDay3,
   },
   methods: {
     flipProject() {
-        //FOR CLICKING PROJECTS ON MOBILE
-    }
-  }
+      //FOR CLICKING PROJECTS ON MOBILE
+    },
+  },
 };
 </script>
 
@@ -161,6 +156,11 @@ export default {
 .project-two {
   background-color: #8d5185 !important;
   background-image: linear-gradient(315deg, #8d5185 0%, #a1bafe 74%) !important;
+}
+
+.project-three {
+  background-color: #d9e4f5 !important;
+  background-image: linear-gradient(315deg, #d9e4f5 0%, #f5e3e6 74%) !important;
 }
 
 .project-icon {
