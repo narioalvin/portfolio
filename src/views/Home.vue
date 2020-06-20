@@ -1,83 +1,96 @@
 <template>
   <div id="page">
-    <section id="home" class="full-height p-40">
+    <section id="home" class="full-height">
       <Navbar />
-      <div class="flex home">
-        <div class="section-content">
-          <div class="info">
-            <div class="info-content">
-              <h1
-                class="name animated"
-                data-animationtype="left"
-                data-delay=".3s"
-              >
-                Alvin Nario
-              </h1>
-              <div class="animated" data-animationtype="left" data-delay=".4s">
-                <span class="job">Software Web Developer</span>
-              </div>
-              <div class="animated" data-animationtype="left" data-delay=".5s">
-                <span class="place">Makati City Philippines</span>
+      <div class="p-40">
+        <div class="flex home">
+          <div class="section-content">
+            <div class="info">
+              <div class="info-content">
+                <h1
+                  class="name animated"
+                  data-animationtype="left"
+                  data-delay=".3s"
+                >
+                  Alvin Nario
+                </h1>
+                <div
+                  class="animated"
+                  data-animationtype="left"
+                  data-delay=".4s"
+                >
+                  <span class="job">Software Web Developer</span>
+                </div>
+                <div
+                  class="animated"
+                  data-animationtype="left"
+                  data-delay=".5s"
+                >
+                  <span class="place">Makati City Philippines</span>
+                </div>
               </div>
             </div>
-          </div>
-          <div
-            class="info-img animated"
-            data-animationtype="right"
-            data-delay=".3s"
-          >
-            <img class="me" src="../assets/image/me.jpg" />
+            <div
+              class="info-img animated"
+              data-animationtype="right"
+              data-delay=".3s"
+            >
+              <img class="me" src="../assets/image/me.jpg" />
+            </div>
           </div>
         </div>
-      </div>
-      <div class="bottom">
-        <ul class="brand-list" style="list-style-type:none; padding: 0">
-          <li>
-            <a href="https://github.com/narioalvin" target="_blank">
-              <font-awesome-icon
-                class="brand-icon animated"
-                data-animationtype="up-brand"
-                data-delay=".3s"
-                :icon="['fab', 'github']"
-              />
-            </a>
-          </li>
-          <li>
-            <a href="https://dribbble.com/narioalvin" target="_blank">
-              <font-awesome-icon
-                class="brand-icon animated"
-                data-animationtype="up-brand"
-                data-delay=".4s"
-                :icon="['fab', 'dribbble']"
-              />
-            </a>
-          </li>
-          <li>
-            <a href="https://www.behance.net/narioalvin" target="_blank">
-              <font-awesome-icon
-                class="brand-icon animated"
-                data-animationtype="up-brand"
-                data-delay=".5s"
-                :icon="['fab', 'behance']"
-              />
-            </a>
-          </li>
-          <li style="margin-bottom: 0">
-            <a
-              href="https://www.linkedin.com/in/alvin-nario-498a20193"
-              target="_blank"
-            >
-              <font-awesome-icon
-                class="brand-icon animated"
-                data-animationtype="up-brand"
-                data-delay=".6s"
-                :icon="['fab', 'linkedin-in']"
-              />
-            </a>
-          </li>
-        </ul>
-        <div class="info-img animatedArrow fadeOutDown infinite">
-          <font-awesome-icon class="arrow-down" :icon="['fas', 'angle-down']" />
+        <div class="bottom">
+          <ul class="brand-list" style="list-style-type:none; padding: 0">
+            <li>
+              <a href="https://github.com/narioalvin" target="_blank">
+                <font-awesome-icon
+                  class="brand-icon animated"
+                  data-animationtype="up-brand"
+                  data-delay=".3s"
+                  :icon="['fab', 'github']"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="https://dribbble.com/narioalvin" target="_blank">
+                <font-awesome-icon
+                  class="brand-icon animated"
+                  data-animationtype="up-brand"
+                  data-delay=".4s"
+                  :icon="['fab', 'dribbble']"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.behance.net/narioalvin" target="_blank">
+                <font-awesome-icon
+                  class="brand-icon animated"
+                  data-animationtype="up-brand"
+                  data-delay=".5s"
+                  :icon="['fab', 'behance']"
+                />
+              </a>
+            </li>
+            <li style="margin-bottom: 0">
+              <a
+                href="https://www.linkedin.com/in/alvin-nario-498a20193"
+                target="_blank"
+              >
+                <font-awesome-icon
+                  class="brand-icon animated"
+                  data-animationtype="up-brand"
+                  data-delay=".6s"
+                  :icon="['fab', 'linkedin-in']"
+                />
+              </a>
+            </li>
+          </ul>
+          <div class="info-img animatedArrow fadeOutDown infinite">
+            <font-awesome-icon
+              class="arrow-down"
+              :icon="['fas', 'angle-down']"
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -98,19 +111,30 @@
         data-delay=".6s"
       >
         <li>
-          <font-awesome-icon class="contact-icon" :icon="['fab', 'github']" />
+          <a href="https://github.com/narioalvin" target="_blank">
+            <font-awesome-icon :icon="['fab', 'github']" />
+          </a>
         </li>
         <li>
-          <font-awesome-icon class="contact-icon" :icon="['fab', 'dribbble']" />
+          <a href="https://dribbble.com/narioalvin" target="_blank">
+            <font-awesome-icon :icon="['fab', 'dribbble']" />
+          </a>
         </li>
         <li>
-          <font-awesome-icon class="contact-icon" :icon="['fab', 'behance']" />
+          <a href="https://www.behance.net/narioalvin" target="_blank">
+            <font-awesome-icon :icon="['fab', 'behance']" />
+          </a>
         </li>
         <li>
-          <font-awesome-icon
-            class="contact-icon"
-            :icon="['fab', 'linkedin-in']"
-          />
+          <a
+            href="https://www.linkedin.com/in/alvin-nario-498a20193"
+            target="_blank"
+          >
+            <font-awesome-icon
+              class="contact-icon"
+              :icon="['fab', 'linkedin-in']"
+            />
+          </a>
         </li>
       </ul>
     </footer>
@@ -129,7 +153,7 @@ export default {
     Navbar,
     Contact,
     About,
-    Project
+    Project,
   },
   data() {
     return {
@@ -137,7 +161,7 @@ export default {
       showAboutPage: false,
       showProjectsPage: false,
       showContactPage: false,
-      innerWidth: window.innerWidth
+      innerWidth: window.innerWidth,
     };
   },
   destroyed() {
@@ -182,9 +206,7 @@ export default {
 }
 
 .home {
-  height: 73vh;
-  position: relative;
-  top: 30px;
+  height: 64vh;
 }
 
 .section-content {
@@ -192,6 +214,11 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  .name {
+    margin: 0;
+    font-weight: bold;
+  }
 }
 
 .me {
@@ -209,25 +236,24 @@ export default {
   font-size: 15px;
 }
 
-.name {
-  margin: 0;
-  font-weight: bold;
-}
-
 .bottom {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
-}
 
-.brand-list li {
-  margin-bottom: 15px;
-}
+  .brand-list li {
+    margin-bottom: 15px;
 
-.brand-icon {
-  font-size: 15px;
-  color: #1a1a1a;
+    a:hover {
+      opacity: 0.8;
+    }
+
+    .brand-icon {
+      font-size: 20px;
+      color: #1a1a1a;
+    }
+  }
 }
 
 .info {
@@ -261,32 +287,37 @@ footer {
   display: flex;
   justify-content: space-between;
   padding: 0 15px;
-}
 
-footer span {
-  font-size: 11px;
-}
+  span {
+    font-size: 11px;
+  }
 
-footer ul {
-  margin: 0;
-}
+  ul {
+    margin: 0;
+  }
 
-footer .links {
-  list-style-type: none;
-  padding: 0;
-}
+  .links {
+    list-style-type: none;
+    padding: 0;
 
-footer .links li {
-  display: inline;
-  margin-right: 12px;
-}
+    li {
+      display: inline;
+      margin-right: 12px;
+      font-size: 14px;
 
-footer .links li:last-child {
-  margin-right: 0;
-}
+      a {
+        color: #202020;
 
-footer .links li .contact-icon {
-  font-size: 14px;
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
 }
 
 // MEDIA QUERIES
@@ -306,19 +337,21 @@ footer .links li .contact-icon {
   }
 
   .home {
-    height: 61vh;
+    height: 65vh;
   }
 
   .brand-icon {
     font-size: 18px;
   }
 
-  footer span {
-    font-size: 15px;
-  }
+  footer {
+    span {
+      font-size: 15px;
+    }
 
-  footer .links li .contact-icon {
-    font-size: 20px;
+    .links li {
+      font-size: 20px;
+    }
   }
 }
 
@@ -345,8 +378,7 @@ footer .links li .contact-icon {
   }
 
   .home {
-    height: 92vh;
-    top: 0;
+    height: 83vh;
   }
 
   .me {
@@ -375,11 +407,7 @@ footer .links li .contact-icon {
   }
 
   .p-40 {
-    padding: 40px;
-  }
-
-  .home {
-    height: 85vh;
+    padding: 0 40px;
   }
 
   footer {

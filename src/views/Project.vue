@@ -33,7 +33,7 @@
             <div class="front project-two">
               <h1 class="text-shadow white-text">Multi-Step Form</h1>
               <img
-                width="70"
+                width="100"
                 class="project-icon"
                 src="../assets/image/avatar.png"
               />
@@ -62,12 +62,12 @@
       </b-row>
 
       <b-row class="two-cols">
-        <b-col class="b-col" sm>
+        <b-col class="b-col" md>
           <div class="flip" @click="flipProject">
             <div class="front project-three">
               <h1 class="text-shadow white-text">Cheez-Meez</h1>
               <img
-                width="150"
+                width="170"
                 class="project-icon"
                 src="../assets/image/cheez-meez.svg"
               />
@@ -92,20 +92,33 @@
             </div>
           </div>
         </b-col>
-        <b-col class="b-col" sm>
+        <b-col class="b-col" md>
           <div class="flip" @click="flipProject">
-            <div
-              class="front"
-              style="background-image: url(https://images.unsplash.com/photo-1486746290722-483e8f1e44d2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=601&q=80)"
-            >
-              <h1 class="text-shadow white-text">COMING SOON</h1>
+            <div class="front project-four">
+              <h1 class="text-shadow white-text">PractQuiz</h1>
+              <img
+                width="140"
+                class="project-icon shake"
+                src="../assets/image/idea.svg"
+              />
             </div>
             <div class="back">
-              <h2 class="dark-text">Angular</h2>
+              <h2 class="dark-text" style="margin-bottom: 20px">Vue</h2>
               <p>
-                Good tools make application development quicker and easier to
-                maintain than if you did everything by hand..
+                A Web Application that you can Practice your memory by taking a
+                Quiz. Created using Vue and Open TB API.
               </p>
+              <a
+                href="https://narioalvin.github.io/vue-practquiz/"
+                target="_blank"
+              >
+                <button class="project-btn">
+                  <font-awesome-icon
+                    class="chevron"
+                    :icon="['fas', 'chevron-right']"
+                  />
+                </button>
+              </a>
             </div>
           </div>
         </b-col>
@@ -161,6 +174,11 @@ export default {
 .project-three {
   background-color: #d9e4f5 !important;
   background-image: linear-gradient(315deg, #d9e4f5 0%, #f5e3e6 74%) !important;
+}
+
+.project-four {
+ background-color: #fff293 !important;
+  background-image: linear-gradient(315deg, #fff293 0%, #ffe884 74%) !important;
 }
 
 .project-icon {
