@@ -8,7 +8,7 @@
       <div>
         <p class="animated" data-animationtype="up" data-delay=".2s">
           Now, I'm a Software Web Developer with more than two years of experience building immersive
-          and responsive softwares, enjoying and learning new languages, frameworks and technologies.
+          and responsive software, enjoying and learning new languages, frameworks and technologies.
           <br />
           <br />
           <span class="animated" data-animationtype="up" data-delay=".3s"
