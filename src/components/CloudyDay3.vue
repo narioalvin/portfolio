@@ -5,8 +5,8 @@
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
       viewBox="0 0 60 60"
-      width="120"
-      height="120"
+      width="140"
+      height="140"
     >
       <defs>
         <filter id="blur" width="200%" height="200%">

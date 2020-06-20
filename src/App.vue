@@ -1,15 +1,19 @@
 <template>
   <div id="app">
-    <router-view />
+    <Home />
   </div>
 </template>
 
 <script>
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
+import Home from './views/Home';
 
 export default {
   name: 'App',
+  components: {
+    Home,
+  },
 };
 </script>
 
@@ -52,6 +56,8 @@ body {
 * {
   font-family: 'Montserrat', sans-serif;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 h1,
@@ -70,7 +76,7 @@ h6 {
 }
 
 .p-40 {
-  padding: 15px;
+  padding: 0 15px;
 }
 
 .full-height {
@@ -188,7 +194,7 @@ section {
 
 @keyframes animDown {
   from {
-    transform: translateY(-50px);
+    transform: translateY(-20px);
     opacity: 0;
   }
   to {
@@ -197,18 +203,60 @@ section {
   }
 }
 
-@media only screen and (min-width: 360px) and (max-width: 812px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
-  .navbar {
-    padding: 0;
+.shake {
+  -webkit-animation-name: wobble;
+  animation-name: wobble;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transform-origin: 50% 100%;
+}
+
+@keyframes wobble {
+  0% {
+    -webkit-transform: none;
+    transform: none;
   }
 
+  15% {
+    -webkit-transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+    transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+  }
+
+  30% {
+    -webkit-transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+    transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+  }
+
+  45% {
+    -webkit-transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+    transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+  }
+
+  60% {
+    -webkit-transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+    transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+  }
+
+  75% {
+    -webkit-transform: none;
+    transform: none;
+  }
+
+  100% {
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@media only screen and (min-width: 360px) and (max-width: 812px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
   .home {
     height: 93vh;
     margin: 70px 0;
   }
 
   #home {
-   margin-bottom: 210px;
+    margin-bottom: 210px;
   }
 
   #about {
@@ -218,6 +266,16 @@ section {
   .back,
   .front {
     height: 100vh !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .about {
+    div {
+      p {
+        font-size: 18px !important;
+      }
+    }
   }
 }
 </style>

@@ -1,19 +1,18 @@
 <template>
   <section class="full-height flex p-40" id="about">
-    <div class="about">
+    <div class="about flex">
       <h4 class="intro animated" data-animationtype="up" data-delay="0s">
-        <b>It all started with one Hello World</b>
+        <b>It all started with one 'Hello World!'</b>
       </h4>
       <br />
       <div>
         <p class="animated" data-animationtype="up" data-delay=".2s">
-          Now I'm a Web Developer with two years of experience building amazing
-          experience for the users and continuously learning and improving
-          myself by practicing day by day with three cups of coffee.
+          Now, I'm a Software Web Developer with more than two years of experience building immersive
+          and responsive softwares, enjoying and learning new languages, frameworks and technologies.
           <br />
           <br />
           <span class="animated" data-animationtype="up" data-delay=".3s"
-            >I love what I do just as I love my dog.</span
+            >I love what I do as much I love my dog and my daily three cups of coffee.</span
           >
         </p>
         <br />
@@ -42,14 +41,12 @@ export default {
 .about {
   text-align: center;
   flex-direction: column;
-    display: flex;
-    align-items: center;
+
   div {
     max-width: 560px;
     p {
       font-weight: 600;
       font-size: 15px;
-
       line-height: 25px;
       letter-spacing: 0.05rem;
     }
@@ -73,6 +70,7 @@ export default {
   &:focus {
     background: #1a1a1a;
     color: #fcfcfc;
+    text-decoration: none;
   }
 }
 

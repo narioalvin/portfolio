@@ -1,5 +1,5 @@
 <template>
-  <section class="contact" id="contact">
+  <section class="contact flex" id="contact">
     <h4 class="project animated" data-animationtype="up" data-delay=".2s">
       Contact Me
     </h4>
@@ -23,9 +23,6 @@ export default {
 <style lang="scss" scoped>
 .contact {
   min-height: 70vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
   font-weight: 600;
   h4 {
