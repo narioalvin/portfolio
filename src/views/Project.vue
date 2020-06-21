@@ -1,117 +1,37 @@
 <template>
   <section id="projects">
     <div class="animated" data-animationtype="up" data-delay=".3s">
-      <b-row class="two-cols">
-        <b-col class="b-col" md>
-          <div class="flip project" @click="flipProject">
-            <div class="front project-one">
-              <h1 class="text-shadow white-text">Weather Vibe</h1>
-              <CloudyDay3 class="project-icon" />
-            </div>
-            <div class="back" style="padding-top: 50px">
-              <h2 class="dark-text" style="margin-bottom: 20px">Vue</h2>
-              <p>
-                A simple weather app with dynamic background and relaxing music
-                using multiple free APIs.
-              </p>
-              <a
-                href="https://narioalvin.github.io/weather-vibe/"
-                target="_blank"
-              >
-                <button class="project-btn">
-                  <font-awesome-icon
-                    class="chevron"
-                    :icon="['fas', 'chevron-right']"
-                  />
-                </button>
-              </a>
-            </div>
-          </div>
-        </b-col>
-        <b-col class="b-col" md>
-          <div class="flip project" @click="flipProject">
-            <div class="front project-two">
-              <h1 class="text-shadow white-text">Multi-Step Form</h1>
-              <img
-                width="100"
-                class="project-icon"
-                src="../assets/image/avatar.png"
-              />
-            </div>
-            <div class="back" style="padding-top: 50px">
-              <h2 class="dark-text">Full Stack</h2>
-              <p>
-                Multi-Step Registration and Login Form Template with complete
-                validation and email verification using Express for Back-End,
-                MongoDB for Database then Angular, Vue, and React for Front-End.
-              </p>
-              <a
-                href="https://narioalvin.github.io/vue-multi-step-form/#/"
-                target="_blank"
-              >
-                <button class="project-btn">
-                  <font-awesome-icon
-                    class="chevron"
-                    :icon="['fas', 'chevron-right']"
-                  />
-                </button>
-              </a>
-            </div>
-          </div>
-        </b-col>
-      </b-row>
-
-      <b-row class="two-cols">
-        <b-col class="b-col" md>
+      <b-row class="project-cols">
+        <b-col
+          class="b-col"
+          cols="12"
+           md="6"
+          v-for="item in projects"
+          :key="item.projectName"
+        >
           <div class="flip" @click="flipProject">
-            <div class="front project-three">
-              <h1 class="text-shadow white-text">Cheez-Meez</h1>
+            <div class="front" :class="item.projectNo">
+              <h1 class="text-shadow white-text">{{ item.projectName }}</h1>
               <img
-                width="170"
+                v-if="!item.isImageComponent"
+                :width="item.imageWidth"
                 class="project-icon"
-                src="../assets/image/cheez-meez.svg"
+                :class="item.animationClass"
+                :src="require(`../assets/image/${item.image}`)"
               />
+              <component
+                v-if="item.isImageComponent"
+                :is="item.componentName"
+              ></component>
             </div>
             <div class="back">
-              <h2 class="dark-text" style="margin-bottom: 20px">Full Stack</h2>
+              <h2 class="dark-text" style="margin-bottom: 20px">
+                {{ item.projectBackTitle }}
+              </h2>
               <p>
-                A Real-Time Chat Application created using ReactJS for
-                Front-End, Node.js and Socket.io for Back-End.
+                {{ item.projectBackDescription }}
               </p>
-              <a
-                href="https://narioalvin.github.io/react-cheez-meez/"
-                target="_blank"
-              >
-                <button class="project-btn">
-                  <font-awesome-icon
-                    class="chevron"
-                    :icon="['fas', 'chevron-right']"
-                  />
-                </button>
-              </a>
-            </div>
-          </div>
-        </b-col>
-        <b-col class="b-col" md>
-          <div class="flip" @click="flipProject">
-            <div class="front project-four">
-              <h1 class="text-shadow white-text">PractQuiz</h1>
-              <img
-                width="140"
-                class="project-icon shake"
-                src="../assets/image/idea.svg"
-              />
-            </div>
-            <div class="back">
-              <h2 class="dark-text" style="margin-bottom: 20px">Vue</h2>
-              <p>
-                A Web Application that you can Practice your memory by taking a
-                Quiz. Created using Vue and Open TB API.
-              </p>
-              <a
-                href="https://narioalvin.github.io/vue-practquiz/"
-                target="_blank"
-              >
+              <a :href="item.projectLink" target="_blank">
                 <button class="project-btn">
                   <font-awesome-icon
                     class="chevron"
@@ -135,6 +55,58 @@ export default {
   components: {
     CloudyDay3,
   },
+  data() {
+    return {
+      projects: [
+        {
+          projectName: 'Weather Vibe',
+          projectBackTitle: 'Vue',
+          projectBackDescription:
+            'A colorful and accurate Weather application with dynamic background and a relaxing music to enjoy the viewing experience. Created using Vue and multiple free public APIs.',
+          projectNo: 'project-one',
+          projectLink: 'https://narioalvin.github.io/weather-vibe/',
+          isImageComponent: true,
+          componentName: 'CloudyDay3',
+        },
+        {
+          projectName: 'Multi-Step Form',
+          projectBackTitle: 'Full Stack',
+          projectBackDescription:
+            'A Multi-Step Registration and Login Form template with complete user authentication and email verification free to use or download anytime. Created using Express for Back-End, MongoDB for Database, and Angular, Vue, React for Front-End.',
+          projectNo: 'project-two',
+          projectLink: 'https://narioalvin.github.io/vue-multi-step-form/#/',
+          image: 'avatar.png',
+          isImageComponent: false,
+          imageWidth: '100',
+          animationClass: 'bounce',
+        },
+        {
+          projectName: 'Cheez-Meez',
+          projectBackTitle: 'Full Stack',
+          projectBackDescription:
+            ' A Real-Time Chat web application created using React, Node.js and Socket.io.',
+          projectNo: 'project-three',
+          projectLink: 'https://narioalvin.github.io/react-cheez-meez/',
+          image: 'cheez-meez.svg',
+          isImageComponent: false,
+          imageWidth: '170',
+          animationClass: 'wobble',
+        },
+        {
+          projectName: 'PractQuiz',
+          projectBackTitle: 'Vue',
+          projectBackDescription:
+            'A Web Application that you can Practice your memory by taking a Quiz. Created using Vue and Open Tivia DB API.',
+          projectNo: 'project-four',
+          projectLink: 'https://narioalvin.github.io/vue-practquiz/',
+          image: 'idea.svg',
+          isImageComponent: false,
+          imageWidth: '130',
+          animationClass: 'hithere',
+        },
+      ],
+    };
+  },
   methods: {
     flipProject() {
       //FOR CLICKING PROJECTS ON MOBILE
@@ -144,6 +116,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@mixin projectBg($firstColor, $secondColor) {
+  background-color: $firstColor !important;
+  background-image: linear-gradient(
+    315deg,
+    $firstColor 0%,
+    $secondColor 74%
+  ) !important;
+}
+
 .project-btn {
   width: 50px;
   height: 50px;
@@ -162,23 +143,19 @@ export default {
 }
 
 .project-one {
-  background-color: #e6c84f !important;
-  background-image: linear-gradient(315deg, #e6c84f 0%, #e8807f 74%) !important;
+  @include projectBg(#e6c84f, #e8807f);
 }
 
 .project-two {
-  background-color: #8d5185 !important;
-  background-image: linear-gradient(315deg, #8d5185 0%, #a1bafe 74%) !important;
+  @include projectBg(#8d5185, #a1bafe);
 }
 
 .project-three {
-  background-color: #d9e4f5 !important;
-  background-image: linear-gradient(315deg, #d9e4f5 0%, #f5e3e6 74%) !important;
+  @include projectBg(#d9e4f5, #f5e3e6);
 }
 
 .project-four {
- background-color: #fff293 !important;
-  background-image: linear-gradient(315deg, #fff293 0%, #ffe884 74%) !important;
+  @include projectBg(#fff293, #ffe884);
 }
 
 .project-icon {
@@ -186,8 +163,7 @@ export default {
   top: 50px;
 }
 
-.two-cols .b-col,
-.three-cols .b-col {
+.project-cols .b-col {
   min-height: 50vh;
   padding: 0;
 }
