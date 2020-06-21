@@ -4,9 +4,9 @@
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
-      viewBox="0 0 60 60"
-      width="140"
-      height="140"
+      viewBox="0 0 50 50"
+      width="160"
+      height="160"
     >
       <defs>
         <filter id="blur" width="200%" height="200%">
