@@ -7,17 +7,19 @@
       <br />
       <div>
         <p class="animated" data-animationtype="up" data-delay=".2s">
-          Now, I'm a Software Web Developer with more than two years of experience building immersive
-          and responsive software, enjoying and learning new languages, frameworks and technologies.
+          Now, I'm a Software Web Developer with more than two years of
+          experience building immersive and responsive software, enjoying and
+          learning new languages, frameworks and technologies.
           <br />
           <br />
           <span class="animated" data-animationtype="up" data-delay=".3s"
-            >I love what I do as much I love my dog and my daily three cups of coffee.</span
+            >I love what I do as much I love my dog and my daily three cups of
+            coffee.</span
           >
         </p>
         <br />
         <div class="animated" data-animationtype="up" data-delay=".4s">
-          <a class="download-btn" :href="`${publicPath}resume.pdf`" download
+          <a class="primary-btn" :href="`${publicPath}resume.pdf`" download
             >DOWNLOAD CV</a
           >
         </div>
@@ -50,27 +52,6 @@ export default {
       line-height: 25px;
       letter-spacing: 0.05rem;
     }
-  }
-}
-
-.download-btn {
-  position: relative;
-  background: #fcfcfc;
-  color: #1a1a1a;
-  font-size: 12px;
-  text-decoration: none;
-  padding: 12px 33px;
-  border-radius: 5px;
-  border: 1px solid #1a1a1a;
-  font-weight: bold;
-  top: 30px;
-  transition: 0.3s;
-
-  &:hover,
-  &:focus {
-    background: #1a1a1a;
-    color: #fcfcfc;
-    text-decoration: none;
   }
 }
 
