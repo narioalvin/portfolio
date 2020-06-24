@@ -5,9 +5,9 @@
         <b-col
           class="b-col"
           cols="12"
-           md="6"
           v-for="item in projects"
           :key="item.projectName"
+          :md="item.size"
         >
           <div class="flip" @click="flipProject">
             <div class="front" :class="item.projectNo">
@@ -67,30 +67,7 @@ export default {
           projectLink: 'https://narioalvin.github.io/weather-vibe/',
           isImageComponent: true,
           componentName: 'CloudyDay3',
-        },
-        {
-          projectName: 'Multi-Step Form',
-          projectBackTitle: 'Full Stack',
-          projectBackDescription:
-            'A Multi-Step Registration and Login Form template with complete user authentication and email verification free to use or download anytime. Created using Express for Back-End, MongoDB for Database, and Angular, Vue, React for Front-End.',
-          projectNo: 'project-two',
-          projectLink: 'https://narioalvin.github.io/vue-multi-step-form/#/',
-          image: 'avatar.png',
-          isImageComponent: false,
-          imageWidth: '100',
-          animationClass: 'bounce',
-        },
-        {
-          projectName: 'Cheez-Meez',
-          projectBackTitle: 'Full Stack',
-          projectBackDescription:
-            ' A Real-Time Chat web application created using React, Node.js and Socket.io.',
-          projectNo: 'project-three',
-          projectLink: 'https://narioalvin.github.io/react-cheez-meez/',
-          image: 'cheez-meez.svg',
-          isImageComponent: false,
-          imageWidth: '170',
-          animationClass: 'wobble',
+          size: '6',
         },
         {
           projectName: 'PractQuiz',
@@ -103,6 +80,46 @@ export default {
           isImageComponent: false,
           imageWidth: '130',
           animationClass: 'hithere',
+          size: '6',
+        },
+        {
+          projectName: 'Multi-Step Form',
+          projectBackTitle: 'Full Stack',
+          projectBackDescription:
+            'A Multi-Step Registration and Login Form template with complete user authentication and email verification free to use or download anytime. Created using Express for Back-End, MongoDB for Database, and Angular, Vue, React for Front-End.',
+          projectNo: 'project-two',
+          projectLink: 'https://narioalvin.github.io/vue-multi-step-form/#/',
+          image: 'avatar.png',
+          isImageComponent: false,
+          imageWidth: '100',
+          animationClass: 'bounce',
+          size: '4',
+        },
+        {
+          projectName: 'Cheez-Meez',
+          projectBackTitle: 'Full Stack',
+          projectBackDescription:
+            ' A Real-Time Chat web application created using React, Node.js and Socket.io.',
+          projectNo: 'project-three',
+          projectLink: 'https://narioalvin.github.io/react-cheez-meez/',
+          image: 'cheez-meez.svg',
+          isImageComponent: false,
+          imageWidth: '170',
+          animationClass: 'swing',
+          size: '4',
+        },
+        {
+          projectName: 'Send Free SMS',
+          projectBackTitle: 'React',
+          projectBackDescription:
+            `A web application that you can send free SMS using Nexmo. Please use it responsibly because my subscription is free and I only have two-dollar credit. :P `,
+          projectNo: 'project-five',
+          projectLink: 'https://narioalvin.github.io/react-send-sms/',
+          image: 'mail.svg',
+          isImageComponent: false,
+          imageWidth: '150',
+          animationClass: 'bounce-in-right',
+          size: '4',
         },
       ],
     };
@@ -156,6 +173,10 @@ export default {
 
 .project-four {
   @include projectBg(#fff293, #ffe884);
+}
+
+.project-five {
+  @include projectBg(#045de9, #09c6f9);
 }
 
 .project-icon {

@@ -14,7 +14,7 @@
       <b-navbar-nav class="ml-auto">
         <b-nav-item
           @click="scrollToSection('about')"
-          class="navAnimation animated"
+          :class="{ 'navAnimation animated': innerWidth > 992 }"
           data-delay="0s"
           >ABOUT</b-nav-item
         >
@@ -38,6 +38,14 @@
 <script>
 export default {
   name: 'Navbar',
+  data() {
+    return {
+      innerWidth: 0
+    }
+  },
+  created() {
+    this.innerWidth = window.innerWidth;
+  },
   mounted() {
     const items = document.querySelectorAll('.navAnimation');
 
