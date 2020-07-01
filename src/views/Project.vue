@@ -44,7 +44,7 @@
         </b-col>
       </b-row>
     </div>
-    <center>
+    <center class="animated" data-animationtype="up" data-delay=".4s">
       <b-button v-if="!loadMoreClicked" @click="loadMore" class="load-more" pill
         >More Projects</b-button
       >
@@ -117,8 +117,8 @@ export default {
       moreProjects: [
         {
           projectName: 'Send Free SMS',
-          projectBackTitle: 'React',
-          projectBackDescription: `A web application that you can send free SMS using Nexmo. Please use it responsibly because my subscription is free and I only have two-dollar credit. :P `,
+          projectBackTitle: 'Full Stack',
+          projectBackDescription: `A web application that you can send free SMS using React, Node.js, and Nexmo API. Please use it responsibly because my subscription is free and I only have two-dollar credit. :P `,
           projectNo: 'project-five',
           projectLink: 'https://narioalvin.github.io/react-send-sms/',
           image: 'mail.svg',
@@ -130,13 +130,25 @@ export default {
         {
           projectName: 'Dev Search',
           projectBackTitle: 'Vue',
-          projectBackDescription: `A web application for Software Developers to search for jobs using GitHub Jobs API.`,
+          projectBackDescription: 'A web application for Software Developers to search for jobs using GitHub Jobs API.',
           projectNo: 'project-six',
           projectLink: 'https://narioalvin.github.io/vue-dev-search/',
           image: 'work.svg',
           isImageComponent: false,
           imageWidth: '100',
           animationClass: 'shake',
+          size: '4',
+        },
+        {
+          projectName: 'Holidays',
+          projectBackTitle: 'Vue',
+          projectBackDescription: 'A web app that let you know about past, current, and future holidays using Calendarific API.',
+          projectNo: 'project-seven',
+          projectLink: 'https://narioalvin.github.io/vue-holidays/',
+          image: 'calendar.svg',
+          isImageComponent: false,
+          imageWidth: '100',
+          animationClass: 'bounce',
           size: '4',
         },
       ],
@@ -206,6 +218,10 @@ export default {
 
 .project-six {
   @include projectBg(#a4508b, #5f0a87);
+}
+
+.project-seven {
+  @include projectBg(#d19592, #c81f70);
 }
 
 .project-icon {
