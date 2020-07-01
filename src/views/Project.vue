@@ -44,6 +44,11 @@
         </b-col>
       </b-row>
     </div>
+    <center class="animated" data-animationtype="up" data-delay=".4s">
+      <b-button v-if="!loadMoreClicked" @click="loadMore" class="load-more" pill
+        >More Projects</b-button
+      >
+    </center>
   </section>
 </template>
 
@@ -93,7 +98,7 @@ export default {
           isImageComponent: false,
           imageWidth: '100',
           animationClass: 'bounce',
-          size: '4',
+          size: '6',
         },
         {
           projectName: 'Cheez-Meez',
@@ -106,13 +111,14 @@ export default {
           isImageComponent: false,
           imageWidth: '170',
           animationClass: 'swing',
-          size: '4',
+          size: '6',
         },
+      ],
+      moreProjects: [
         {
           projectName: 'Send Free SMS',
-          projectBackTitle: 'React',
-          projectBackDescription:
-            `A web application that you can send free SMS using Nexmo. Please use it responsibly because my subscription is free and I only have two-dollar credit. :P `,
+          projectBackTitle: 'Full Stack',
+          projectBackDescription: `A web application that you can send free SMS using React, Node.js, and Nexmo API. Please use it responsibly because my subscription is free and I only have two-dollar credit. :P `,
           projectNo: 'project-five',
           projectLink: 'https://narioalvin.github.io/react-send-sms/',
           image: 'mail.svg',
@@ -121,12 +127,43 @@ export default {
           animationClass: 'bounce-in-right',
           size: '4',
         },
+        {
+          projectName: 'Dev Search',
+          projectBackTitle: 'Vue',
+          projectBackDescription: 'A web application for Software Developers to search for jobs using GitHub Jobs API.',
+          projectNo: 'project-six',
+          projectLink: 'https://narioalvin.github.io/vue-dev-search/',
+          image: 'work.svg',
+          isImageComponent: false,
+          imageWidth: '100',
+          animationClass: 'shake',
+          size: '4',
+        },
+        {
+          projectName: 'Holidays',
+          projectBackTitle: 'Vue',
+          projectBackDescription: 'A web app that let you know about past, current, and future holidays using Calendarific API.',
+          projectNo: 'project-seven',
+          projectLink: 'https://narioalvin.github.io/vue-holidays/',
+          image: 'calendar.svg',
+          isImageComponent: false,
+          imageWidth: '100',
+          animationClass: 'bounce',
+          size: '4',
+        },
       ],
+      loadMoreClicked: false
     };
   },
   methods: {
     flipProject() {
       //FOR CLICKING PROJECTS ON MOBILE
+    },
+    loadMore() {
+      this.loadMoreClicked = true;
+      this.moreProjects.forEach(project => {
+        this.projects.push(project);
+      });
     },
   },
 };
@@ -179,6 +216,14 @@ export default {
   @include projectBg(#045de9, #09c6f9);
 }
 
+.project-six {
+  @include projectBg(#a4508b, #5f0a87);
+}
+
+.project-seven {
+  @include projectBg(#d19592, #c81f70);
+}
+
 .project-icon {
   position: relative;
   top: 50px;
@@ -191,6 +236,7 @@ export default {
 
 .flip {
   position: relative;
+  transition: 4s;
   > .front,
   > .back {
     display: block;
@@ -254,6 +300,21 @@ export default {
       line-height: 160%;
       color: #202020;
     }
+  }
+}
+
+.load-more {
+  width: 150px;
+  background: #d9d9d9;
+  color: #202020;
+  border: 0;
+  font-size: 14px;
+  margin-top: 30px;
+  height: 40px;
+
+  &:hover {
+    background: #202020;
+    color: #ffffff;
   }
 }
 </style>
