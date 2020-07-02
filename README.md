@@ -1,5 +1,8 @@
 # todo-app
 
+## Live
+[Click Me](https://narioalvin.github.io/portfolio/)
+
 ## Project setup
 ```
 npm install
