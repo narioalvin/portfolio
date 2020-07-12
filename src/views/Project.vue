@@ -130,7 +130,8 @@ export default {
         {
           projectName: 'Dev Search',
           projectBackTitle: 'Vue',
-          projectBackDescription: 'A web application for Software Developers to search for jobs using GitHub Jobs API.',
+          projectBackDescription:
+            'A web application for Software Developers to search for jobs using GitHub Jobs API.',
           projectNo: 'project-six',
           projectLink: 'https://narioalvin.github.io/vue-dev-search/',
           image: 'work.svg',
@@ -142,7 +143,8 @@ export default {
         {
           projectName: 'Holidays',
           projectBackTitle: 'Vue',
-          projectBackDescription: 'A web app that let you know about past, current, and future holidays using Calendarific API.',
+          projectBackDescription:
+            'A web app that let you know about past, current, and future holidays using Calendarific API.',
           projectNo: 'project-seven',
           projectLink: 'https://narioalvin.github.io/vue-holidays/',
           image: 'calendar.svg',
@@ -151,8 +153,34 @@ export default {
           animationClass: 'bounce',
           size: '4',
         },
+        {
+          projectName: 'The Daily News',
+          projectBackTitle: 'Vue',
+          projectBackDescription:
+            'A web app that collects the news in your country from various sources using Currents API.',
+          projectNo: 'project-eight',
+          projectLink: 'https://narioalvin.github.io/vue-the-daily-news/',
+          image: 'news-white.svg',
+          isImageComponent: false,
+          imageWidth: '100',
+          animationClass: 'swing',
+          size: '4',
+        },
+        {
+          projectName: 'Recipes',
+          projectBackTitle: 'Vue',
+          projectBackDescription:
+            'A web app with lots of recipes to choose from using Edamam API.',
+          projectNo: 'project-nine',
+          projectLink: 'https://narioalvin.github.io/vue-recipes/',
+          image: 'recipe.svg',
+          isImageComponent: false,
+          imageWidth: '100',
+          animationClass: 'hithere',
+          size: '4',
+        },
       ],
-      loadMoreClicked: false
+      loadMoreClicked: false,
     };
   },
   methods: {
@@ -161,7 +189,7 @@ export default {
     },
     loadMore() {
       this.loadMoreClicked = true;
-      this.moreProjects.forEach(project => {
+      this.moreProjects.forEach((project) => {
         this.projects.push(project);
       });
     },
@@ -222,6 +250,14 @@ export default {
 
 .project-seven {
   @include projectBg(#d19592, #c81f70);
+}
+
+.project-eight {
+  @include projectBg(#39375b, #383e56);
+}
+
+.project-nine {
+  @include projectBg(#feb618, #febe34);
 }
 
 .project-icon {
