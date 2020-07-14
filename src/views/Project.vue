@@ -101,15 +101,15 @@ export default {
           size: '6',
         },
         {
-          projectName: 'Cheez-Meez',
+          projectName: 'CheezMeez',
           projectBackTitle: 'Full Stack',
           projectBackDescription:
-            ' A Real-Time Chat web application created using React, Node.js and Socket.io.',
+            ' A Real-Time Chat web application created using React for Front-End, Node.js and Socket.io for Back-End.',
           projectNo: 'project-three',
           projectLink: 'https://narioalvin.github.io/react-cheez-meez/',
-          image: 'cheez-meez.svg',
+          image: 'chat.svg',
           isImageComponent: false,
-          imageWidth: '170',
+          imageWidth: '100',
           animationClass: 'swing',
           size: '6',
         },
@@ -118,7 +118,7 @@ export default {
         {
           projectName: 'Send Free SMS',
           projectBackTitle: 'Full Stack',
-          projectBackDescription: `A web application that you can send free SMS using React, Node.js, and Nexmo API. Please use it responsibly because my subscription is free and I only have two-dollar credit. :P `,
+          projectBackDescription: `A web application that you can send free SMS using React for Front-End, Node.js for Back-End, and Nexmo API. Please use it responsibly because my subscription is free and I only have two-dollar credit. :P `,
           projectNo: 'project-five',
           projectLink: 'https://narioalvin.github.io/react-send-sms/',
           image: 'mail.svg',
@@ -233,7 +233,7 @@ export default {
 }
 
 .project-three {
-  @include projectBg(#d9e4f5, #f5e3e6);
+  @include projectBg(#4d4c7d, #363062);
 }
 
 .project-four {
