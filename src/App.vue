@@ -79,10 +79,6 @@ h6 {
   padding: 0 15px;
 }
 
-.full-height {
-  height: 100vh;
-}
-
 .flex {
   display: flex;
   justify-content: center;
@@ -120,6 +116,15 @@ section {
     color: #fcfcfc;
     text-decoration: none;
   }
+}
+
+.navbar-light .navbar-toggler {
+  border-color: transparent;
+  padding: 0;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(0, 0, 0, 0.7)
 }
 
 .animated {
@@ -381,36 +386,6 @@ section {
   }
   100% {
     transform: translateX(0);
-  }
-}
-
-@media only screen and (min-width: 360px) and (max-width: 812px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
-  .home {
-    height: 93vh;
-    margin: 70px 0;
-  }
-
-  #home {
-    margin-bottom: 210px;
-  }
-
-  #about {
-    margin-bottom: 200px;
-  }
-
-  .back,
-  .front {
-    height: 100vh !important;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .about {
-    div {
-      p {
-        font-size: 18px !important;
-      }
-    }
   }
 }
 </style>
