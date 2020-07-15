@@ -1,5 +1,5 @@
 <template>
-  <section id="projects">
+  <section id="projects" class="projects">
     <div class="animated" data-animationtype="up" data-delay=".3s">
       <b-row class="project-cols">
         <b-col
@@ -7,7 +7,7 @@
           cols="12"
           v-for="item in projects"
           :key="item.projectName"
-          :md="item.size"
+          :lg="item.size"
         >
           <div class="flip" @click="flipProject">
             <div class="front" :class="item.projectNo">
@@ -207,6 +207,12 @@ export default {
   ) !important;
 }
 
+.projects {
+  position: relative;
+  top: 40px;
+  margin-bottom: 40px;
+}
+
 .project-btn {
   width: 50px;
   height: 50px;
@@ -325,12 +331,10 @@ export default {
   > .back {
     display: block;
     width: inherit;
-    background-size: cover !important;
-    background-position: center !important;
-    height: 50vh;
     padding: 1em 2em;
+    height: 50vh;
+    min-height: 300px;
     background-color: #f6f6f6;
-    background-image: linear-gradient(315deg, #f6f6f6 0%, #e9e9e9 74%);
     p {
       font-size: 0.9125rem;
       line-height: 160%;

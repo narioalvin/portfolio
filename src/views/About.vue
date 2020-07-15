@@ -43,6 +43,14 @@ export default {
 .about {
   text-align: center;
   flex-direction: column;
+  margin: 60px 0;
+
+  .intro {
+    line-height: 1.6em;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
 
   div {
     max-width: 560px;
@@ -55,9 +63,17 @@ export default {
   }
 }
 
-.intro {
-  font-size: 3vw;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+@media (min-width: 992px) {
+  .about {
+    height: 100vh;
+
+    .intro {
+      font-size: 32px;
+    }
+
+    div p {
+      font-size: 18px;
+    }
+  }
 }
 </style>
