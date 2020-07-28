@@ -1,6 +1,6 @@
 <template>
-  <section class="full-height flex p-40" id="about">
-    <div class="about flex">
+  <section class="about flex p-40" id="about">
+    <div class="about-content flex">
       <h4 class="intro animated" data-animationtype="up" data-delay="0s">
         <b>It all started with one 'Hello World!'</b>
       </h4>
@@ -41,30 +41,39 @@ export default {
 
 <style lang="scss" scope>
 .about {
-  text-align: center;
-  flex-direction: column;
-  margin: 60px 0;
+  height: 100vh;
+  .about-content {
+    text-align: center;
+    flex-direction: column;
+    margin: 60px 0;
 
-  .intro {
-    line-height: 1.6em;
-    font-size: 18px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
+    .intro {
+      line-height: 1.6em;
+      font-size: 18px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
 
-  div {
-    max-width: 560px;
-    p {
-      font-weight: 600;
-      font-size: 15px;
-      line-height: 25px;
-      letter-spacing: 0.05rem;
+    div {
+      max-width: 560px;
+      p {
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 25px;
+        letter-spacing: 0.05rem;
+      }
     }
   }
 }
 
+@media (min-width: 400px) {
+  .about .about-content .intro {
+    font-size: 23px;
+  }
+}
+
 @media (min-width: 992px) {
-  .about {
+  .about .about-content {
     height: 100vh;
 
     .intro {
