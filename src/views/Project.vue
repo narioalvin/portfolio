@@ -92,7 +92,7 @@ export default {
           projectName: 'CheezMeez',
           projectBackTitle: 'Full Stack',
           projectBackDescription:
-            ' A Real-Time Chat Web Application created using React for Front-End, Node.js and Socket.io for Back-End.',
+            'A Real-Time Chat Web Application created using React for Front-End, Node.js and Socket.io for Back-End.',
           projectNo: 'project-three',
           projectLink: 'https://narioalvin.github.io/react-cheez-meez/',
           image: 'chat.svg',
