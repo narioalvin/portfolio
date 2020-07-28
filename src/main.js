@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import App from './App.vue';
-// import router from './router';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
@@ -38,17 +37,8 @@ Vue.component('b-navbar-brand', BNavbarBrand);
 
 Vue.component('CloudyDay3', CloudyDay3);
 
-// Vue.component('my-component', {
-//   components: {
-//     'b-container': BContainer,
-//     'b-row': BRow,
-//     'b-col': BCol
-//   }
-// })
-
 Vue.config.productionTip = false;
 
 new Vue({
-  // router,
   render: (h) => h(App),
 }).$mount('#app');

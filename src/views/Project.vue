@@ -67,7 +67,7 @@ export default {
           projectName: 'Weather Vibe',
           projectBackTitle: 'Vue',
           projectBackDescription:
-            'A colorful and accurate Weather application with dynamic background and a relaxing music to enjoy the viewing experience. Created using Vue and multiple free public APIs.',
+            'A colorful and accurate Weather Web Application with dynamic background and a relaxing music to enjoy the viewing experience. Created using Vue for Front-End and multiple free Public APIs to get the exact location and weather.',
           projectNo: 'project-one',
           projectLink: 'https://narioalvin.github.io/weather-vibe/',
           isImageComponent: true,
@@ -75,26 +75,14 @@ export default {
           size: '6',
         },
         {
-          projectName: 'PractQuiz',
-          projectBackTitle: 'Vue',
-          projectBackDescription:
-            'A Web Application that you can Practice your memory by taking a Quiz. Created using Vue and Open Tivia DB API.',
-          projectNo: 'project-four',
-          projectLink: 'https://narioalvin.github.io/vue-practquiz/',
-          image: 'idea.svg',
-          isImageComponent: false,
-          imageWidth: '130',
-          animationClass: 'hithere',
-          size: '6',
-        },
-        {
-          projectName: 'Multi-Step Form',
+          projectName: 'Personal Expense Tracker',
           projectBackTitle: 'Full Stack',
           projectBackDescription:
-            'A Multi-Step Registration and Login Form template with complete user authentication and email verification free to use or download anytime. Created using Express for Back-End, MongoDB for Database, and Angular, Vue, React for Front-End.',
+            'A Personal Expense Tracker Web Application that allows you to monitor your spending pattern. Created using Vue for Front-End, Node.js for Back-End, and MongoDB for Database.',
           projectNo: 'project-two',
-          projectLink: 'https://narioalvin.github.io/vue-multi-step-form/#/',
-          image: 'avatar.png',
+          projectLink:
+            'https://narioalvin.github.io/vue-personal-expense-tracker/',
+          image: 'expense-tracker.svg',
           isImageComponent: false,
           imageWidth: '100',
           animationClass: 'bounce',
@@ -104,7 +92,7 @@ export default {
           projectName: 'CheezMeez',
           projectBackTitle: 'Full Stack',
           projectBackDescription:
-            ' A Real-Time Chat web application created using React for Front-End, Node.js and Socket.io for Back-End.',
+            ' A Real-Time Chat Web Application created using React for Front-End, Node.js and Socket.io for Back-End.',
           projectNo: 'project-three',
           projectLink: 'https://narioalvin.github.io/react-cheez-meez/',
           image: 'chat.svg',
@@ -113,12 +101,25 @@ export default {
           animationClass: 'swing',
           size: '6',
         },
+        {
+          projectName: 'PractQuiz',
+          projectBackTitle: 'Vue',
+          projectBackDescription:
+            'A Web Application Trivia Game that you can Practice your memory by taking a Quiz. Created using Vue and Open Trivia DB API.',
+          projectNo: 'project-four',
+          projectLink: 'https://narioalvin.github.io/vue-practquiz/',
+          image: 'idea.svg',
+          isImageComponent: false,
+          imageWidth: '130',
+          animationClass: 'hithere',
+          size: '6',
+        },
       ],
       moreProjects: [
         {
           projectName: 'Send Free SMS',
           projectBackTitle: 'Full Stack',
-          projectBackDescription: `A web application that you can send free SMS using React for Front-End, Node.js for Back-End, and Nexmo API. Please use it responsibly because my subscription is free and I only have two-dollar credit. :P `,
+          projectBackDescription: `A simple Web Application that you can send free SMS using React for Front-End, Node.js for Back-End, and Nexmo API. Please use it responsibly because my subscription is free and I only have two-dollar credit. :P `,
           projectNo: 'project-five',
           projectLink: 'https://narioalvin.github.io/react-send-sms/',
           image: 'mail.svg',
@@ -131,7 +132,7 @@ export default {
           projectName: 'Dev Search',
           projectBackTitle: 'Vue',
           projectBackDescription:
-            'A web application for Software Developers to search for jobs using GitHub Jobs API.',
+            'A Web Application for Software Developers to search for jobs using GitHub Jobs API.',
           projectNo: 'project-six',
           projectLink: 'https://narioalvin.github.io/vue-dev-search/',
           image: 'work.svg',
@@ -144,7 +145,7 @@ export default {
           projectName: 'Holidays',
           projectBackTitle: 'Vue',
           projectBackDescription:
-            'A web app that let you know about past, current, and future holidays using Calendarific API.',
+            'A Web Application for past, current, and future holidays with over 230 countries, 3,300+ states and 100+ languages using Calendarific API.',
           projectNo: 'project-seven',
           projectLink: 'https://narioalvin.github.io/vue-holidays/',
           image: 'calendar.svg',
@@ -157,7 +158,7 @@ export default {
           projectName: 'The Daily News',
           projectBackTitle: 'Vue',
           projectBackDescription:
-            'A web app that collects the news in your country from various sources using Currents API.',
+            'A Web Application that collects the news in your country from various sources using Currents API.',
           projectNo: 'project-eight',
           projectLink: 'https://narioalvin.github.io/vue-the-daily-news/',
           image: 'news-white.svg',
@@ -170,13 +171,26 @@ export default {
           projectName: 'Recipes',
           projectBackTitle: 'Vue',
           projectBackDescription:
-            'A web app with lots of recipes to choose from using Edamam API.',
+            'A Web Application with lots of recipes to choose from using Edamam API.',
           projectNo: 'project-nine',
           projectLink: 'https://narioalvin.github.io/vue-recipes/',
           image: 'recipe.svg',
           isImageComponent: false,
           imageWidth: '100',
           animationClass: 'hithere',
+          size: '4',
+        },
+        {
+          projectName: 'Multi-Step Form',
+          projectBackTitle: 'Full Stack',
+          projectBackDescription:
+            'A Multi-Step Registration and Login Form template with complete user authentication and email verification free to use or download anytime. Created using Express for Back-End, MongoDB for Database, and Angular, Vue, React for Front-End.',
+          projectNo: 'project-ten',
+          projectLink: 'https://narioalvin.github.io/vue-multi-step-form/#/',
+          image: 'avatar.png',
+          isImageComponent: false,
+          imageWidth: '100',
+          animationClass: 'gelatine',
           size: '4',
         },
       ],
@@ -235,7 +249,7 @@ export default {
 }
 
 .project-two {
-  @include projectBg(#8d5185, #a1bafe);
+  @include projectBg(#fc5296, #f67062);
 }
 
 .project-three {
@@ -266,9 +280,8 @@ export default {
   @include projectBg(#feb618, #febe34);
 }
 
-.project-icon {
-  position: relative;
-  top: 50px;
+.project-ten {
+  @include projectBg(#8d5185, #a1bafe);
 }
 
 .project-cols .b-col {
@@ -329,7 +342,10 @@ export default {
   width: 100%;
   > .front,
   > .back {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
     width: inherit;
     padding: 1em 2em;
     height: 50vh;
@@ -355,6 +371,13 @@ export default {
   &:hover {
     background: #202020;
     color: #ffffff;
+  }
+}
+
+@media (max-width: 360px) {
+  h1,
+  h2 {
+    font-size: 30px;
   }
 }
 </style>
