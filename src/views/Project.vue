@@ -1,12 +1,16 @@
 <template>
   <section id="projects" class="projects">
-    <div class="animated" data-animationtype="up" data-delay=".3s">
+    <center v-if="loading && ipInfo === null">
+      <b-spinner></b-spinner>
+    </center>
+    <center v-else-if="error !== ''">{{ error }}</center>
+    <div v-else>
       <b-row class="project-cols">
         <b-col
           class="b-col"
           cols="12"
-          v-for="item in projects"
-          :key="item.projectName"
+          v-for="(item, index) in projects"
+          :key="index"
           :lg="item.size"
         >
           <div class="flip" @click="flipProject">
@@ -31,7 +35,7 @@
               <p>
                 {{ item.projectBackDescription }}
               </p>
-              <a :href="item.projectLink" target="_blank">
+              <a :href="item.projectLink" target="_blank" class="mb-3">
                 <button class="project-btn">
                   <font-awesome-icon
                     class="chevron"
@@ -39,21 +43,69 @@
                   />
                 </button>
               </a>
+
+              <div class="like-section">
+                <font-awesome-icon
+                  v-if="item.likes.includes(ipInfo.ip)"
+                  @click="likeProject(item, 'unlike', index)"
+                  class="liked-heart mr-2"
+                  :icon="['fas', 'heart']"
+                />
+
+                <font-awesome-icon
+                  v-else
+                  @click="likeProject(item, 'like', index)"
+                  class="unlike-heart mr-2"
+                  :icon="['far', 'heart']"
+                />
+                <span>{{ item.likes.length }}</span>
+              </div>
             </div>
           </div>
         </b-col>
       </b-row>
+      <center>
+        <b-button
+          v-if="!loadMoreClicked"
+          @click="loadMore"
+          class="load-more"
+          pill
+          >More Projects</b-button
+        >
+      </center>
     </div>
-    <center class="animated" data-animationtype="up" data-delay=".4s">
-      <b-button v-if="!loadMoreClicked" @click="loadMore" class="load-more" pill
-        >More Projects</b-button
-      >
-    </center>
+    <b-modal
+      ref="like-modal"
+      id="modal-center"
+      size="sm"
+      hide-footer
+      hide-header
+      centered
+    >
+      <div v-if="likedProject">
+        <center>
+          <h6 class="my-4">
+            I really appreciate it!
+            <font-awesome-icon class="heart ml-1" :icon="['fas', 'heart']" />
+          </h6>
+        </center>
+      </div>
+      <div v-else>
+        <center>
+          <h6 class="my-4">
+            I'll keep on improving!
+            <font-awesome-icon class="smiley ml-1" :icon="['far', 'smile']" />
+          </h6>
+        </center>
+      </div>
+    </b-modal>
   </section>
 </template>
 
 <script>
 import CloudyDay3 from '@/components/CloudyDay3.vue';
+import ProjectService from '../service/ProjectService';
+import axios from 'axios';
 
 export default {
   name: 'Project',
@@ -62,142 +114,55 @@ export default {
   },
   data() {
     return {
-      projects: [
-        {
-          projectName: 'Weather Vibe',
-          projectBackTitle: 'Vue',
-          projectBackDescription:
-            'A colorful and accurate Weather Web Application with dynamic background and a relaxing music to enjoy the viewing experience. Created using Vue for Front-End and multiple free Public APIs to get the exact location and weather.',
-          projectNo: 'project-one',
-          projectLink: 'https://narioalvin.github.io/weather-vibe/',
-          isImageComponent: true,
-          componentName: 'CloudyDay3',
-          size: '6',
-        },
-        {
-          projectName: 'Personal Expense Tracker',
-          projectBackTitle: 'Full Stack',
-          projectBackDescription:
-            'A Personal Expense Tracker Web Application that allows you to monitor your spending pattern. Created using Vue for Front-End, Node.js for Back-End, and MongoDB for Database.',
-          projectNo: 'project-two',
-          projectLink:
-            'https://narioalvin.github.io/vue-personal-expense-tracker/',
-          image: 'expense-tracker.svg',
-          isImageComponent: false,
-          imageWidth: '100',
-          animationClass: 'bounce',
-          size: '6',
-        },
-        {
-          projectName: 'CheezMeez',
-          projectBackTitle: 'Full Stack',
-          projectBackDescription:
-            'A Real-Time Chat Web Application created using React for Front-End, Node.js and Socket.io for Back-End.',
-          projectNo: 'project-three',
-          projectLink: 'https://narioalvin.github.io/react-cheez-meez/',
-          image: 'chat.svg',
-          isImageComponent: false,
-          imageWidth: '100',
-          animationClass: 'swing',
-          size: '6',
-        },
-        {
-          projectName: 'PractQuiz',
-          projectBackTitle: 'Vue',
-          projectBackDescription:
-            'A Web Application Trivia Game that you can Practice your memory by taking a Quiz. Created using Vue and Open Trivia DB API.',
-          projectNo: 'project-four',
-          projectLink: 'https://narioalvin.github.io/vue-practquiz/',
-          image: 'idea.svg',
-          isImageComponent: false,
-          imageWidth: '130',
-          animationClass: 'hithere',
-          size: '6',
-        },
-      ],
-      moreProjects: [
-        {
-          projectName: 'Send Free SMS',
-          projectBackTitle: 'Full Stack',
-          projectBackDescription: `A simple Web Application that you can send free SMS using React for Front-End, Node.js for Back-End, and Nexmo API. Please use it responsibly because my subscription is free and I only have two-dollar credit. :P `,
-          projectNo: 'project-five',
-          projectLink: 'https://narioalvin.github.io/react-send-sms/',
-          image: 'mail.svg',
-          isImageComponent: false,
-          imageWidth: '150',
-          animationClass: 'bounce-in-right',
-          size: '4',
-        },
-        {
-          projectName: 'Dev Search',
-          projectBackTitle: 'Vue',
-          projectBackDescription:
-            'A Web Application for Software Developers to search for jobs using GitHub Jobs API.',
-          projectNo: 'project-six',
-          projectLink: 'https://narioalvin.github.io/vue-dev-search/',
-          image: 'work.svg',
-          isImageComponent: false,
-          imageWidth: '100',
-          animationClass: 'shake',
-          size: '4',
-        },
-        {
-          projectName: 'Holidays',
-          projectBackTitle: 'Vue',
-          projectBackDescription:
-            'A Web Application for past, current, and future holidays with over 230 countries, 3,300+ states and 100+ languages using Calendarific API.',
-          projectNo: 'project-seven',
-          projectLink: 'https://narioalvin.github.io/vue-holidays/',
-          image: 'calendar.svg',
-          isImageComponent: false,
-          imageWidth: '100',
-          animationClass: 'bounce',
-          size: '4',
-        },
-        {
-          projectName: 'The Daily News',
-          projectBackTitle: 'Vue',
-          projectBackDescription:
-            'A Web Application that collects the news in your country from various sources using Currents API.',
-          projectNo: 'project-eight',
-          projectLink: 'https://narioalvin.github.io/vue-the-daily-news/',
-          image: 'news-white.svg',
-          isImageComponent: false,
-          imageWidth: '100',
-          animationClass: 'swing',
-          size: '4',
-        },
-        {
-          projectName: 'Recipes',
-          projectBackTitle: 'Vue',
-          projectBackDescription:
-            'A Web Application with lots of recipes to choose from using Edamam API.',
-          projectNo: 'project-nine',
-          projectLink: 'https://narioalvin.github.io/vue-recipes/',
-          image: 'recipe.svg',
-          isImageComponent: false,
-          imageWidth: '100',
-          animationClass: 'hithere',
-          size: '4',
-        },
-        {
-          projectName: 'Multi-Step Form',
-          projectBackTitle: 'Full Stack',
-          projectBackDescription:
-            'A Multi-Step Registration and Login Form template with complete user authentication and email verification free to use or download anytime. Created using Express for Back-End, MongoDB for Database, and Angular, Vue, React for Front-End.',
-          projectNo: 'project-ten',
-          projectLink: 'https://narioalvin.github.io/vue-multi-step-form/#/',
-          image: 'avatar.png',
-          isImageComponent: false,
-          imageWidth: '100',
-          animationClass: 'gelatine',
-          size: '4',
-        },
-      ],
+      projects: [],
+      moreProjects: [],
       loadMoreClicked: false,
+      ipInfo: JSON.parse(localStorage.getItem('ipInfo')) || null,
+      ipDataKey: process.env.VUE_APP_IPDATAKEY,
+      loading: true,
+      error: '',
+      index: 0,
+      likedProject: null,
     };
   },
+  created() {
+    if (this.ipInfo === null) {
+      this.getIpAddress();
+    }
+    this.getProjects();
+  },
   methods: {
+    getIpAddress() {
+      axios
+        .get(`https://ipinfo.io/json?token=${this.ipDataKey}`)
+        .then((response) => {
+          this.ipInfo = response.data;
+          localStorage.setItem('ipInfo', JSON.stringify(this.ipInfo));
+        })
+        .catch((error) => {
+          this.loading = false;
+          this.error = error;
+        });
+    },
+    getProjects() {
+      ProjectService.getProjects()
+        .then((response) => {
+          const projects = response.data;
+
+          if (this.index > 3) {
+            this.projects = projects;
+          } else {
+            this.projects = projects.slice(0, 4);
+            this.moreProjects = projects.slice(4, projects.length);
+          }
+
+          this.loading = false;
+        })
+        .catch((error) => {
+          this.loading = false;
+          this.error = error;
+        });
+    },
     flipProject() {
       //FOR CLICKING PROJECTS ON MOBILE
     },
@@ -206,6 +171,32 @@ export default {
       this.moreProjects.forEach((project) => {
         this.projects.push(project);
       });
+    },
+    likeProject(project, state, index) {
+      this.index = index;
+
+      const value = {
+        projectId: project._id,
+        ip: this.ipInfo.ip,
+      };
+
+      if (state === 'like') {
+        this.likedProject = true;
+        ProjectService.like(value).then(() => {
+          this.getProjects();
+        });
+      } else {
+        this.likedProject = false;
+        ProjectService.unlike(value).then(() => {
+          this.getProjects();
+        });
+      }
+
+      this.$refs['like-modal'].show();
+
+      setTimeout(() => {
+        this.$refs['like-modal'].hide();
+      }, 2500);
     },
   },
 };
@@ -310,6 +301,26 @@ export default {
     width: 100%;
     height: 100%;
     transform: rotateY(-180deg);
+
+    .like-section {
+      svg {
+        font-size: 22px;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+
+      .liked-heart {
+        color: #e8505b;
+      }
+
+      span {
+        font-size: 17px;
+        font-weight: bold;
+      }
+    }
   }
   &:hover {
     > .front {
@@ -378,6 +389,10 @@ export default {
   h1,
   h2 {
     font-size: 30px;
+  }
+
+  p {
+    font-size: 13px !important;
   }
 }
 </style>

@@ -66,4 +66,18 @@ body {
 .app {
   background: #f2f2f2;
 }
+
+.modal {
+  h6 {
+    font-size: 20px;
+  }
+
+  .heart {
+    color: #e8505b;
+  }
+
+  .smiley {
+    color: #f3c623;
+  }
+}
 </style>

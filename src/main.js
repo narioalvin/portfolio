@@ -18,6 +18,7 @@ import {
   BCollapse,
   BNavbarNav,
   BNavItem,
+  BModal,
 } from 'bootstrap-vue';
 
 library.add(fas, fab, far);
@@ -34,6 +35,7 @@ Vue.component('b-navbar-nav', BNavbarNav);
 Vue.component('b-nav-item', BNavItem);
 Vue.component('b-navbar-toggle', BNavbarToggle);
 Vue.component('b-navbar-brand', BNavbarBrand);
+Vue.component('b-modal', BModal);
 
 Vue.component('CloudyDay3', CloudyDay3);
 
