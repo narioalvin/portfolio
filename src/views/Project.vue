@@ -1,6 +1,11 @@
 <template>
   <section id="projects" class="projects">
-    <center v-if="loading && ipInfo === null">
+    <center v-if="loading || ipinfo != null">
+      <div class="font-weight-bold mb-3">
+        <h6>
+          Getting projects from database
+        </h6>
+      </div>
       <b-spinner></b-spinner>
     </center>
     <center v-else-if="error !== ''">{{ error }}</center>
@@ -64,11 +69,11 @@
           </div>
         </b-col>
       </b-row>
-      <center>
+      <center v-if="!loading">
         <b-button
           v-if="!loadMoreClicked"
           @click="loadMore"
-          class="load-more"
+          class="load-more font-weight-bold"
           pill
           >More Projects</b-button
         >
