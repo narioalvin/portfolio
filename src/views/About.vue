@@ -7,14 +7,13 @@
       <br />
       <div>
         <p class="animated" data-animationtype="up" data-delay=".2s">
-          Now, I'm a Software Web Developer with more than two years of
+          Now, I'm a Software Web Developer with more than three years of
           experience building immersive and responsive software, enjoying and
           learning new languages, frameworks and technologies.
           <br />
           <br />
           <span class="animated" data-animationtype="up" data-delay=".3s"
-            >I love what I do as much I love my dog and my daily three cups of
-            coffee.</span
+            >I love what I do as much I love my dog and my coffee.</span
           >
         </p>
         <br />

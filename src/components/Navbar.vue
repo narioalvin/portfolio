@@ -40,8 +40,8 @@ export default {
   name: 'Navbar',
   data() {
     return {
-      innerWidth: 0
-    }
+      innerWidth: 0,
+    };
   },
   created() {
     this.innerWidth = window.innerWidth;
@@ -79,6 +79,10 @@ export default {
 
   .nav-logo {
     width: 45px;
+  }
+
+  a.nav-link:hover {
+    opacity: 0.8;
   }
 }
 </style>
