@@ -21,7 +21,7 @@
         </feMerge>
       </filter>
     </defs>
-    <g filter="url(#blur)" id="cloudy-day-3">
+    <g filter="url(#blur)" id="cloudy-day">
       <g transform="translate(20,10)">
         <g transform="translate(0,16)">
           <g class="am-weather-sun">
@@ -156,7 +156,7 @@
 
 <script>
 export default {
-  name: 'CloudyDay3',
+  name: 'CloudyDay',
 };
 </script>
 

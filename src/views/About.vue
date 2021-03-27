@@ -19,7 +19,7 @@
         <br />
         <div class="animated" data-animationtype="up" data-delay=".4s">
           <a class="primary-btn" :href="`${publicPath}resume.pdf`" download
-            >DOWNLOAD CV</a
+            >Download CV</a
           >
         </div>
       </div>

@@ -1,6 +1,6 @@
 <template>
   <section id="projects" class="projects">
-    <center v-if="loading || ipinfo != null">
+    <center v-if="loading || !ipInfo">
       <div class="font-weight-bold mb-3">
         <h6>
           Getting projects from database
@@ -70,13 +70,11 @@
         </b-col>
       </b-row>
       <center v-if="!loading">
-        <b-button
+        <button
           v-if="!loadMoreClicked"
           @click="loadMore"
-          class="load-more font-weight-bold"
-          pill
-          >More Projects</b-button
-        >
+          class="primary-btn"
+        >More Projects</button>
       </center>
     </div>
     <b-modal
@@ -90,7 +88,7 @@
       <div v-if="likedProject">
         <center>
           <h6 class="my-4">
-            I really appreciate it!
+            Appreciate it!
             <font-awesome-icon class="heart ml-1" :icon="['fas', 'heart']" />
           </h6>
         </center>
@@ -108,14 +106,14 @@
 </template>
 
 <script>
-import CloudyDay3 from '@/components/CloudyDay3.vue';
+import CloudyDay from '@/assets/svg/CloudyDay.vue';
 import ProjectService from '../service/ProjectService';
 import axios from 'axios';
 
 export default {
   name: 'Project',
   components: {
-    CloudyDay3,
+    CloudyDay,
   },
   data() {
     return {
@@ -372,21 +370,6 @@ export default {
       line-height: 160%;
       color: #202020;
     }
-  }
-}
-
-.load-more {
-  width: 150px;
-  background: #d9d9d9;
-  color: #202020;
-  border: 0;
-  font-size: 14px;
-  margin-top: 30px;
-  height: 40px;
-
-  &:hover {
-    background: #202020;
-    color: #ffffff;
   }
 }
 
