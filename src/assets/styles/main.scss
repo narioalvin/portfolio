@@ -37,17 +37,17 @@ section {
 
 .primary-btn {
   position: relative;
+  font-size: 14px;
   background: #d9d9d9;
   color: #1a1a1a;
-  font-size: 12px;
   text-decoration: none;
   padding: 12px 33px;
   border-radius: 25px;
-  font-weight: 600;
   top: 30px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
   font-weight: bold;
+  border: 0;
 
   &:hover,
   &:focus {

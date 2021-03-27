@@ -6,11 +6,8 @@
         data-delay="0s"
         src="../assets/image/logo.png"
     /></b-navbar-brand>
-
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-
     <b-collapse id="nav-collapse" is-nav>
-      <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
         <b-nav-item
           @click="scrollToSection('about')"
