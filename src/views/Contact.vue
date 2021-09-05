@@ -5,7 +5,7 @@
     </h3>
     <div class="project animated" data-animationtype="up" data-delay=".4s">
       <font-awesome-icon class="contact-icon" :icon="['fas', 'phone']" />
-      <h2>09295122417</h2>
+      <h2>+639052322714</h2>
     </div>
     <div class="project animated" data-animationtype="up" data-delay=".5s">
       <font-awesome-icon class="contact-icon" :icon="['fas', 'paper-plane']" />

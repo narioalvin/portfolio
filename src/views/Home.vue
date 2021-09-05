@@ -5,7 +5,7 @@
       <Intro />
     </section>
     <About />
-    <Project />
+    <Projects />
     <Contact />
     <Footer />
   </div>
@@ -16,7 +16,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Intro from './Intro';
 import About from './About';
-import Project from './Project';
+import Projects from './Projects';
 import Contact from './Contact';
 
 export default {
@@ -26,7 +26,7 @@ export default {
     Contact,
     Intro,
     About,
-    Project,
+    Projects,
     Footer,
   },
   data() {
