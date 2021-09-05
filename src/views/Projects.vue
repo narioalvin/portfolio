@@ -111,7 +111,7 @@ import ProjectService from '../service/ProjectService';
 import axios from 'axios';
 
 export default {
-  name: 'Project',
+  name: 'Projects',
   components: {
     CloudyDay,
   },
@@ -276,6 +276,10 @@ export default {
 
 .project-ten {
   @include projectBg(#8d5185, #a1bafe);
+}
+
+.project-eleven {
+  @include projectBg(#FF995A, #ff6666) ;
 }
 
 .project-cols .b-col {
