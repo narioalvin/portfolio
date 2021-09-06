@@ -26,7 +26,7 @@
                 :width="item.imageWidth"
                 class="project-icon"
                 :class="item.animationClass"
-                :src="require(`../assets/image/${item.image}`)"
+                :src="require(`../assets/images/${item.image}`)"
               />
               <component
                 v-if="item.isImageComponent"
@@ -42,26 +42,31 @@
               </p>
               <a :href="item.projectLink" target="_blank" class="mb-3">
                 <button class="project-btn">
-                  <font-awesome-icon
+                  <img
                     class="chevron"
-                    :icon="['fas', 'chevron-right']"
+                    src="../assets/images/right-chevron.svg"
+                    alt="right-chevron"
+                    width="20"
                   />
                 </button>
               </a>
 
               <div class="like-section">
-                <font-awesome-icon
+                <img
                   v-if="item.likes.includes(ipInfo.ip)"
                   @click="likeProject(item, 'unlike', index)"
-                  class="liked-heart mr-2"
-                  :icon="['fas', 'heart']"
+                  class="liked-heart"
+                  src="../assets/images/liked-heart.svg"
+                  alt="right-chevron"
+                  width="20"
                 />
-
-                <font-awesome-icon
+                <img
                   v-else
                   @click="likeProject(item, 'like', index)"
-                  class="unlike-heart mr-2"
-                  :icon="['far', 'heart']"
+                  class="liked-heart"
+                  src="../assets/images/heart.svg"
+                  alt="right-chevron"
+                  width="20"
                 />
                 <span>{{ item.likes.length }}</span>
               </div>
@@ -70,11 +75,9 @@
         </b-col>
       </b-row>
       <center v-if="!loading">
-        <button
-          v-if="!loadMoreClicked"
-          @click="loadMore"
-          class="primary-btn"
-        >More Projects</button>
+        <button v-if="!loadMoreClicked" @click="loadMore" class="primary-btn">
+          More Projects
+        </button>
       </center>
     </div>
     <b-modal
@@ -231,11 +234,6 @@ export default {
   &:hover {
     opacity: 0.8;
   }
-
-  .chevron {
-    font-size: 18px;
-    color: #ffffff;
-  }
 }
 
 .project-one {
@@ -279,7 +277,7 @@ export default {
 }
 
 .project-eleven {
-  @include projectBg(#FF995A, #ff6666) ;
+  @include projectBg(#ff995a, #ff6666);
 }
 
 .project-cols .b-col {
@@ -310,17 +308,13 @@ export default {
     transform: rotateY(-180deg);
 
     .like-section {
-      svg {
-        font-size: 22px;
+      img {
         cursor: pointer;
+        margin-right: 6px;
 
         &:hover {
           opacity: 0.9;
         }
-      }
-
-      .liked-heart {
-        color: #e8505b;
       }
 
       span {

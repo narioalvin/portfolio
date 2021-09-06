@@ -4,11 +4,15 @@
       Contact Me
     </h3>
     <div class="project animated" data-animationtype="up" data-delay=".4s">
-      <font-awesome-icon class="contact-icon" :icon="['fas', 'phone']" />
+      <img
+        class="contact-icon"
+        src="../assets/images/phone-call.svg"
+        alt="phone-call"
+      />
       <h2>+639052322714</h2>
     </div>
     <div class="project animated" data-animationtype="up" data-delay=".5s">
-      <font-awesome-icon class="contact-icon" :icon="['fas', 'paper-plane']" />
+      <img class="contact-icon" src="../assets/images/paper-plane.svg" alt="email" />
       <h2>narioalvin94@gmail.com</h2>
     </div>
   </section>
@@ -33,6 +37,7 @@ export default {
 
   div {
     margin-bottom: 10px;
+    display: flex;
     h2 {
       display: inline-block !important;
       font-size: 21px;
@@ -40,7 +45,7 @@ export default {
     }
 
     .contact-icon {
-      font-size: 21px;
+      width: 21px;
       margin-right: 8px;
     }
   }
@@ -58,7 +63,7 @@ export default {
       }
 
       .contact-icon {
-        font-size: 24px;
+        width: 24px;
       }
     }
   }
@@ -76,7 +81,7 @@ export default {
       }
 
       .contact-icon {
-        font-size: 40px;
+        width: 40px;
       }
     }
   }

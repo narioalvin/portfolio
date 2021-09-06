@@ -4,7 +4,7 @@
       ><img
         class="nav-logo navAnimation animated"
         data-delay="0s"
-        src="../assets/image/logo.png"
+        src="../assets/images/logo.png"
     /></b-navbar-brand>
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
     <b-collapse id="nav-collapse" is-nav>

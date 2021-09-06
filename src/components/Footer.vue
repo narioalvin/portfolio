@@ -10,17 +10,25 @@
     >
       <li>
         <a href="https://github.com/narioalvin" target="_blank">
-          <font-awesome-icon :icon="['fab', 'github']" />
+          <img src="../assets/images/github.svg" alt="github" width="20" />
         </a>
       </li>
       <li>
         <a href="https://dribbble.com/narioalvin" target="_blank">
-          <font-awesome-icon :icon="['fab', 'dribbble']" />
+          <img
+            src="../assets/images/dribbble-logo.svg"
+            alt="dribbble"
+            width="20"
+          />
         </a>
       </li>
       <li>
         <a href="https://www.behance.net/narioalvin" target="_blank">
-          <font-awesome-icon :icon="['fab', 'behance']" />
+          <img
+            src="../assets/images/behance-logo.svg"
+            alt="behance"
+            width="20"
+          />
         </a>
       </li>
       <li>
@@ -28,10 +36,7 @@
           href="https://www.linkedin.com/in/alvin-nario-498a20193"
           target="_blank"
         >
-          <font-awesome-icon
-            class="contact-icon"
-            :icon="['fab', 'linkedin-in']"
-          />
+          <img src="../assets/images/linkedin.svg" alt="behance" width="20" />
         </a>
       </li>
     </ul>
@@ -46,7 +51,7 @@ export default {
 
 <style lang="scss" scoped>
 footer {
-  background-color: #e6e6e6;
+  background-color: #f2f2f2;
   color: #1a1a1a;
   height: 60px;
   align-items: center;
