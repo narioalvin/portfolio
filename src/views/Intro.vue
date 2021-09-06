@@ -24,7 +24,7 @@
           data-animationtype="right"
           data-delay=".3s"
         >
-          <img class="me" src="../assets/image/me.jpg" />
+          <img class="me" src="../assets/images/me.jpg" />
         </div>
       </div>
     </div>
@@ -32,31 +32,37 @@
       <ul class="brand-list" style="list-style-type:none; padding: 0">
         <li>
           <a href="https://github.com/narioalvin" target="_blank">
-            <font-awesome-icon
+            <img
               class="brand-icon animated"
               data-animationtype="up-brand"
               data-delay=".3s"
-              :icon="['fab', 'github']"
+              src="../assets/images/github.svg"
+              alt="github"
+              width="20"
             />
           </a>
         </li>
         <li>
           <a href="https://dribbble.com/narioalvin" target="_blank">
-            <font-awesome-icon
+            <img
               class="brand-icon animated"
               data-animationtype="up-brand"
               data-delay=".4s"
-              :icon="['fab', 'dribbble']"
+              src="../assets/images/dribbble-logo.svg"
+              alt="dribbble"
+              width="20"
             />
           </a>
         </li>
         <li>
           <a href="https://www.behance.net/narioalvin" target="_blank">
-            <font-awesome-icon
+            <img
               class="brand-icon animated"
               data-animationtype="up-brand"
               data-delay=".5s"
-              :icon="['fab', 'behance']"
+              src="../assets/images/behance-logo.svg"
+              alt="behance"
+              width="20"
             />
           </a>
         </li>
@@ -65,17 +71,25 @@
             href="https://www.linkedin.com/in/alvin-nario-498a20193"
             target="_blank"
           >
-            <font-awesome-icon
+            <img
               class="brand-icon animated"
               data-animationtype="up-brand"
               data-delay=".6s"
-              :icon="['fab', 'linkedin-in']"
+              src="../assets/images/linkedin.svg"
+              alt="behance"
+              width="20"
             />
           </a>
         </li>
       </ul>
       <div class="info-img animatedArrow fadeOutDown infinite">
-        <font-awesome-icon class="arrow-down" :icon="['fas', 'angle-down']" />
+        <img
+          class="arrow-down"
+          data-delay=".6s"
+          src="../assets/images/arrow-down.svg"
+          alt="arrow"
+          width="20"
+        />
       </div>
     </div>
   </div>
@@ -156,7 +170,6 @@ export default {
 }
 
 .arrow-down {
-  font-size: 22px;
   position: relative;
   bottom: 10px;
   animation: arrowAnimation 1.5s infinite;
