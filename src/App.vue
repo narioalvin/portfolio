@@ -5,8 +5,6 @@
 </template>
 
 <script>
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap-vue/dist/bootstrap-vue.css';
 import Home from './views/Home';
 
 export default {
@@ -67,17 +65,29 @@ body {
   background: #f2f2f2;
 }
 
-.modal {
-  h6 {
-    font-size: 20px;
-  }
+.loader {
+  display: inline-block;
+  width: 30px;
+  height: 4px;
+  background: #000;
+  -webkit-animation: loader 1.5s linear infinite;
+  animation: loader 1.5s linear infinite;
+}
 
-  .heart {
-    color: #e8505b;
+@keyframes loader {
+  from {
+    transform: rotate(0deg);
   }
-
-  .smiley {
-    color: #f3c623;
+  to {
+    transform: rotate(720deg);
+  }
+}
+@-webkit-keyframes loader {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(720deg);
   }
 }
 </style>

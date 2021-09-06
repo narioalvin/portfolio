@@ -111,7 +111,7 @@ footer {
 
 @media screen and (min-width: 600px) and (orientation: portrait) {
   footer {
-    padding: 0 40px;
+    padding: 0 15px;
   }
 }
 

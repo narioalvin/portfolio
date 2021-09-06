@@ -1,22 +1,21 @@
 <template>
   <section id="projects" class="projects">
     <center v-if="loading || !ipInfo">
-      <div class="font-weight-bold mb-3">
-        <h6>
-          Getting projects from database
-        </h6>
-      </div>
-      <b-spinner></b-spinner>
+      <h3>
+        Getting projects from database
+      </h3>
+      <div class="loader"></div>
     </center>
     <center v-else-if="error !== ''">{{ error }}</center>
     <div v-else>
-      <b-row class="project-cols">
-        <b-col
-          class="b-col"
-          cols="12"
+      <div class="project-cols">
+        <div
           v-for="(item, index) in projects"
           :key="index"
-          :lg="item.size"
+          :class="{
+            'width-6': item.size === '6',
+            'width-4': item.size === '4',
+          }"
         >
           <div class="flip" @click="flipProject">
             <div class="front" :class="item.projectNo">
@@ -72,39 +71,14 @@
               </div>
             </div>
           </div>
-        </b-col>
-      </b-row>
+        </div>
+      </div>
       <center v-if="!loading">
         <button v-if="!loadMoreClicked" @click="loadMore" class="primary-btn">
           More Projects
         </button>
       </center>
     </div>
-    <b-modal
-      ref="like-modal"
-      id="modal-center"
-      size="sm"
-      hide-footer
-      hide-header
-      centered
-    >
-      <div v-if="likedProject">
-        <center>
-          <h6 class="my-4">
-            Appreciate it!
-            <font-awesome-icon class="heart ml-1" :icon="['fas', 'heart']" />
-          </h6>
-        </center>
-      </div>
-      <div v-else>
-        <center>
-          <h6 class="my-4">
-            I'll keep on improving!
-            <font-awesome-icon class="smiley ml-1" :icon="['far', 'smile']" />
-          </h6>
-        </center>
-      </div>
-    </b-modal>
   </section>
 </template>
 
@@ -197,12 +171,6 @@ export default {
           this.getProjects();
         });
       }
-
-      this.$refs['like-modal'].show();
-
-      setTimeout(() => {
-        this.$refs['like-modal'].hide();
-      }, 2500);
     },
   },
 };
@@ -230,9 +198,28 @@ export default {
   border: 0;
   border-radius: 50%;
   background: #202020;
+  cursor: pointer;
 
   &:hover {
     opacity: 0.8;
+  }
+}
+
+.width-4 .width-6 {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .project-cols div {
+    float: left;
+  }
+
+  .width-4 {
+    width: 33.33%;
+  }
+
+  .width-6 {
+    width: 50%;
   }
 }
 
@@ -280,11 +267,6 @@ export default {
   @include projectBg(#ff995a, #ff6666);
 }
 
-.project-cols .b-col {
-  min-height: 50vh;
-  padding: 0;
-}
-
 .flip {
   position: relative;
   transition: 4s;
@@ -308,6 +290,8 @@ export default {
     transform: rotateY(-180deg);
 
     .like-section {
+      display: flex;
+
       img {
         cursor: pointer;
         margin-right: 6px;
