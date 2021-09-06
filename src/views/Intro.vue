@@ -163,6 +163,7 @@ export default {
 .info-content {
   position: relative;
   left: 130px;
+  z-index: 1;
 }
 
 .info-img {
@@ -247,7 +248,7 @@ export default {
   }
 
   .p-40 {
-    padding: 0 40px;
+    padding: 0 15px;
   }
 }
 
