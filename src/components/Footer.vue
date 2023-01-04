@@ -1,7 +1,7 @@
 <template>
   <footer>
     <span class="project animated" data-animationtype="left" data-delay=".6s">
-      <b>2021 ALVIN NARIO</b>
+      <b>2023 ALVIN NARIO</b>
     </span>
     <ul
       class="links project animated"

@@ -1,6 +1,6 @@
 import axios from 'axios';
 // const url = 'http://localhost:5000/api/';
-const url = 'https://my-personal-portfolio-api.herokuapp.com/api/';
+const url = 'https://puzzled-school-uniform-pike.cyclic.app/api/';
 
 class LikeService {
   static getProjects() {
