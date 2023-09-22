@@ -1,22 +1,13 @@
 <template>
   <section id="projects" class="projects">
     <center v-if="loading || !ipInfo">
-      <h3>
-        Getting projects from database
-      </h3>
+      <h3>Getting projects from database</h3>
       <div class="loader"></div>
     </center>
     <center v-else-if="error !== ''">{{ error }}</center>
     <div v-else>
       <div class="project-cols">
-        <div
-          v-for="(item, index) in projects"
-          :key="index"
-          :class="{
-            'width-6': item.size === '6',
-            'width-4': item.size === '4',
-          }"
-        >
+        <div v-for="(item, index) in projects" :key="index" class="width-6">
           <div class="flip" @click="flipProject">
             <div class="front" :class="item.projectNo">
               <h1 class="text-shadow white-text">{{ item.projectName }}</h1>

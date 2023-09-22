@@ -7,7 +7,7 @@
       <br />
       <div>
         <p class="animated" data-animationtype="up" data-delay=".2s">
-          Now, I'm a Software Developer with more than four years of
+          Now, I'm a Software Developer with more than five years of
           experience building immersive and responsive software, enjoying and
           learning new languages, frameworks and technologies.
           <br />
